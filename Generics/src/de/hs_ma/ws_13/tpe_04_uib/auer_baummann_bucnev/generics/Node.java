@@ -11,20 +11,33 @@ import java.util.ArrayList;
  * 
  */
 public class Node<T> {
+
+	protected T node;
+	protected boolean isVisited;
 	
-	ArrayList<T> nodeList = new ArrayList<T>();
-	
-	void addNode(Node node){
-		nodeList.add((T) node);
-		
+	//noch unsicher, obs gebraucht wird in dieser Klasse
+		ArrayList<T> nodeList = new ArrayList<T>();
+
+
+	void addNode(T node) {
+		this.node = node;
+
 	}
 
-	void addLeftChild() {
+	public boolean isVisited() {
+		return isVisited;
+	}
 
+	public void visit() {
+		isVisited = true;
 	}
 	
-	void addRightChild(){
-		
+	public void unvisited(){
+		isVisited = false;
+	}
+
+	void addChild() {
+
 	}
 
 	void getChildren() {
@@ -38,5 +51,12 @@ public class Node<T> {
 	void getValue() {
 
 	}
+
+	@Override
+	public String toString() {
+		return "Node [nodeList=" + nodeList + ", node=" + node + "]";
+	}
+	
+	
 
 }
