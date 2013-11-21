@@ -1,5 +1,5 @@
 package de.hs_ma.ws_13.tpe_04_uib.auer_baummann_bucnev.generics;
-
+//test
 
 /**
  * Interface. Einfache Datenstruktur zur Verwaltung einer Reihe von Elementen.
