@@ -1,5 +1,7 @@
 package de.hs_ma.ws_13.tpe_04_uib.auer_baummann_bucnev.generics;
 
+import java.util.ArrayList;
+
 /**
  * Klasse, ...
  * 
@@ -9,9 +11,20 @@ package de.hs_ma.ws_13.tpe_04_uib.auer_baummann_bucnev.generics;
  * 
  */
 public class Node<T> {
+	
+	ArrayList<T> nodeList = new ArrayList<T>();
+	
+	void addNode(Node node){
+		nodeList.add((T) node);
+		
+	}
 
-	void addChild() {
+	void addLeftChild() {
 
+	}
+	
+	void addRightChild(){
+		
 	}
 
 	void getChildren() {
