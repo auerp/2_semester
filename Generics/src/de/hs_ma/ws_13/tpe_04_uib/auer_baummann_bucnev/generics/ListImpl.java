@@ -1,6 +1,8 @@
 package de.hs_ma.ws_13.tpe_04_uib.auer_baummann_bucnev.generics;
-// Test mit Tobi
+
 import java.util.ArrayList;
+import java.util.LinkedList;
+
 
 /**
  * Klasse, zur Implementierung der Liste
@@ -12,7 +14,7 @@ import java.util.ArrayList;
  * @param <T>
  *            Typ der gespeicherten Elemente
  */
-public abstract class ListImpl<T> implements List<T> {
+public abstract class ListImpl<T> extends LinkedList<T> implements List<T> {
 
 	ArrayList<T> list = new ArrayList<T>();
 	

@@ -1,8 +1,4 @@
-package de.hs_ma.ws_13.tpe_04_uib.auer_baummann_bucnev.generics;
-
-import java.util.LinkedList;
-
-/**
+package de.hs_ma.ws_13.tpe_04_uib.auer_baummann_bucnev.generics;/**
  * Klasse, ...
  * 
  * @author pauer
@@ -10,18 +6,12 @@ import java.util.LinkedList;
  * @author tbaumann version 20.11.2013
  * 
  */
-public class Node<T> {
+public class Node<T> extends NodeListImpl {
 
-	protected T node;
+	
 	protected boolean isVisited;
 
-	// noch unsicher, obs gebraucht wird in dieser Klasse
-	LinkedList<T> nodeList = new LinkedList<T>();
-
-	void addNode(T node) {
-		this.node = node;
-
-	}
+	
 
 	public boolean isVisited() {
 		return isVisited;
@@ -35,8 +25,8 @@ public class Node<T> {
 		isVisited = false;
 	}
 
-	void addChild() {
-
+	void addChild(){
+		
 	}
 
 	void getChildren() {
@@ -44,6 +34,7 @@ public class Node<T> {
 	}
 
 	void getName() {
+		
 
 	}
 
@@ -51,9 +42,9 @@ public class Node<T> {
 
 	}
 
-	@Override
-	public String toString() {
-		return "Node [nodeList=" + nodeList + ", node=" + node + "]";
-	}
+	// @Override
+	// public String toString() {
+	// // return "Node [nodeList=" + nodeList + ", node=" + node + "]";
+	// }
 
 }
