@@ -4,6 +4,15 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+/**
+ * Klasse, zum Testen der Implementierten Methoden
+ * 
+ * @author pauer
+ * @author rbucnev
+ * @author tbaumann
+ * @version 20.11.2013
+ * 
+ */
 public class JUnitTest {
 
 	@Test

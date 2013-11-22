@@ -1,24 +1,23 @@
 package de.hs_ma.ws_13.tpe_04_uib.auer_baummann_bucnev.generics;
+
 /**
  * Klasse, ...
  * 
  * @author pauer
  * @author rbucnev
- * @author tbaumann version 20.11.2013
+ * @author tbaumann
+ * @version 20.11.2013
  * 
  */
 
 public class Graph {
 
-	
-
 	/**
 	 * Konstruktor
 	 */
-	 Graph() {
-		
-	}
+	Graph() {
 
+	}
 
 	/**
 	 * Methode, zur Durchsuchung des Graphes

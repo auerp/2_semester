@@ -7,7 +7,8 @@ import java.util.LinkedList;
  * 
  * @author pauer
  * @author rbucnev
- * @author tbaumann version 20.11.2013
+ * @author tbaumann
+ * @version 20.11.2013
  * 
  */
 public class Node<T> extends NodeListImpl<T> {
@@ -27,7 +28,6 @@ public class Node<T> extends NodeListImpl<T> {
 	}
 
 	void addChild() {
-		
 
 	}
 
