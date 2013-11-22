@@ -1,4 +1,8 @@
-package de.hs_ma.ws_13.tpe_04_uib.auer_baummann_bucnev.generics;/**
+package de.hs_ma.ws_13.tpe_04_uib.auer_baummann_bucnev.generics;
+
+import java.util.LinkedList;
+
+/**
  * Klasse, ...
  * 
  * @author pauer
@@ -6,12 +10,38 @@ package de.hs_ma.ws_13.tpe_04_uib.auer_baummann_bucnev.generics;/**
  * @author tbaumann version 20.11.2013
  * 
  */
-public class Node<T> extends NodeListImpl {
+public class Node<T> extends NodeListImpl<T> {
 
-	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 7678153360742668972L;
 	protected boolean isVisited;
+	String nodeName;
+	T wert;
 
-	
+	Node(String nodeName, T wert, LinkedList<Node> nodeList) {
+		this.nodeName = nodeName;
+		this.wert = wert;
+
+	}
+
+	void addChild() {
+		
+
+	}
+
+	void getChildren() {
+
+	}
+
+	void getName() {
+
+	}
+
+	void getValue() {
+
+	}
 
 	public boolean isVisited() {
 		return isVisited;
@@ -23,23 +53,6 @@ public class Node<T> extends NodeListImpl {
 
 	public void unvisited() {
 		isVisited = false;
-	}
-
-	void addChild(){
-		
-	}
-
-	void getChildren() {
-
-	}
-
-	void getName() {
-		
-
-	}
-
-	void getValue() {
-
 	}
 
 	// @Override

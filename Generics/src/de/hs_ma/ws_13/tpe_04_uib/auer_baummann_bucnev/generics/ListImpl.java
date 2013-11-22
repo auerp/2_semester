@@ -1,11 +1,10 @@
 package de.hs_ma.ws_13.tpe_04_uib.auer_baummann_bucnev.generics;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
 
 
 /**
- * Klasse, zur Implementierung der Liste
+ * Klasse, zur Verwaltung der Listen
  * 
  * @author pauer
  * @author rbucnev
@@ -15,28 +14,13 @@ import java.util.LinkedList;
  *            Typ der gespeicherten Elemente
  */
 public abstract class ListImpl<T> extends LinkedList<T> implements List<T> {
+	
+	
+	
+	
+	
 
-	ArrayList<T> list = new ArrayList<T>();
-	
-	
-	/**
-	 * Fuegt am Ende ein Element hinzu.
-	 * 
-	 * @param e
-	 *            Element, das hinzugefuegt werden soll.
-	 * @return ist immer true
-	 */
-	public boolean add(T e){
-		return list.add(e);
-		
-		
-	}
-	
-	
-	public boolean contains(Object e){
-		
-		return false;
-		
-	}
 
+	
+	
 }

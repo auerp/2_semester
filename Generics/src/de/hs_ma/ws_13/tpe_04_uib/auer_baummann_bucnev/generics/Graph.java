@@ -10,35 +10,15 @@ package de.hs_ma.ws_13.tpe_04_uib.auer_baummann_bucnev.generics;
 
 public class Graph {
 
-	protected Node root;
+	
 
 	/**
 	 * Konstruktor
 	 */
-	protected Graph() {
-		root = null;
+	 Graph() {
+		
 	}
 
-
-	/**
-	 * Methode, zur Erzeugung eines neuen Graphes
-	 * 
-	 * @param v
-	 * @param left
-	 * @param right
-	 */
-	protected void newGraph(char v, Graph left, Graph right) {
-
-	}
-
-	/**
-	 * Methode, zur Überprufung, ob Graph leer ist
-	 * 
-	 * @return
-	 */
-	protected boolean isEmpty() {
-		return root == null;
-	}
 
 	/**
 	 * Methode, zur Durchsuchung des Graphes

@@ -13,7 +13,7 @@ public interface NodeList<T> extends List<T> {
 	
 	public boolean addNodeToList(T node);
 	public boolean removeNodeFromList(T node);
-//	public boolean contains(T node);
+
 					
 	
 	
