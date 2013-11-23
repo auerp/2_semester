@@ -20,27 +20,32 @@ public class Node<T> extends NodeListImpl<T> {
 	protected boolean isVisited;
 	String nodeName;
 	T wert;
+	LinkedList<Node> nodeList;
 
 	Node(String nodeName, T wert, LinkedList<Node> nodeList) {
 		this.nodeName = nodeName;
 		this.wert = wert;
+		this.nodeList= nodeList;
 
 	}
 
-	void addChild() {
-
+	void addChild(Node<T> child) {
+		this.add(child);	// ? ob es doppelt ist
+		nodeList.add(child);
 	}
 
-	void getChildren() {
-
+	//Auslesen aller Kindsknoten
+	LinkedList getChildren() {
+		return nodeList;
 	}
 
-	void getName() {
-
+	String getName() {
+		return this.nodeName;
 	}
 
-	void getValue() {
-
+	//Auslesen des Wertes
+	T getValue() {
+		return this.wert;
 	}
 
 	public boolean isVisited() {

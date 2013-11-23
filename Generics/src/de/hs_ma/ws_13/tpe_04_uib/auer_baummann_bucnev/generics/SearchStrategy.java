@@ -16,10 +16,11 @@ public interface SearchStrategy {
 	/**
 	 * Methode, um den Graphen nach Knoten mit einem bestimmten Wert zu
 	 * durchsuchen.
+	 * @param <T>
 	 * 
 	 * @return
 	 */
-	public String search();
+	public <T> String search(T wert,boolean breitensuche);
 
 	/**
 	 * Methode, um den Weg des zu letzt genutzen Durchlaufes im Graphen
@@ -28,5 +29,6 @@ public interface SearchStrategy {
 	 * @return
 	 */
 	public String getPath();
+
 
 }

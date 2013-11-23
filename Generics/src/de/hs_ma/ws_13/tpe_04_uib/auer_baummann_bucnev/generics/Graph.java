@@ -1,5 +1,7 @@
 package de.hs_ma.ws_13.tpe_04_uib.auer_baummann_bucnev.generics;
 
+import java.util.LinkedList;
+
 /**
  * Klasse, ...
  * 
@@ -7,23 +9,30 @@ package de.hs_ma.ws_13.tpe_04_uib.auer_baummann_bucnev.generics;
  * @author rbucnev
  * @author tbaumann
  * @version 20.11.2013
+ * @param <T>
  * 
  */
 
-public class Graph {
+public class Graph<T> implements SearchStrategy{
 
+	LinkedList liste = new LinkedList();	//darf man das machen?
+	Node<T> root;
 	/**
 	 * Konstruktor
 	 */
-	Graph() {
-
+	Graph(Node<T>root) {
+		this.root= root;
 	}
 
-	/**
-	 * Methode, zur Durchsuchung des Graphes
-	 */
-	void search() {
 
+	
+	public void breitensuche(T wert, Node<T> root)
+	{
+		
+	}
+	private void tiefensuche(T wert, Node<T> root)
+	{
+		
 	}
 
 	/**
@@ -31,6 +40,30 @@ public class Graph {
 	 */
 	void copyInto() {
 
+	}
+
+	@Override
+	public String getPath() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+
+	@Override
+	public <T> String search(T wert, boolean breitensuche) {
+		
+			liste.clear();
+			if(breitensuche)
+			{
+				breitensuche(wert,root);	//komischer Fehler, vllt findet ihr etwas dagegen
+			}
+			else {
+				tiefensuche(wert,root);
+			}
+			return null;
+
+		
 	}
 
 }
