@@ -13,26 +13,24 @@ import java.util.LinkedList;
  * 
  */
 
-public class Graph<T> implements SearchStrategy{
+public class Graph<T> implements SearchStrategy {
 
-	LinkedList liste = new LinkedList();	//darf man das machen?
+	LinkedList<T> liste = new LinkedList<T>(); // darf man das machen?
 	Node<T> root;
+
 	/**
 	 * Konstruktor
 	 */
-	Graph(Node<T>root) {
-		this.root= root;
+	Graph(Node<T> root) {
+		this.root = root;
 	}
 
+	public void breitensuche(T wert, Node<T> root) {
 
-	
-	public void breitensuche(T wert, Node<T> root)
-	{
-		
 	}
-	private void tiefensuche(T wert, Node<T> root)
-	{
-		
+
+	private void tiefensuche(T wert, Node<T> root) {
+
 	}
 
 	/**
@@ -48,22 +46,22 @@ public class Graph<T> implements SearchStrategy{
 		return null;
 	}
 
-
-
+	/**
+	 * Methode
+	 */
+	@SuppressWarnings("hiding")
 	@Override
 	public <T> String search(T wert, boolean breitensuche) {
-		
-			liste.clear();
-			if(breitensuche)
-			{
-				breitensuche(wert,root);	//komischer Fehler, vllt findet ihr etwas dagegen
-			}
-			else {
-				tiefensuche(wert,root);
-			}
-			return null;
 
-		
+		liste.clear();
+		if (breitensuche) {
+			breitensuche(wert, root); // komischer Fehler, vllt findet ihr etwas
+										// dagegen
+		} else {
+			tiefensuche(wert, root);
+		}
+		return null;
+
 	}
 
 }
