@@ -7,7 +7,7 @@ package de.hs_ma.ws_13.tpe_04_uib.auer_baummann_bucnev.generics;
  * @author rbucnev
  * @author tbaumann
  * @version 20.11.2013
- * 
+ * t
  */
 public class Node<T> {
 
