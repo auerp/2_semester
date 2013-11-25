@@ -36,11 +36,6 @@ public abstract class Graph<T> implements SearchStrategy {
 		return list;
 	}
 
-	@Override
-	public Node<T> getPath() {
-		return this.root;
-	}
-
 	/**
 	 * Methode
 	 */
@@ -48,6 +43,13 @@ public abstract class Graph<T> implements SearchStrategy {
 		NodeListImpl<T> found = new NodeListImpl<T>();
 		found = strategy.search(this.root, search);
 		return found;
+	}
+
+	// Ist diese Methode in dieser Klasse notwendig? Denn der PAth interessiert
+	// uns hier ja wenig. Wir wollen hier ja nur die Knoten verwalten!?
+	@Override
+	public Node<T> getPath() {
+		return this.root;
 	}
 
 }

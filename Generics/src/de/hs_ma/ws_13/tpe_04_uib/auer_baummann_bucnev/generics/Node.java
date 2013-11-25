@@ -29,7 +29,7 @@ public class Node<T> {
 
 	}
 
-	void addChild(T child) {
+	void addChild(Node<T> child) {
 		this.childList.add(child);
 	}
 
