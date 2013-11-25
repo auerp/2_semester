@@ -1,7 +1,5 @@
 package de.hs_ma.ws_13.tpe_04_uib.auer_baummann_bucnev.generics;
 
-import java.util.LinkedList;
-
 /**
  * Klasse, ...
  * 
@@ -11,39 +9,40 @@ import java.util.LinkedList;
  * @version 20.11.2013
  * 
  */
-public class Node<T> extends NodeListImpl<T> {
+public class Node<T> {
+
+	protected boolean isVisited;
+	private String nodeName;
+	private T wert;
+	private NodeListImpl<T> childList;
 
 	/**
+	 * Konstruktor
 	 * 
+	 * @param nodeName
+	 * @param wert
 	 */
-	private static final long serialVersionUID = 7678153360742668972L;
-	protected boolean isVisited;
-	String nodeName;
-	T wert;
-	LinkedList<Node> nodeList;
-
-	Node(String nodeName, T wert, LinkedList<Node> nodeList) {
+	public Node(String nodeName, T wert) {
 		this.nodeName = nodeName;
 		this.wert = wert;
-		this.nodeList= nodeList;
+		this.childList = new NodeListImpl<T>();
 
 	}
 
-	void addChild(Node<T> child) {
-		this.add(child);	// ? ob es doppelt ist
-		nodeList.add(child);
+	void addChild(T child) {
+		this.childList.add(child);
 	}
 
-	//Auslesen aller Kindsknoten
-	LinkedList getChildren() {
-		return nodeList;
+	// Auslesen aller Kindsknoten
+	NodeListImpl<T> getChildren() {
+		return this.childList;
 	}
 
 	String getName() {
 		return this.nodeName;
 	}
 
-	//Auslesen des Wertes
+	// Auslesen des Wertes
 	T getValue() {
 		return this.wert;
 	}

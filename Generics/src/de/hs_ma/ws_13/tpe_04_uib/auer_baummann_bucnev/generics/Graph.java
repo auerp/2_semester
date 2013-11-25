@@ -13,55 +13,41 @@ import java.util.LinkedList;
  * 
  */
 
-public class Graph<T> implements SearchStrategy {
+public abstract class Graph<T> implements SearchStrategy {
 
-	LinkedList<T> liste = new LinkedList<T>(); // darf man das machen?
-	Node<T> root;
+	// LinkedList<T> liste = new LinkedList<T>(); // darf man das machen?
+	private NodeListImpl<T> all = new NodeListImpl<T>();
+	private Node<T> root;
 
 	/**
 	 * Konstruktor
 	 */
-	Graph(Node<T> root) {
+	public Graph(Node<T> root) {
 		this.root = root;
-	}
-
-	public void breitensuche(T wert, Node<T> root) {
-
-	}
-
-	private void tiefensuche(T wert, Node<T> root) {
-
 	}
 
 	/**
 	 * Methode, zum kopieren von Knoten in eine Liste
 	 */
-	void copyInto() {
-
+	void copyInto(NodeListImpl list) {
+		for (Node<T> it : this.all) {
+			list.add(it);
+		}
+		return list;
 	}
 
 	@Override
-	public String getPath() {
-		// TODO Auto-generated method stub
-		return null;
+	public Node<T> getPath() {
+		return this.root;
 	}
 
 	/**
 	 * Methode
 	 */
-	@SuppressWarnings("hiding")
-	@Override
-	public <T> String search(T wert, boolean breitensuche) {
-
-		liste.clear();
-		if (breitensuche) {
-			breitensuche(wert, root); // komischer Fehler, vllt findet ihr etwas
-										// dagegen
-		} else {
-			tiefensuche(wert, root);
-		}
-		return null;
-
+	public NodeListImpl<T> search(Node<T> search, SearchStrategy<T> strategy) {
+		NodeListImpl<T> found = new NodeListImpl<T>();
+		found = strategy.search(this.root, search);
+		return found;
 	}
 
 }

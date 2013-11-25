@@ -11,7 +11,7 @@ package de.hs_ma.ws_13.tpe_04_uib.auer_baummann_bucnev.generics;
  * 
  */
 
-public interface SearchStrategy {
+public interface SearchStrategy<T> {
 
 	/**
 	 * Methode, um den Graphen nach Knoten mit einem bestimmten Wert zu
@@ -20,7 +20,7 @@ public interface SearchStrategy {
 	 * 
 	 * @return
 	 */
-	public <T> String search(T wert,boolean breitensuche);
+	abstract NodeListImpl<T> search(Node<T> firstNode, Node<T> search);
 
 	/**
 	 * Methode, um den Weg des zu letzt genutzen Durchlaufes im Graphen
@@ -28,7 +28,7 @@ public interface SearchStrategy {
 	 * 
 	 * @return
 	 */
-	public String getPath();
+	abstract NodeListImpl<T> getPath();
 
 
 }

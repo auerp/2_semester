@@ -12,7 +12,7 @@ import java.util.LinkedList;
  * @param <T>
  */
 
-public class NodeListImpl<T> extends LinkedList<Node<T>> implements NodeList<T> {
+public class NodeListImpl<T> extends ListImpl<T> implements NodeList<T> {
 
 	/**
 	 * 
