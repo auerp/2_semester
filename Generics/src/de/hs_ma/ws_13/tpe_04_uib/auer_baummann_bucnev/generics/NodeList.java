@@ -9,10 +9,11 @@ package de.hs_ma.ws_13.tpe_04_uib.auer_baummann_bucnev.generics;
  * @version 22.11.2013
  * @param <T>
  */
-public interface NodeList<T> extends List<T> {
+public interface NodeList<T> extends List<Node<T>> {
 
-	public boolean addNodeToList(T node);
+	// Ist das überhaupt nötig, die beiden Methoden??
+	// public boolean addNodeToList(T node);
 
-	public boolean removeNodeFromList(T node);
+	// public boolean removeNodeFromList(T node);
 
 }
