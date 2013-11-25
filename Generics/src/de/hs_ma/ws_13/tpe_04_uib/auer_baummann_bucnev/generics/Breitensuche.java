@@ -1,23 +1,25 @@
 package de.hs_ma.ws_13.tpe_04_uib.auer_baummann_bucnev.generics;
 
-public class Breitensuche implements SearchStrategy{
-
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	}
+/**
+ * Klasse zur Erzeugung der Breitensuche.
+ * 
+ * @author pauer
+ * @author rbucnev
+ * @author tbaumann
+ * 
+ * @param<T>
+ * 
+ */
+public class Breitensuche<T> implements SearchStrategy<T> {
 
 	@Override
-	public <T> String search(T wert, boolean breitensuche) {
+	public NodeListImpl<T> getPath() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public String getPath() {
+	public NodeListImpl search(Node firstNode, Node search) {
 		// TODO Auto-generated method stub
 		return null;
 	}
