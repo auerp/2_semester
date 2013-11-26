@@ -1,6 +1,5 @@
 package de.hs_ma.ws_13.tpe_04_uib.auer_baummann_bucnev.generics;
 
-
 /**
  * Klasse, ...
  * 
@@ -12,7 +11,7 @@ package de.hs_ma.ws_13.tpe_04_uib.auer_baummann_bucnev.generics;
  * 
  */
 
-public  class Graph<T> implements SearchStrategy<T> {
+public class Graph<T> implements SearchStrategy<T> {
 
 	private NodeListImpl<T> allNodes = new NodeListImpl<T>();
 	private Node<T> firstNode;
@@ -31,9 +30,6 @@ public  class Graph<T> implements SearchStrategy<T> {
 		for (Node<T> it : this.allNodes) {
 			list.add(it);
 		}
-		 Stimmt die Methode copyInto?????????????
-				 ergibt sinn
-				 werden wir in der junit sehen
 	}
 
 	/**
@@ -56,7 +52,5 @@ public  class Graph<T> implements SearchStrategy<T> {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
-	
 
 }
