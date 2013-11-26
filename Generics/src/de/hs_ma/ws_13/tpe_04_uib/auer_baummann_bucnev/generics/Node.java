@@ -67,27 +67,39 @@ public class Node<T> {
 		return this.value;
 	}
 
-	/**
-	 * Methode, um zu prüfen, ob ein Knoten bereits besucht wurde
-	 * 
-	 * @return visit
-	 */
-	public boolean isVisited() {
-		return this.visit();
+	
+	public boolean getVisit(){
+		return isVisited;
+		
+	}
+	
+	public void setVisit(boolean visit){
+		isVisited = visit;
+		
 	}
 
-	/**
-	 * Methode, um festzulegen, ob ein Knoten besucht oder nicht besucht wurde
-	 * 
-	 * @return true wenn der Knoten besucht wurde; false wenn der Knoten nocht
-	 *         nicht besucht wurde
-	 */
-	public boolean visit() {
-		if (isVisited) {
-			return isVisited = true;
-		} else
-			return false;
-	}
+	
+//	/**
+//	 * Methode, um zu prüfen, ob ein Knoten bereits besucht wurde
+//	 * 
+//	 * @return visit
+//	 */
+//	public boolean isVisited() {
+//		return isVisited;
+//	}
+
+//	/**
+//	 * Methode, um festzulegen, ob ein Knoten besucht oder nicht besucht wurde
+//	 * 
+//	 * @return true wenn der Knoten besucht wurde; false wenn der Knoten nocht
+//	 *         nicht besucht wurde
+//	 */
+//	public boolean visit() {
+//		if (isVisited) {
+//			return isVisited = true;
+//		} else
+//			return false;
+//	}
 
 	// public void unvisited() {
 	// isVisited = false;
@@ -96,9 +108,10 @@ public class Node<T> {
 	/**
 	 * Methode, um eine geeignete Darstellung zu erzeugen
 	 */
+	@Override
 	public String toString() {
-		return "Node [nodeName=" + nodeName + ", value=" + value
-				+ ", childList=" + childList + "]";
+		return "Node [nodeName=" + nodeName + ", value=" + value + "]";
 	}
+	
 
 }

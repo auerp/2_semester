@@ -17,17 +17,17 @@ public class Tiefensuche<T> implements SearchStrategy<T> {
 
 	@Override
 	public NodeListImpl<T> search(Node<T> startNode, Node<T> toSearch) {
-		this.search = search;
+		this.search = toSearch;
 		this.pathList.clear();
 		this.found = new NodeListImpl<T>();
 
-		if(startNode.getValue().equals(search.getValue())){
+		if (startNode.getValue().equals(search.getValue())) {
 			this.pathList.add(startNode);
 			found.add(startNode);
-			startNode.isVisited();
-		}else{
+			startNode.setVisit(true);
+		} else {
 			this.pathList.add(startNode);
-			
+
 		}
 		return found;
 
@@ -36,9 +36,9 @@ public class Tiefensuche<T> implements SearchStrategy<T> {
 	/**
 	 * Methode, um den Weg zurückzuliefern
 	 * 
-	 * @return pathList
+	 * @return pathList liefert den durchgelaufenen Pfad zurück
 	 */
 	public NodeListImpl<T> getPath() {
-		return this.pathList;
+		return pathList;
 	}
 }

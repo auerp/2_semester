@@ -12,7 +12,7 @@ package de.hs_ma.ws_13.tpe_04_uib.auer_baummann_bucnev.generics;
  * 
  */
 
-public abstract class Graph<T> implements SearchStrategy<T> {
+public  class Graph<T> implements SearchStrategy<T> {
 
 	private NodeListImpl<T> allNodes = new NodeListImpl<T>();
 	private Node<T> firstNode;
@@ -41,6 +41,18 @@ public abstract class Graph<T> implements SearchStrategy<T> {
 		NodeListImpl<T> found = new NodeListImpl<T>();
 		found = strategy.search(this.firstNode, toSearch);
 		return found;
+	}
+
+	@Override
+	public NodeListImpl<T> search(Node<T> startNode, Node<T> toSearch) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public NodeListImpl<T> getPath() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	
