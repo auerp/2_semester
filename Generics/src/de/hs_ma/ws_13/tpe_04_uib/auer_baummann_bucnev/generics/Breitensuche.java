@@ -11,16 +11,24 @@ package de.hs_ma.ws_13.tpe_04_uib.auer_baummann_bucnev.generics;
  * 
  */
 public class Breitensuche<T> implements SearchStrategy<T> {
+	
+	/**
+	 * Konstruktor
+	 */
+	//TODO kann der Kontruktor nicht generisch sein?
+	public Breitensuche(){
+		
+	}
 
 	@Override
 	public NodeListImpl<T> getPath() {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 
 	@Override
-	public NodeListImpl search(Node firstNode, Node search) {
-		// TODO Auto-generated method stub
+	public NodeListImpl<T> search(Node<T> firstNode, Node<T> toSearch) {
+		
 		return null;
 	}
 

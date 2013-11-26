@@ -18,7 +18,7 @@ public class Tiefensuche<T> implements SearchStrategy<T> {
 	}
 
 	@Override
-	public NodeListImpl search(Node firstNode, Node search) {
+	public NodeListImpl search(Node firstNode, Node toSearch) {
 		// TODO Auto-generated method stub
 		return null;
 	}

@@ -13,7 +13,7 @@ public class Node<T> {
 
 	protected boolean isVisited;
 	private String nodeName;
-	private T wert;
+	private T value;
 	private NodeListImpl<T> childList;
 
 	/**
@@ -22,9 +22,9 @@ public class Node<T> {
 	 * @param nodeName
 	 * @param wert
 	 */
-	public Node(String nodeName, T wert) {
+	public Node(String nodeName, T value) {
 		this.nodeName = nodeName;
-		this.wert = wert;
+		this.value = value;
 		this.childList = new NodeListImpl<T>();
 
 	}
@@ -44,7 +44,7 @@ public class Node<T> {
 
 	// Auslesen des Wertes
 	T getValue() {
-		return this.wert;
+		return this.value;
 	}
 
 	public boolean isVisited() {
@@ -59,9 +59,12 @@ public class Node<T> {
 		isVisited = false;
 	}
 
-	// @Override
-	// public String toString() {
-	// // return "Node [nodeList=" + nodeList + ", node=" + node + "]";
-	// }
+	@Override
+	public String toString() {
+		return "Node [nodeName=" + nodeName
+				+ ", value=" + value + ", childList=" + childList + "]";
+	}
+
+	
 
 }

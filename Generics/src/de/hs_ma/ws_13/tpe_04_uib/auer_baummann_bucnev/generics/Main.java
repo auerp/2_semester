@@ -1,7 +1,5 @@
 package de.hs_ma.ws_13.tpe_04_uib.auer_baummann_bucnev.generics;
 
-import java.util.ArrayList;
-
 /**
  * Klasse um eine Simulation zu erzeugen
  * 
@@ -15,6 +13,29 @@ import java.util.ArrayList;
 public class Main {
 
 	public static void main(String[] args) {
+		
+//		NodeListImpl<String> list = new NodeListImpl<String>();
+		Breitensuche breitensuche = new Breitensuche();
+		
+		Node<String> a = new Node<String>("A", "A");
+        Node<String> b = new Node<String>("B", "B");
+        Node<String> c = new Node<String>("C", "C");
+        Node<String> d = new Node<String>("D", "D");
+        Node<String> e = new Node<String>("E", "E");
+        Node<String> f = new Node<String>("F", "F");
+        
+      
+        
+        a.addChild(d);
+        a.addChild(c);
+        a.addChild(b);
+        
+//        System.out.println(a);
+        System.out.println();
+        
+        b.addChild(f);
+        
+     
 
 	}
 
