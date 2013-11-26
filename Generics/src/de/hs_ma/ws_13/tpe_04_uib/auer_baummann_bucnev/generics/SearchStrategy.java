@@ -20,7 +20,7 @@ public interface SearchStrategy<T> {
 	 * 
 	 * @return
 	 */
-	abstract NodeListImpl<T> search(Node<T> firstNode, Node<T> toSearch);
+	abstract NodeListImpl<T> search(Node<T> startNode, Node<T> toSearch);
 
 	/**
 	 * Methode, um den Weg des zu letzt genutzen Durchlaufes im Graphen

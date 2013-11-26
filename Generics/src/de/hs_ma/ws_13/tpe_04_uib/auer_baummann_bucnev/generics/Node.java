@@ -6,8 +6,7 @@ package de.hs_ma.ws_13.tpe_04_uib.auer_baummann_bucnev.generics;
  * @author pauer
  * @author rbucnev
  * @author tbaumann
- * @version 20.11.2013
- * t
+ * @version 20.11.2013 t
  */
 public class Node<T> {
 
@@ -48,23 +47,24 @@ public class Node<T> {
 	}
 
 	public boolean isVisited() {
-		return isVisited;
+		return this.visit();
 	}
 
-	public void visit() {
-		isVisited = true;
+	public boolean visit() {
+		if (isVisited) {
+			return isVisited = true;
+		} else
+			return false;
 	}
 
-	public void unvisited() {
-		isVisited = false;
-	}
+	// public void unvisited() {
+	// isVisited = false;
+	// }
 
 	@Override
 	public String toString() {
-		return "Node [nodeName=" + nodeName
-				+ ", value=" + value + ", childList=" + childList + "]";
+		return "Node [nodeName=" + nodeName + ", value=" + value
+				+ ", childList=" + childList + "]";
 	}
-
-	
 
 }

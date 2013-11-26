@@ -11,16 +11,34 @@ package de.hs_ma.ws_13.tpe_04_uib.auer_baummann_bucnev.generics;
  */
 public class Tiefensuche<T> implements SearchStrategy<T> {
 
+	private Node<T> search;
+	private NodeListImpl<T> found;
+	private NodeListImpl<T> pathList = new NodeListImpl<T>();
+
 	@Override
+	public NodeListImpl<T> search(Node<T> startNode, Node<T> toSearch) {
+		this.search = search;
+		this.pathList.clear();
+		this.found = new NodeListImpl<T>();
+
+		if(startNode.getValue().equals(search.getValue())){
+			this.pathList.add(startNode);
+			found.add(startNode);
+			startNode.isVisited();
+		}else{
+			this.pathList.add(startNode);
+			
+		}
+		return found;
+
+	}
+
+	/**
+	 * Methode, um den Weg zurückzuliefern
+	 * 
+	 * @return pathList
+	 */
 	public NodeListImpl<T> getPath() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.pathList;
 	}
-
-	@Override
-	public NodeListImpl search(Node firstNode, Node toSearch) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 }
