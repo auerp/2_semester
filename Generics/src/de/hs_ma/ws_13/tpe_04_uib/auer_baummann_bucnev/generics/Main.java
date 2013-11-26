@@ -36,29 +36,29 @@ public class Main {
 
 
 
-		a.addChild(b);
+		a.addChild(d);
         a.addChild(c);
-        a.addChild(d);
-        b.addChild(e);
-        b.addChild(f);
+        a.addChild(b);
         b.addChild(g);
+        b.addChild(f);
+        b.addChild(e);
         b.addChild(a);
-        c.addChild(l);
-        c.addChild(m);
-        d.addChild(o);
-        d.addChild(p);
+        //c.addChild(l);
+        g.addChild(d);
+        f.addChild(k);
+        f.addChild(j);
         e.addChild(h);
         e.addChild(i);
-        f.addChild(j);
-        f.addChild(k);
-        m.addChild(n);
+        k.addChild(d);
+        j.addChild(i);
+        h.addChild(b);
         
 
 		
 		Graph<String> firstGraph = new Graph<String>(a);
 
 		// System.out.println(a);
-		System.out.println(firstGraph.search(b, breitensuche));
+		System.out.println(firstGraph.search(k, breitensuche));
 		System.out.println("Breitensuche: " + breitensuche.getPath());
 
 //		b.addChild(f);

@@ -103,9 +103,6 @@ public class Breitensuche<T> implements SearchStrategy<T> {
 		}
 	}
 
-	@Override
-	public String toString() {
-		return "Breitensuche [pathList=" + pathList + "]";
-	}
+//	arze
 
 }
