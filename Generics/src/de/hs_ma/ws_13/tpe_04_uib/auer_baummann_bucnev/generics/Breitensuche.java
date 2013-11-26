@@ -11,25 +11,31 @@ package de.hs_ma.ws_13.tpe_04_uib.auer_baummann_bucnev.generics;
  * 
  */
 public class Breitensuche<T> implements SearchStrategy<T> {
-	
-	/**
-	 * Konstruktor
-	 */
-	//TODO kann der Kontruktor nicht generisch sein?
-	public Breitensuche(){
-		
-	}
+
+	NodeListImpl<T> pathList = new NodeListImpl<T>();
 
 	@Override
 	public NodeListImpl<T> getPath() {
-		
-		return null;
+		return pathList;
 	}
 
 	@Override
 	public NodeListImpl<T> search(Node<T> firstNode, Node<T> toSearch) {
 		
-		return null;
+		if(firstNode.getChildren().isEmpty()){
+			 pathList.add(firstNode);
+		}
+		else{
+			pathList.add(firstNode);
+			pathList.addAll(firstNode.getChildren());
+		}
+		return getPath();
 	}
 
+	@Override
+	public String toString() {
+		return "Breitensuche [pathList=" + pathList + "]";
+	}
+
+	
 }

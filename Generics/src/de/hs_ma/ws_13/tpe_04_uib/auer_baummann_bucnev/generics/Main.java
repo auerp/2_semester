@@ -31,7 +31,8 @@ public class Main {
         a.addChild(b);
         
 //        System.out.println(a);
-        System.out.println();
+        System.out.println(breitensuche.search(a, b));
+        System.out.println(breitensuche.getPath());
         
         b.addChild(f);
         
