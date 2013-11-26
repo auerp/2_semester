@@ -21,15 +21,26 @@ public class Breitensuche<T> implements SearchStrategy<T> {
 
 	@Override
 	public NodeListImpl<T> search(Node<T> firstNode, Node<T> toSearch) {
+	
+		if(firstNode.getValue().equals(toSearch.getValue())){
+			return firstNode;
+		}else{
+			
+		}
+		
+			
+			
 		
 		if(firstNode.getChildren().isEmpty()){
 			 pathList.add(firstNode);
+			 firstNode.visit();
 		}
 		else{
 			pathList.add(firstNode);
 			pathList.addAll(firstNode.getChildren());
+			
 		}
-		return getPath();
+		return pathList;
 	}
 
 	@Override

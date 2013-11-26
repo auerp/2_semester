@@ -12,10 +12,10 @@ package de.hs_ma.ws_13.tpe_04_uib.auer_baummann_bucnev.generics;
 
 public class Main {
 
-	public static void main(String[] args) {
+	public static <T> void main(String[] args) {
 		
 //		NodeListImpl<String> list = new NodeListImpl<String>();
-		Breitensuche breitensuche = new Breitensuche();
+		Breitensuche<String> breitensuche = new Breitensuche<String>();
 		
 		Node<String> a = new Node<String>("A", "A");
         Node<String> b = new Node<String>("B", "B");
@@ -24,20 +24,25 @@ public class Main {
         Node<String> e = new Node<String>("E", "E");
         Node<String> f = new Node<String>("F", "F");
         
+//    	Graph<String> ja = new Graph<String>(a);
+
       
         
         a.addChild(d);
         a.addChild(c);
         a.addChild(b);
         
+
+        
 //        System.out.println(a);
-        System.out.println(breitensuche.search(a, b));
+       System.out.println(breitensuche.search(a, b));
         System.out.println(breitensuche.getPath());
         
         b.addChild(f);
         
-     
+
 
 	}
+
 
 }
