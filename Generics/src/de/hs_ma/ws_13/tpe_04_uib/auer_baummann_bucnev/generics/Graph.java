@@ -18,7 +18,7 @@ public  class Graph<T> implements SearchStrategy<T> {
 	private Node<T> firstNode;
 
 	/**
-	 * Konstruktor
+	 * Konstruktor zur Erzeugung des ersten Knoten
 	 */
 	public Graph(Node<T> firstNode) {
 		this.firstNode = firstNode;
@@ -31,7 +31,9 @@ public  class Graph<T> implements SearchStrategy<T> {
 		for (Node<T> it : this.allNodes) {
 			list.add(it);
 		}
-		
+		 Stimmt die Methode copyInto?????????????
+				 ergibt sinn
+				 werden wir in der junit sehen
 	}
 
 	/**

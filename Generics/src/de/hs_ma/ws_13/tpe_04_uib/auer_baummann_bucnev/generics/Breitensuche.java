@@ -14,7 +14,12 @@ public class Breitensuche<T> implements SearchStrategy<T> {
 
 	NodeListImpl<T> pathList = new NodeListImpl<T>();
 
-	@Override
+	/**
+	 * Methode in der die Breitensuche implementiert ist. Der duchlaufene Pfad
+	 * wird hier ebenfalls gespeichert
+	 * 
+	 * @return found liefert den gesuchten Schlüsselwert zurück
+	 */
 	public NodeListImpl<T> search(Node<T> firstNode, Node<T> toSearch) {
 
 		NodeListImpl<T> tempList = new NodeListImpl<T>();
@@ -55,38 +60,14 @@ public class Breitensuche<T> implements SearchStrategy<T> {
 					if (!iterator.getVisit()) {
 						iterator.setVisit(true);
 						tempList.add(iterator);
-						this.pathList.add(iterator);
+						pathList.add(iterator);
 					}
 				}
 			}
 		}
-		// pathList.clear();
-		clean(); // Liste leeren???
+		clean();
 		return found;
 	}
-
-	// if(firstNode.getValue().equals(toSearch.getValue())){
-	// pathList.add(firstNode);
-	// firstNode.setVisit(true);
-	// }else{
-	//
-	// firstNode.getChildren();
-	// firstNode.getChildren().getFirst()
-	//
-	//
-
-	// }
-
-	// if (firstNode.getChildren().isEmpty()) {
-	// pathList.add(firstNode);
-	// firstNode.setVisit(true);
-	// } else {
-	// pathList.add(firstNode);
-	// pathList.addAll(firstNode.getChildren());
-	//
-	// }
-	// return pathList;
-	// }
 
 	/**
 	 * Methode, um den Weg zurückzuliefern
@@ -97,12 +78,13 @@ public class Breitensuche<T> implements SearchStrategy<T> {
 		return pathList;
 	}
 
+	/**
+	 * Methode, um die Liste des Pfades auf false zu setzen
+	 */
 	private void clean() {
 		for (Node<T> iterator : this.pathList) {
 			iterator.setVisit(false);
 		}
 	}
-
-//	arze
 
 }

@@ -16,6 +16,7 @@ public class Main {
 
 		// NodeListImpl<String> list = new NodeListImpl<String>();
 		Breitensuche<String> breitensuche = new Breitensuche<String>();
+		Tiefensuche<String> tiefensuche = new Tiefensuche<String>();
 
 		Node<String> a = new Node<String>("A", "A");
 		Node<String> b = new Node<String>("B", "B");
@@ -34,34 +35,29 @@ public class Main {
 		Node<String> o = new Node<String>("O", "O");
 		Node<String> p = new Node<String>("P", "P");
 
-
-
 		a.addChild(d);
-        a.addChild(c);
-        a.addChild(b);
-        b.addChild(g);
-        b.addChild(f);
-        b.addChild(e);
-        b.addChild(a);
-        //c.addChild(l);
-        g.addChild(d);
-        f.addChild(k);
-        f.addChild(j);
-        e.addChild(h);
-        e.addChild(i);
-        k.addChild(d);
-        j.addChild(i);
-        h.addChild(b);
-        
+		a.addChild(c);
+		a.addChild(b);
+		b.addChild(g);
+		b.addChild(f);
+		b.addChild(e);
+		b.addChild(a);
+		g.addChild(d);
+		f.addChild(k);
+		f.addChild(j);
+		e.addChild(h);
+		e.addChild(i);
+		k.addChild(d);
+		j.addChild(i);
+		h.addChild(b);
 
-		
 		Graph<String> firstGraph = new Graph<String>(a);
 
-		// System.out.println(a);
 		System.out.println(firstGraph.search(k, breitensuche));
 		System.out.println("Breitensuche: " + breitensuche.getPath());
-
-//		b.addChild(f);
+		System.out.println();
+		System.out.println(firstGraph.search(k, tiefensuche));
+		System.out.println("Tiefensuche: " + tiefensuche.getPath());
 
 	}
 
