@@ -1,12 +1,14 @@
 package de.hs_ma.ws_13.tpe_04_uib.auer_baummann_bucnev.generics;
 
 /**
- * Klasse, ...
+ * Klasse, zur Verwaltung der Knoten und zur Erzeugung der Knoten
  * 
  * @author pauer
  * @author rbucnev
  * @author tbaumann
- * @version 20.11.2013 t
+ * @version 27.11.2013
+ * @param T
+ *            Typ der gespeicherten Elemente
  */
 public class Node<T> {
 
@@ -67,51 +69,34 @@ public class Node<T> {
 		return this.value;
 	}
 
-	
-	public boolean getVisit(){
+	/**
+	 * Methode, um zu prüfen ob ein Knoten besucht wurde
+	 * 
+	 * @return isVisited gibt an, ob ein Knoten besucht wurde.
+	 */
+	public boolean getVisit() {
 		return isVisited;
-		
+
 	}
-	
-	public void setVisit(boolean visit){
+
+	/**
+	 * Methode um den Besuch eines Knoten zu setzen
+	 * 
+	 * @param visit
+	 */
+	public void setVisit(boolean visit) {
 		isVisited = visit;
-		
+
 	}
-
-	
-//	/**
-//	 * Methode, um zu prüfen, ob ein Knoten bereits besucht wurde
-//	 * 
-//	 * @return visit
-//	 */
-//	public boolean isVisited() {
-//		return isVisited;
-//	}
-
-//	/**
-//	 * Methode, um festzulegen, ob ein Knoten besucht oder nicht besucht wurde
-//	 * 
-//	 * @return true wenn der Knoten besucht wurde; false wenn der Knoten nocht
-//	 *         nicht besucht wurde
-//	 */
-//	public boolean visit() {
-//		if (isVisited) {
-//			return isVisited = true;
-//		} else
-//			return false;
-//	}
-
-	// public void unvisited() {
-	// isVisited = false;
-	// }
 
 	/**
 	 * Methode, um eine geeignete Darstellung zu erzeugen
+	 * 
+	 * @return nodeName Name des Knoten
 	 */
 	@Override
 	public String toString() {
 		return nodeName;
 	}
-	
 
 }

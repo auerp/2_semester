@@ -25,7 +25,8 @@ public class JUnitTest {
 		NodeListImpl<String> breitensuche = new NodeListImpl<String>();
 		NodeListImpl<String> tiefensuche = new NodeListImpl<String>();
 		NodeListImpl<String> found = new NodeListImpl<String>();
-		NodeListImpl<String> nFound = new NodeListImpl<String>();
+		NodeListImpl<String> notFound = new NodeListImpl<String>();
+		NodeListImpl<String> copyList = new NodeListImpl<String>();
 
 		Node<String> a = new Node<String>("A", "A");
 		Node<String> b = new Node<String>("B", "B");
@@ -95,7 +96,7 @@ public class JUnitTest {
 		// Schlüsselwert enthalten
 		assertEquals(found, firstGraph.search(k, breitensucheObject));
 		// Schlüsselwert nicht enthalten
-		assertEquals(nFound, firstGraph.search(z, breitensucheObject));
+		assertEquals(notFound, firstGraph.search(z, breitensucheObject));
 		// durchlaufener Pfad
 		assertEquals(breitensuche, breitensucheObject.getPath());
 
@@ -103,7 +104,10 @@ public class JUnitTest {
 		// Schlüsselwert enthalten
 		assertEquals(found, firstGraph.search(k, tiefensucheObject));
 		// Schlüsselwert nicht enthalten
-		assertEquals(nFound, firstGraph.search(z, tiefensucheObject));
+		assertEquals(notFound, firstGraph.search(z, tiefensucheObject));
 		assertEquals(tiefensuche, tiefensucheObject.getPath());
+
+		// copyInto() Test
+		assertEquals(breitensuche, firstGraph.copyInto(breitensuche, copyList));
 	}
 }

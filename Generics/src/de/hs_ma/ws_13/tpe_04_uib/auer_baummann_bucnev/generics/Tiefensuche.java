@@ -6,8 +6,9 @@ package de.hs_ma.ws_13.tpe_04_uib.auer_baummann_bucnev.generics;
  * @author pauer
  * @author rbucnev
  * @author tbaumann
- * 
+ * @version 27.11.13
  * @param <T>
+ *            Typ der gespeicherten Elemente
  */
 public class Tiefensuche<T> implements SearchStrategy<T> {
 
@@ -15,26 +16,19 @@ public class Tiefensuche<T> implements SearchStrategy<T> {
 	private NodeListImpl<T> found;
 	private NodeListImpl<T> pathList = new NodeListImpl<T>();
 
-	@Override
+	/**
+	 * Methode, um den Graphen nach Knoten mit einem bestimmten Wert zu
+	 * durchsuchen.
+	 * 
+	 * @param startNode
+	 *            Anfangsknoten
+	 * @param toSearch
+	 *            gesuchter Wert
+	 */
 	public NodeListImpl<T> search(Node<T> startNode, Node<T> toSearch) {
 		// this.search = toSearch;
 		this.pathList.clear();
 		this.found = new NodeListImpl<T>();
-
-		// dSearch() {
-		// färbe alle Knoten weiß
-		// for(alle im Graph enthaltenen Knoten) {
-		// if(Farbe von Knoten == weiß) {
-		// rufe dSearchVisit auf und übergebe diesen Knoten
-		// }}}
-		// dSearchVisit(Knoten) {
-		// färbe Knoten grau
-		// for(alle Nachbarn von Knoten) {
-		// if(Farbe von Nachbarn == weiß) {
-		// rufe dSearchVisit auf und übergebe Nachbarn. //REK.!
-		// } }
-		// färbe Knoten schwarz
-		// }
 
 		if (startNode.getValue().equals(toSearch.getValue())) {
 			pathList.add(startNode);
@@ -58,6 +52,11 @@ public class Tiefensuche<T> implements SearchStrategy<T> {
 	/**
 	 * Methode, die als rekursive Hilfsfunktion zu oben stehender Methode
 	 * search() dient
+	 * 
+	 * @param tempNode
+	 *            Temporärer Speicher für einen Node
+	 * @param toSearch
+	 *            der gesuchte Wert
 	 */
 	private void searchHelpRek(Node<T> tempNode, Node<T> toSearch) {
 		tempNode.setVisit(true);

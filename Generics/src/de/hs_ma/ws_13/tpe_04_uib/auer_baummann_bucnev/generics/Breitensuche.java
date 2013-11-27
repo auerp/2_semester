@@ -6,8 +6,8 @@ package de.hs_ma.ws_13.tpe_04_uib.auer_baummann_bucnev.generics;
  * @author pauer
  * @author rbucnev
  * @author tbaumann
- * 
- * @param<T>
+ * @version 27.11.2013
+ * @param<T> Typ der gespeicherten Elemente
  * 
  */
 public class Breitensuche<T> implements SearchStrategy<T> {
@@ -18,36 +18,25 @@ public class Breitensuche<T> implements SearchStrategy<T> {
 	 * Methode in der die Breitensuche implementiert ist. Der duchlaufene Pfad
 	 * wird hier ebenfalls gespeichert
 	 * 
+	 * @param startNode
+	 *            Anfangsknoten
+	 * @param toSearch
+	 *            gescuhter Wert
 	 * @return found liefert den gesuchten Schlüsselwert zurück
 	 */
-	public NodeListImpl<T> search(Node<T> firstNode, Node<T> toSearch) {
+	public NodeListImpl<T> search(Node<T> startNode, Node<T> toSearch) {
 
 		NodeListImpl<T> tempList = new NodeListImpl<T>();
 		NodeListImpl<T> found = new NodeListImpl<T>();
 		Node<T> tempNode;
 
 		pathList.clear();
-		pathList.add(firstNode);
+		pathList.add(startNode);
 
-		// bSearch (Startknoten) {
-		// färbe alle Knoten weiß
-		// färbe Startknoten grau und hänge ihn an Schlange an
-		// while(Schlange nicht leer){
-		// tntferne erstes Element aus Schlange und
-		// setze es auf tmp
-		// for (alle Nachbarn von tmp) {
-		// if (Farbe von Nachbarn == weiß) {
-		// färbe Nachbarn grau und hänge ihn an Schlange an
-		// }
-		// }
-		// färbe tmp schwarz
-		// }
-		// }
-
-		if (firstNode.getValue().equals(toSearch.getValue())) {
-			found.add(firstNode);
+		if (startNode.getValue().equals(toSearch.getValue())) {
+			found.add(startNode);
 		} else {
-			tempList.add(firstNode);
+			tempList.add(startNode);
 
 			while (!tempList.isEmpty()) {
 				tempNode = tempList.removeFirst();

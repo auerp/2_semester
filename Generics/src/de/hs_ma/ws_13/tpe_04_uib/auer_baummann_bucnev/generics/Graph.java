@@ -1,13 +1,15 @@
 package de.hs_ma.ws_13.tpe_04_uib.auer_baummann_bucnev.generics;
 
 /**
- * Klasse, ...
+ * Klasse, zur Erzeugung eines Graphen. Hierfür werden Methoden aus dem
+ * Interface SearchStrategy implementiert.
  * 
  * @author pauer
  * @author rbucnev
  * @author tbaumann
- * @version 20.11.2013
+ * @version 27.11.2013
  * @param <T>
+ *            Typ der gespeicherten Elemente
  * 
  */
 
@@ -18,6 +20,9 @@ public class Graph<T> implements SearchStrategy<T> {
 
 	/**
 	 * Konstruktor zur Erzeugung des ersten Knoten
+	 * 
+	 * @param firstNode
+	 *            ist der Wurzelknoten
 	 */
 	public Graph(Node<T> firstNode) {
 		this.firstNode = firstNode;
@@ -25,15 +30,22 @@ public class Graph<T> implements SearchStrategy<T> {
 
 	/**
 	 * Methode, zum kopieren von Knoten in eine Liste
+	 * 
+	 * @return list liefert eine Liste mit den kopierten Werten zurück
 	 */
-	void copyInto(NodeListImpl<T> list) {
-		for (Node<T> it : this.allNodes) {
-			list.add(it);
+	public NodeListImpl<T> copyInto(NodeListImpl<T> existList,
+			NodeListImpl<T> list) {
+
+		if (existList.getFirst() != null) {
+			list.addAll(existList);
 		}
+		return list;
 	}
 
 	/**
-	 * Methode
+	 * Methode, um nach einem bestimmten Wert zu suchen
+	 * 
+	 * @return found liefert den gesuchten Wert zurück
 	 */
 	public NodeListImpl<T> search(Node<T> toSearch, SearchStrategy<T> strategy) {
 		NodeListImpl<T> found = new NodeListImpl<T>();
@@ -41,15 +53,27 @@ public class Graph<T> implements SearchStrategy<T> {
 		return found;
 	}
 
+	/**
+	 * Methode, um den Graphen nach Knoten mit einem bestimmten Wert zu
+	 * durchsuchen.
+	 * 
+	 * @param <T>
+	 * 
+	 * @return null
+	 */
 	@Override
 	public NodeListImpl<T> search(Node<T> startNode, Node<T> toSearch) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
+	/**
+	 * Methode, um den Weg des zu letzt genutzen Durchlaufes im Graphen
+	 * auszugeben.
+	 * 
+	 * @return null
+	 */
 	@Override
 	public NodeListImpl<T> getPath() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
