@@ -25,6 +25,7 @@ public class JUnitTest {
 		NodeListImpl<String> breitensuche = new NodeListImpl<String>();
 		NodeListImpl<String> tiefensuche = new NodeListImpl<String>();
 		NodeListImpl<String> found = new NodeListImpl<String>();
+		NodeListImpl<String> nFound = new NodeListImpl<String>();
 
 		Node<String> a = new Node<String>("A", "A");
 		Node<String> b = new Node<String>("B", "B");
@@ -42,6 +43,7 @@ public class JUnitTest {
 		Node<String> n = new Node<String>("N", "N");
 		Node<String> o = new Node<String>("O", "O");
 		Node<String> p = new Node<String>("P", "P");
+		Node<String> z = new Node<String>("Z", "Z");
 
 		a.addChild(d);
 		a.addChild(c);
@@ -59,49 +61,49 @@ public class JUnitTest {
 		j.addChild(i);
 		h.addChild(b);
 
+		// Elemente in die Liste der Breitensuche hinzufügen
+		breitensuche.add(a);
 		breitensuche.add(d);
 		breitensuche.add(c);
 		breitensuche.add(b);
 		breitensuche.add(g);
 		breitensuche.add(f);
 		breitensuche.add(e);
-		breitensuche.add(a);
-		breitensuche.add(d);
 		breitensuche.add(k);
 		breitensuche.add(j);
 		breitensuche.add(h);
 		breitensuche.add(i);
-		breitensuche.add(d);
-		breitensuche.add(i);
-		breitensuche.add(b);
 
+		// Elemente in die Liste der Tiefensuche hinzufügen
+		tiefensuche.add(a);
 		tiefensuche.add(d);
 		tiefensuche.add(c);
 		tiefensuche.add(b);
 		tiefensuche.add(g);
 		tiefensuche.add(f);
-		tiefensuche.add(e);
-		tiefensuche.add(a);
-		tiefensuche.add(d);
 		tiefensuche.add(k);
 		tiefensuche.add(j);
+		tiefensuche.add(i);
+		tiefensuche.add(e);
 		tiefensuche.add(h);
-		tiefensuche.add(i);
-		tiefensuche.add(d);
-		tiefensuche.add(i);
-		tiefensuche.add(b);
 
 		Graph<String> firstGraph = new Graph<String>(a);
 
 		found.add(k);
 
 		// Breitensuche
+		// Schlüsselwert enthalten
 		assertEquals(found, firstGraph.search(k, breitensucheObject));
+		// Schlüsselwert nicht enthalten
+		assertEquals(nFound, firstGraph.search(z, breitensucheObject));
 		// durchlaufener Pfad
 		assertEquals(breitensuche, breitensucheObject.getPath());
 
 		// Tiefensuche
+		// Schlüsselwert enthalten
 		assertEquals(found, firstGraph.search(k, tiefensucheObject));
+		// Schlüsselwert nicht enthalten
+		assertEquals(nFound, firstGraph.search(z, tiefensucheObject));
 		assertEquals(tiefensuche, tiefensucheObject.getPath());
 	}
 }
