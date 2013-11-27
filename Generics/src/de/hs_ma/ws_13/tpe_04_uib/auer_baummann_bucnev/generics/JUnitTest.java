@@ -17,8 +17,14 @@ public class JUnitTest {
 
 	@Test
 	public void test() {
-//		Breitensuche<String> breitensuche = new Breitensuche<String>();
-		Tiefensuche<String> tiefensuche = new Tiefensuche<String>();
+		// Objekte
+		Breitensuche<String> breitensucheObject = new Breitensuche<String>();
+		Tiefensuche<String> tiefensucheObject = new Tiefensuche<String>();
+
+		// Listen
+		NodeListImpl<String> breitensuche = new NodeListImpl<String>();
+		NodeListImpl<String> tiefensuche = new NodeListImpl<String>();
+		NodeListImpl<String> found = new NodeListImpl<String>();
 
 		Node<String> a = new Node<String>("A", "A");
 		Node<String> b = new Node<String>("B", "B");
@@ -53,11 +59,49 @@ public class JUnitTest {
 		j.addChild(i);
 		h.addChild(b);
 
+		breitensuche.add(d);
+		breitensuche.add(c);
+		breitensuche.add(b);
+		breitensuche.add(g);
+		breitensuche.add(f);
+		breitensuche.add(e);
+		breitensuche.add(a);
+		breitensuche.add(d);
+		breitensuche.add(k);
+		breitensuche.add(j);
+		breitensuche.add(h);
+		breitensuche.add(i);
+		breitensuche.add(d);
+		breitensuche.add(i);
+		breitensuche.add(b);
+
+		tiefensuche.add(d);
+		tiefensuche.add(c);
+		tiefensuche.add(b);
+		tiefensuche.add(g);
+		tiefensuche.add(f);
+		tiefensuche.add(e);
+		tiefensuche.add(a);
+		tiefensuche.add(d);
+		tiefensuche.add(k);
+		tiefensuche.add(j);
+		tiefensuche.add(h);
+		tiefensuche.add(i);
+		tiefensuche.add(d);
+		tiefensuche.add(i);
+		tiefensuche.add(b);
+
 		Graph<String> firstGraph = new Graph<String>(a);
-		
 
-		assertEquals("K",firstGraph.search(k,new Breitensuche<String>()));
-		assertEquals("A, D, C, B, G, F, E, K, J, H, I", new Breitensuche<String>().getPath());
+		found.add(k);
 
+		// Breitensuche
+		assertEquals(found, firstGraph.search(k, breitensucheObject));
+		// durchlaufener Pfad
+		assertEquals(breitensuche, breitensucheObject.getPath());
+
+		// Tiefensuche
+		assertEquals(found, firstGraph.search(k, tiefensucheObject));
+		assertEquals(tiefensuche, tiefensucheObject.getPath());
 	}
 }

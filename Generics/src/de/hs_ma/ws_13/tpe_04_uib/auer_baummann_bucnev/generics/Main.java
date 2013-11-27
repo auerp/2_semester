@@ -14,7 +14,6 @@ public class Main {
 
 	public static <T> void main(String[] args) {
 
-		// NodeListImpl<String> list = new NodeListImpl<String>();
 		Breitensuche<String> breitensuche = new Breitensuche<String>();
 		Tiefensuche<String> tiefensuche = new Tiefensuche<String>();
 
