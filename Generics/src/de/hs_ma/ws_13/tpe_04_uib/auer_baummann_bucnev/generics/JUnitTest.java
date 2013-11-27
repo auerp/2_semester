@@ -47,20 +47,20 @@ public class JUnitTest {
 		Node<String> z = new Node<String>("Z", "Z");
 
 		a.addChild(b);
-        a.addChild(c);
-        a.addChild(d);
-        b.addChild(e);
-        b.addChild(f);
-        b.addChild(g);
-        c.addChild(l);
-        c.addChild(m);
-        d.addChild(o);
-        d.addChild(p);
-        e.addChild(h);
-        e.addChild(i);
-        f.addChild(j);
-        f.addChild(k);
-        m.addChild(n);
+		a.addChild(c);
+		a.addChild(d);
+		b.addChild(e);
+		b.addChild(f);
+		b.addChild(g);
+		c.addChild(l);
+		c.addChild(m);
+		d.addChild(o);
+		d.addChild(p);
+		e.addChild(h);
+		e.addChild(i);
+		f.addChild(j);
+		f.addChild(k);
+		m.addChild(n);
 
 		// Elemente in die Liste der Breitensuche hinzufügen
 		breitensuche.add(a);
