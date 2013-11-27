@@ -46,47 +46,57 @@ public class JUnitTest {
 		Node<String> p = new Node<String>("P", "P");
 		Node<String> z = new Node<String>("Z", "Z");
 
-		a.addChild(d);
-		a.addChild(c);
 		a.addChild(b);
-		b.addChild(g);
-		b.addChild(f);
-		b.addChild(e);
-		b.addChild(a);
-		g.addChild(d);
-		f.addChild(k);
-		f.addChild(j);
-		e.addChild(h);
-		e.addChild(i);
-		k.addChild(d);
-		j.addChild(i);
-		h.addChild(b);
+        a.addChild(c);
+        a.addChild(d);
+        b.addChild(e);
+        b.addChild(f);
+        b.addChild(g);
+        c.addChild(l);
+        c.addChild(m);
+        d.addChild(o);
+        d.addChild(p);
+        e.addChild(h);
+        e.addChild(i);
+        f.addChild(j);
+        f.addChild(k);
+        m.addChild(n);
 
 		// Elemente in die Liste der Breitensuche hinzufügen
 		breitensuche.add(a);
-		breitensuche.add(d);
-		breitensuche.add(c);
 		breitensuche.add(b);
-		breitensuche.add(g);
-		breitensuche.add(f);
+		breitensuche.add(c);
+		breitensuche.add(d);
 		breitensuche.add(e);
-		breitensuche.add(k);
-		breitensuche.add(j);
+		breitensuche.add(f);
+		breitensuche.add(g);
+		breitensuche.add(l);
+		breitensuche.add(m);
+		breitensuche.add(o);
+		breitensuche.add(p);
 		breitensuche.add(h);
 		breitensuche.add(i);
+		breitensuche.add(j);
+		breitensuche.add(k);
+		breitensuche.add(n);
 
 		// Elemente in die Liste der Tiefensuche hinzufügen
 		tiefensuche.add(a);
-		tiefensuche.add(d);
-		tiefensuche.add(c);
 		tiefensuche.add(b);
-		tiefensuche.add(g);
-		tiefensuche.add(f);
-		tiefensuche.add(k);
-		tiefensuche.add(j);
-		tiefensuche.add(i);
 		tiefensuche.add(e);
 		tiefensuche.add(h);
+		tiefensuche.add(i);
+		tiefensuche.add(f);
+		tiefensuche.add(j);
+		tiefensuche.add(k);
+		tiefensuche.add(g);
+		tiefensuche.add(c);
+		tiefensuche.add(l);
+		tiefensuche.add(m);
+		tiefensuche.add(n);
+		tiefensuche.add(d);
+		tiefensuche.add(o);
+		tiefensuche.add(p);
 
 		Graph<String> firstGraph = new Graph<String>(a);
 
