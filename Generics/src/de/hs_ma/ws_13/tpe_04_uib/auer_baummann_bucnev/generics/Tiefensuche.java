@@ -59,15 +59,22 @@ public class Tiefensuche<T> implements SearchStrategy<T> {
 	 *            der gesuchte Wert
 	 */
 	private void searchHelpRek(Node<T> tempNode, Node<T> toSearch) {
-		tempNode.setVisit(true);
+		tempNode.setVisit(true); // setzt Knoten auf true
 		pathList.add(tempNode);
 
 		for (Node<T> iterator : tempNode.getChildren()) {
-			if (iterator.getValue().equals(toSearch.getValue())) {
+			if (iterator.getValue().equals(toSearch.getValue())) { // iteriert
+																	// den
+																	// Graphen
+																	// durch und
+																	// liefert
+																	// die Werte
 				found.add(iterator);
 			}
-			if (!iterator.getVisit()) {
-				searchHelpRek(iterator, toSearch);
+			if (!iterator.getVisit()) { // prüft, ob Knoten bereits besucht
+										// wurde
+				searchHelpRek(iterator, toSearch); // ruft die Methode erneut
+													// auf
 			}
 		}
 	}
@@ -76,7 +83,9 @@ public class Tiefensuche<T> implements SearchStrategy<T> {
 	 * Methode, um die Liste des Pfades auf false zu setzen
 	 */
 	private void clean() {
-		for (Node<T> iterator : this.pathList) {
+		for (Node<T> iterator : this.pathList) { // iteriert die Liste durch und
+													// setzt besuchte Knoten auf
+													// false
 			iterator.setVisit(false);
 		}
 	}
