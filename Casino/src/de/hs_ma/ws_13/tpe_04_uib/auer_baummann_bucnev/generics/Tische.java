@@ -4,6 +4,10 @@ import java.util.Collections;
 import java.util.Stack;
 
 public class Tische extends Casino {
+	
+	Tische(){
+		
+	}
 
 	class Dealer {
 		// Methoden
@@ -15,6 +19,26 @@ public class Tische extends Casino {
 			// Wie viele Spieler?
 			// 3 Karten pro Spieler
 			// Dealer spielt mit
+		}
+		
+		//Einsätze der Spieler
+		protected void abfragen(){
+			
+		}
+		
+		//festlegen des Gewinners
+		protected void festlegen(){
+			
+		}
+		
+		//Gewinn Auszahlung
+		protected void auszahlen(){
+			
+		}
+		
+		//Karten einsammeln von Spielern
+		protected void einsammeln(){
+			
 		}
 
 	}

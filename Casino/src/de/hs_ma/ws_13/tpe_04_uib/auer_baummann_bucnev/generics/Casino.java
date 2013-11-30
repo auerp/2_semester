@@ -5,7 +5,8 @@ import java.util.Collections;
 
 public class Casino {
 
-	private int vermoegen;
-	private ArrayList Tische;
+	protected int vermoegen;
+	protected ArrayList tische;
+	protected ArrayList spieler;
 
 }
