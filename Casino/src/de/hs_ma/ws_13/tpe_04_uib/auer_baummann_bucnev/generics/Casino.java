@@ -9,4 +9,13 @@ public class Casino {
 	protected ArrayList tische;
 	protected ArrayList spieler;
 
+	Casino(int vermoegen, ArrayList tische) {
+		this.vermoegen = vermoegen;
+		this.tische = tische;
+//		this.spieler = spieler;
+	}
+	
+	//Spieler einem Tisch zuweisen(zufällig)
+	
+
 }
