@@ -4,52 +4,53 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Stack;
 
-public class Tische{
-	
+public class Tische {
+
 	private int pot;
-	
-	
+
 	Tische(int pot, ArrayList spieler) {
-		
+
 		this.pot = pot;
-		
-		
+
 	}
 
 	class Dealer {
-		
-		Dealer(){
-			
+
+		Dealer() {
+
 		}
+
 		// Methoden
-		protected void mischen(Stack kartendeck) {
+		// Karten mischen
+		protected void mischenKarten(Stack kartendeck) {
 			Collections.shuffle(kartendeck);
 		}
 
-		protected void austeilen(Stack kartendeck) {
+		// Karten austeilen an Spieler und sich selbst
+		protected void austeilenKarten(Stack kartendeck) {
 			// Wie viele Spieler?
 			// 3 Karten pro Spieler
 			// Dealer spielt mit
 		}
-		
-		//Einsätze der Spieler
-		protected void abfragen(){
-			
+
+		// Einsätze der Spieler
+		protected void abfragen() {
+
 		}
-		
-		//festlegen des Gewinners
-		protected void festlegen(){
-			
+
+		// festlegen des Gewinners
+		protected void festlegenGewinner() {
+
 		}
-		
-		//Gewinn Auszahlung
-		protected void auszahlen(){
-			
+
+		// Auszahlung an Gewinner
+		protected void auszahlen() {
+
 		}
-		
-		//Karten einsammeln von Spielern
-		protected void einsammeln(){
-			
+
+		// Karten einsammeln von Spielern
+		protected void einsammelnKarten() {
+
 		}
 
 	}
