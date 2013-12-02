@@ -19,11 +19,8 @@ public class Tische {
 	// Innere Klasse (Nonstatic Member Class)
 	class Dealer {
 
-		// Listen zur Verwaltung der Spieler
-		private ArrayList<Spieler> dealer = new ArrayList<Spieler>();
-
-		Dealer(ArrayList<Spieler> dealer) {
-			this.dealer = dealer;
+		Dealer() {
+			// this.dealer = dealer;
 
 		}
 
