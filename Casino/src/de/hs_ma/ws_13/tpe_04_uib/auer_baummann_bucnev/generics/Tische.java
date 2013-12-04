@@ -6,8 +6,6 @@ import java.util.Stack;
 
 public class Tische {
 
-	//Deckgröße
-	private static final int DECK_SIZE = KartenDeck.Kartenwert.values().length * KartenDeck.KartenTyp.values().length;
 	//Gewinner 21
 	private static final int blackjack = 21;
 	
