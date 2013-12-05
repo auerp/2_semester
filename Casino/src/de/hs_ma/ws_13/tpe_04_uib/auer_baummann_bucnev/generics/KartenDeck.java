@@ -4,16 +4,15 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class KartenDeck {
-	
 
+	// Liste zur Verwendung des Ka rtendecks
+	ArrayList kartenDeck = new ArrayList();
 
-	ArrayList meinDeck= new ArrayList();
-	
 	// Methoden
 	// Karten mischen
-	public int mischeKarten(){
-		Collections.enumeration(meinDeck);
-		 Collections.shuffle(meinDeck);
-		 return 0;
+	public int mischeKarten() {
+		Collections.enumeration(kartenDeck);
+		Collections.shuffle(kartenDeck);
+		return 0;
 	}
 }

@@ -12,4 +12,15 @@ package enum_klassen;
 public enum EnumKartenTypen {
 
 	PIK, KREUZ, KARO, HERZ;
+
+	// private EnumKartenTypen enumKartenTypen;
+	//
+	// // Konstruktor
+	// EnumKartenTypen(EnumKartenTypen enumKartenTypen) {
+	// this.enumKartenTypen = enumKartenTypen;
+	// }
+	//
+	// private EnumKartenTypen getEnumKartenTypen() {
+	// return enumKartenTypen;
+	// }
 }

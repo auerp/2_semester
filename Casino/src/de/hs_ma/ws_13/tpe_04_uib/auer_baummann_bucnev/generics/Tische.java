@@ -38,6 +38,7 @@ public class Tische {
 			// Wie viele Spieler?
 			// 3 Karten pro Spieler
 			// Dealer spielt mit
+			
 		}
 
 		// Einsätze der Spieler
