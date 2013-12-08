@@ -10,9 +10,9 @@ public class KartenDeck {
 
 	// Methoden
 	// Karten mischen
-	public int mischeKarten() {
-		Collections.enumeration(kartenDeck);
+	public void mischeKarten() {
+		//Collections.enumeration(kartenDeck);
 		Collections.shuffle(kartenDeck);
-		return 0;
+		//return 0;
 	}
 }

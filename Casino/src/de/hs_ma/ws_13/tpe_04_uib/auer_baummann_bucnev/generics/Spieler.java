@@ -16,7 +16,18 @@ public class Spieler {
 		this.id = id;
 		// this.vermoegen = vermoegen;
 		setVermoegen(vermoegen);
+		
 	}
+	
+	//Geld setzen
+	public void setzen(int betrag) {
+        this.vermoegen =  this.vermoegen -betrag;
+        }
+	
+	//Geld gewonnen
+	public void gewonnen(int betrag){
+        this.vermoegen = this.vermoegen+ betrag;
+    }
 
 	// Getter Methoden
 	// getName
@@ -30,7 +41,7 @@ public class Spieler {
 	}
 
 	// getVermoegen
-	public int getVermoegen(int vermoegen) {
+	public int getVermoegen() {
 		return this.vermoegen;
 	}
 

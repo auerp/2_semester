@@ -1,36 +1,62 @@
 package de.hs_ma.ws_13.tpe_04_uib.auer_baummann_bucnev.generics;
 
+import de.hs_ma.ws_13.tpe_04_uib.auer_baummann_bucnev.generics.Spieler;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Collections;
+import java.util.Map;
 import java.util.Stack;
+import java.util.Random;
 
 public class Tische {
 
-	//Gewinner 21
-	private static final int blackjack = 21;
-	
 	private int pot;
+	private int tischNr = 0;
+	private HashMap<String, Spieler> spieler;
+	private KartenDeck kartendeck;
 
-	// Listen zur Verwaltung der Spieler
-	private ArrayList<Spieler> spieler = new ArrayList<Spieler>();
-
-	Tische(int pot, ArrayList<Spieler> spieler) {
-		this.pot = pot;
-		this.spieler = spieler;
+	public Tische(int pot, ArrayList<Spieler> spieler) {
+		
+		this.tischNr++;
+	this.spieler = new HashMap<String, Spieler>();
+		this.kartendeck = new KartenDeck();
+//		this.pot = new HashMap<String, Integer>();
 	}
+
+	public int getTischNr() {
+		return this.tischNr;
+	}
+
+	public HashMap<String, Spieler> getSpieler() {
+		return this.spieler;
+	}
+
+	// //Gewinner 21
+	// private static final int blackjack = 21;
+	//
+	// private int pot;
+	//
+	// // Listen zur Verwaltung der Spieler
+	// private ArrayList<Spieler> spieler = new ArrayList<Spieler>();
+	//
+	// Tische(int pot, ArrayList<Spieler> spieler) {
+	// this.pot = pot;
+	// this.spieler = spieler;
+	// }
 
 	// Innere Klasse (Nonstatic Member Class)
 	class Dealer {
 
+		private ArrayList<Karte> cards = new ArrayList<Karte>();
 		Dealer() {
 			// this.dealer = dealer;
-
+			
 		}
 
 		// Methoden
 		// Karten mischen
-		protected void mischenKarten(Stack<?> kartendeck) {
-			Collections.shuffle(kartendeck);
+		protected void mischenKarten() { //Stack<?> kartendeck
+			Collections.shuffle(cards);
 		}
 
 		// Karten austeilen an Spieler und sich selbst
@@ -38,7 +64,20 @@ public class Tische {
 			// Wie viele Spieler?
 			// 3 Karten pro Spieler
 			// Dealer spielt mit
+			//karten verteilen
 			
+			
+			for(int a = 1; a <= 4; a++)
+		    {
+		      for(int b = 1; b <= 13; b++)
+		      {
+		        Karte c = new Karte(a,b);
+		        cards.add(c);
+		      }
+		    }
+		    mischenKarten();
+			
+
 		}
 
 		// Einsätze der Spieler
@@ -52,8 +91,8 @@ public class Tische {
 		}
 
 		// Auszahlung an Gewinner
-		protected void auszahlen() {
-
+		protected void auszahlen(int betrag) {
+			
 		}
 
 		// Karten einsammeln von Spielern
