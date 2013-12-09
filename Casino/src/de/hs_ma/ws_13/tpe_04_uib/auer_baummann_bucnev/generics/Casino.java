@@ -15,7 +15,7 @@ public class Casino {
 		this.tische = new ArrayList<Tische>();
      //   this.tische.add(new Tische());
 	}
-	
+	 		
 	public int getGewinn(){
         return this.gewinn;
     }

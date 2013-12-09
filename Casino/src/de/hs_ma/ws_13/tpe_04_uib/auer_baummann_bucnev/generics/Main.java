@@ -14,6 +14,10 @@ public class Main {
 	ArrayList alleTische = new ArrayList();
 	
 	
+//	KartenDeck deck = new KartenDeck();
+//	Karte karte = new Karte();
+//	karte.getFarbe();
+	
 	//Spieler
 	Spieler spieler1 = new Spieler("Lutz", "01", 1000);
 	Spieler spieler2 = new Spieler("Peter", "02", 2000);
@@ -36,3 +40,4 @@ public class Main {
 	Casino casino1 = new Casino(0, alleTische);
 	}
 }
+		

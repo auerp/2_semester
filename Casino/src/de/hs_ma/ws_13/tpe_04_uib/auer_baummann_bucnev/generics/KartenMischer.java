@@ -5,5 +5,5 @@ public interface KartenMischer {
 	// dient als zentraler Kartenmischer im Casino. Mischt die Karten des
 	// Kartendecks
 
-	public int mischeKarten();
+	public void mischeKarten();
 }

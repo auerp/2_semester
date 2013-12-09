@@ -9,11 +9,19 @@ public class Karte {
 	  private String farbe[] = {"Herz", "Pik", "Karo", "Kreuz"};
 	  private String wert[] = {"2", "3", "4", "5", "6", "7", "8", "9", "10", "Bube", "Dame", "König","As"};
 
-	  public Karte(int farbe, int wert)
-	  {
-		 farbeValue = farbe;
-		 wertValue = wert;
+	  public Karte(){
+		  
 	  }
+	  
+//	  public void kartenHinzufuegen(){
+//		  
+//	  }
+	  
+//	  public Karte(int farbe, int wert)
+//	  {
+//		 farbeValue = farbe;
+//		 wertValue = wert;
+//	  }
 
 	  public String convertToString(int farben){
 	    return farbe[farben];
@@ -22,6 +30,15 @@ public class Karte {
 	  public void setFarbe(int farben){
 		  farbeValue = farben;
 	  }
+	  
+//	  public String getFarbe(){
+//		  for (int i=0; i<= farbe.length; i++){
+//			  System.out.println(farbe[i]);
+//			  return farbe[i];
+//			  
+//		  }
+//		  return "Hallo";
+//	  }
 
 	  public void setSuit(int wert){
 		  wertValue = wert;
