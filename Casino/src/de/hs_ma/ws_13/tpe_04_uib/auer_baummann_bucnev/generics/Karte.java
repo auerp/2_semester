@@ -31,27 +31,6 @@ public class Karte {
 		this.typ = typ;
 	}
 
-	protected HashMap<String, String> alleKarten = new HashMap<String, String>();
-
-	public void kartenHinzufuegen() {
-
-		for (int i = 0; i < typ.length; i++) {
-			for (int k = 0; k < wert; k++) {
-				deck[i][k] = typ[i] + " " + wert[k];
-				alleKarten.put(deck[i][k], wert[k]);
-
-				// System.out.println(deck[i][k]);
-				// System.out.println(alleKarten.get(deck[i][k]));
-
-			}
-		}
-
-	}
-
-	// public String convertToString(int farben) {
-	// return farbe[farben];
-	// }
-
 	/**
 	 * Methode die die Farbe der Karte liefert
 	 * 

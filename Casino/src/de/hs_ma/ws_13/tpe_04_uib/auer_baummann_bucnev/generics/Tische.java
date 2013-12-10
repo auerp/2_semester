@@ -84,8 +84,6 @@ public class Tische {
 					// cards.add(c);
 				}
 			}
-			mischenKarten();
-
 		}
 
 		// Einsätze der Spieler
