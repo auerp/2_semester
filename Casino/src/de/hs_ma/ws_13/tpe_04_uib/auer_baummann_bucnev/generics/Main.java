@@ -17,6 +17,9 @@ public class Main {
 //	KartenDeck deck = new KartenDeck();
 //	Karte karte = new Karte();
 //	karte.getFarbe();
+	Karte karte = new Karte();
+	karte.kartenHinzufuegen();
+	System.out.println("zahl");
 	
 	//Spieler
 	Spieler spieler1 = new Spieler("Lutz", "01", 1000);

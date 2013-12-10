@@ -19,7 +19,7 @@ public class Tische {
 		
 		this.tischNr++;
 	this.spieler = new HashMap<String, Spieler>();
-		this.kartendeck = new KartenDeck();
+//		this.kartendeck = new KartenDeck();
 //		this.pot = new HashMap<String, Integer>();
 	}
 
@@ -71,8 +71,8 @@ public class Tische {
 		    {
 		      for(int b = 1; b <= 13; b++)
 		      {
-		        Karte c = new Karte(a,b);
-		        cards.add(c);
+//		        Karte c = new Karte(a,b);
+//		        cards.add(c);
 		      }
 		    }
 		    mischenKarten();

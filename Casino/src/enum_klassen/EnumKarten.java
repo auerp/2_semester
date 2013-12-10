@@ -22,7 +22,7 @@ public enum EnumKarten {
 	}
 
 	// liefert die Werte der ENUM zurück
-	private int getWert() {
+	public int getWert() {
 		return wert;
 	}
 

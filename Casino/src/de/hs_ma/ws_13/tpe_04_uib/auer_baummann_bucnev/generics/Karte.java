@@ -1,5 +1,7 @@
 package de.hs_ma.ws_13.tpe_04_uib.auer_baummann_bucnev.generics;
 
+import java.util.HashMap;
+
 import enum_klassen.EnumKartenTypen;
 import enum_klassen.EnumKarten;
 
@@ -8,14 +10,32 @@ public class Karte {
 	private int farbeValue, wertValue;
 	  private String farbe[] = {"Herz", "Pik", "Karo", "Kreuz"};
 	  private String wert[] = {"2", "3", "4", "5", "6", "7", "8", "9", "10", "Bube", "Dame", "König","As"};
+	 
+	  private String deck [][] = new String[3][13];
 
 	  public Karte(){
 		  
 	  }
 	  
-//	  public void kartenHinzufuegen(){
-//		  
-//	  }
+	  protected HashMap<String, String> alleKarten = new HashMap<String, String>();
+	  
+	  
+	  
+	  public void kartenHinzufuegen(){
+		
+		  
+		  for(int i=0; i<farbe.length;i++){
+			  for(int k=0; k< wert.length; k++){
+				  deck[i][k]= farbe[i]+" " + wert[k];
+				  alleKarten.put(deck[i][k], wert[k]);
+				 
+//				  System.out.println(deck[i][k]);
+//				 System.out.println(alleKarten.get(deck[i][k]));
+				
+			  }
+		  }
+		 
+	  }
 	  
 //	  public Karte(int farbe, int wert)
 //	  {
