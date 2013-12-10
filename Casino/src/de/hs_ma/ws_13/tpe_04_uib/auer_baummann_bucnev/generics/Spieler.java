@@ -28,7 +28,12 @@ public class Spieler {
 		this.id = intId.toString();
 	}
 
-	// Geld setzen
+	/**
+	 * Methode um einen BEtrag zu setzen
+	 * 
+	 * @param betrag
+	 *            Betrag der gesetzt werden soll
+	 */
 	public void setzen(int betrag) {
 		this.vermoegen = this.vermoegen - betrag;
 	}
