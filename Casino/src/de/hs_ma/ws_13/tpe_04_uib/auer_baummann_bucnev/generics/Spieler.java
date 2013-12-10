@@ -4,11 +4,13 @@ public class Spieler {
 
 	private String name;
 	private String id;
+//	private int id1=0;
 	private int vermoegen;
 
-	int intId = Integer.parseInt(id); // String wird in Integer umgewandelt
-
-	// Integer integerId = new Integer(stringId);
+//	 private Integer intId = new Integer(id1);
+	
+	private int intId= Integer.parseInt(id); // String wird in Integer umgewandelt 
+	//private Integer idIntW = new Integer(intid);
 
 	/**
 	 * Konstruktor zur Erzeugung eines Spielers
@@ -20,16 +22,16 @@ public class Spieler {
 	 * @param vermoegen
 	 *            Das Vermoegen eines Spielers
 	 */
-	public Spieler(String name, String id, int vermoegen) {
+	public Spieler(String name, String id,int vermoegen) {
 		this.name = name;
 		this.vermoegen = vermoegen;
 		// setVermoegen(vermoegen);
 		this.intId++;
-		this.id = intId.toString();
+//		this.id = intId.toString();
 	}
 
 	/**
-	 * Methode um einen BEtrag zu setzen
+	 * Methode um einen Betrag zu setzen
 	 * 
 	 * @param betrag
 	 *            Betrag der gesetzt werden soll
@@ -63,7 +65,7 @@ public class Spieler {
 	 * @return id liefert die ID des Spielers
 	 */
 	public String getId() {
-		return this.stringId;
+		return this.id;
 	}
 
 	// // getVermoegen

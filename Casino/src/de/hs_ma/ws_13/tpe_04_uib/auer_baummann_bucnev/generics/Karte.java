@@ -16,7 +16,7 @@ public class Karte {
 	private EnumKarten wert; // Werte der Karten
 	private EnumKartenTypen typ; // Zeichen bzw. Farbe der Karten
 
-	private String deck[][] = new String[3][13];
+	private String deck[][] = new String[4][13];
 
 	/**
 	 * Konstruktor zur Erzeugung der Karte
@@ -71,7 +71,7 @@ public class Karte {
 	// }
 
 	public String toString() {
-		String name = typ[typ] + " of " + wert[wert];
+		String name = typ + " of " + wert;
 		return name;
 	}
 }

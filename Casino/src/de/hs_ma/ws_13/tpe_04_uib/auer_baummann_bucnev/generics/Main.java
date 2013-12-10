@@ -2,7 +2,8 @@ package de.hs_ma.ws_13.tpe_04_uib.auer_baummann_bucnev.generics;
 
 import java.util.ArrayList;
 
-
+import enum_klassen.EnumKartenTypen;
+import enum_klassen.EnumKarten;
 import de.hs_ma.ws_13.tpe_04_uib.auer_baummann_bucnev.generics.Tische.Dealer;
 
 public class Main {
@@ -17,7 +18,7 @@ public class Main {
 //	KartenDeck deck = new KartenDeck();
 //	Karte karte = new Karte();
 //	karte.getFarbe();
-	Karte karte = new Karte();
+	Karte karte = new Karte(EnumKarten.ACHT,EnumKartenTypen.KARO);
 	karte.kartenHinzufuegen();
 	System.out.println("zahl");
 	
