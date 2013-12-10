@@ -35,9 +35,9 @@ public class Karte {
 
 	public void kartenHinzufuegen() {
 
-		for (int i = 0; i < farbe.length; i++) {
-			for (int k = 0; k < wert.length; k++) {
-				deck[i][k] = farbe[i] + " " + wert[k];
+		for (int i = 0; i < typ.length; i++) {
+			for (int k = 0; k < wert; k++) {
+				deck[i][k] = typ[i] + " " + wert[k];
 				alleKarten.put(deck[i][k], wert[k]);
 
 				// System.out.println(deck[i][k]);
@@ -92,7 +92,7 @@ public class Karte {
 	// }
 
 	public String toString() {
-		String name = farbe[farbeValue] + " of " + wert[wertValue];
+		String name = typ[typ] + " of " + wert[wert];
 		return name;
 	}
 }

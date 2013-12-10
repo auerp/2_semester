@@ -11,7 +11,7 @@ package enum_klassen;
  */
 public enum EnumKartenTypen {
 
-	PIK, KREUZ, KARO, HERZ;
+	PIK, KREUZ, KARO, HERZ, length;
 
 	// private EnumKartenTypen enumKartenTypen;
 	//

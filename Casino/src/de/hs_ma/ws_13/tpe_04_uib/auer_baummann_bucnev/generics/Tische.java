@@ -16,11 +16,11 @@ public class Tische {
 	private KartenDeck kartendeck;
 
 	public Tische(int pot, ArrayList<Spieler> spieler) {
-		
+
 		this.tischNr++;
-	this.spieler = new HashMap<String, Spieler>();
-//		this.kartendeck = new KartenDeck();
-//		this.pot = new HashMap<String, Integer>();
+		this.spieler = new HashMap<String, Spieler>();
+		// this.kartendeck = new KartenDeck();
+		// this.pot = new HashMap<String, Integer>();
 	}
 
 	public int getTischNr() {
@@ -45,17 +45,29 @@ public class Tische {
 	// }
 
 	// Innere Klasse (Nonstatic Member Class)
-	class Dealer {
+	/**
+	 * Innere Klasse die den Dealer enthaelt
+	 * 
+	 * @author auerp
+	 * @author bucnevr
+	 * @author baumannt
+	 * 
+	 */
+	class Dealer implements KartenMischer {
 
 		private ArrayList<Karte> cards = new ArrayList<Karte>();
+
+		/**
+		 * Konstruktor zur Erzeugung eines Dealer
+		 */
 		Dealer() {
 			// this.dealer = dealer;
-			
+
 		}
 
 		// Methoden
 		// Karten mischen
-		protected void mischenKarten() { //Stack<?> kartendeck
+		public void mischeKarten() { // Stack<?> kartendeck
 			Collections.shuffle(cards);
 		}
 
@@ -64,19 +76,15 @@ public class Tische {
 			// Wie viele Spieler?
 			// 3 Karten pro Spieler
 			// Dealer spielt mit
-			//karten verteilen
-			
-			
-			for(int a = 1; a <= 4; a++)
-		    {
-		      for(int b = 1; b <= 13; b++)
-		      {
-//		        Karte c = new Karte(a,b);
-//		        cards.add(c);
-		      }
-		    }
-		    mischenKarten();
-			
+			// karten verteilen
+
+			for (int a = 1; a <= 4; a++) {
+				for (int b = 1; b <= 13; b++) {
+					// Karte c = new Karte(a,b);
+					// cards.add(c);
+				}
+			}
+			mischenKarten();
 
 		}
 
@@ -92,14 +100,13 @@ public class Tische {
 
 		// Auszahlung an Gewinner
 		protected void auszahlen(int betrag) {
-			
+
 		}
 
 		// Karten einsammeln von Spielern
 		protected void einsammelnKarten() {
 
 		}
-
 	} // Innere Klasse Ende
 
 }
