@@ -1,10 +1,10 @@
-package de.hs_ma.ws_13.tpe_04_uib.auer_baummann_bucnev.generics;
+package de.hs_ma.ws_13.tpe_04_uib.auer_baummann_bucnev.casino;
 
 import java.util.ArrayList;
 
 import enum_klassen.EnumKartenTypen;
 import enum_klassen.EnumKarten;
-import de.hs_ma.ws_13.tpe_04_uib.auer_baummann_bucnev.generics.Tische.Dealer;
+import de.hs_ma.ws_13.tpe_04_uib.auer_baummann_bucnev.casino.Tische.Dealer;
 
 public class Main {
 	

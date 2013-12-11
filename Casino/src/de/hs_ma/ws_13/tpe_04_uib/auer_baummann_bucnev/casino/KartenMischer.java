@@ -1,4 +1,4 @@
-package de.hs_ma.ws_13.tpe_04_uib.auer_baummann_bucnev.generics;
+package de.hs_ma.ws_13.tpe_04_uib.auer_baummann_bucnev.casino;
 
 /**
  * Interface , das als zentraler Kartenmischer im Casiono dient.

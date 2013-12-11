@@ -1,6 +1,5 @@
-package de.hs_ma.ws_13.tpe_04_uib.auer_baummann_bucnev.generics;
+package de.hs_ma.ws_13.tpe_04_uib.auer_baummann_bucnev.casino;
 
-import de.hs_ma.ws_13.tpe_04_uib.auer_baummann_bucnev.generics.Spieler;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Collections;
@@ -33,16 +32,6 @@ public class Tische {
 
 	// //Gewinner 21
 	// private static final int blackjack = 21;
-	//
-	// private int pot;
-	//
-	// // Listen zur Verwaltung der Spieler
-	// private ArrayList<Spieler> spieler = new ArrayList<Spieler>();
-	//
-	// Tische(int pot, ArrayList<Spieler> spieler) {
-	// this.pot = pot;
-	// this.spieler = spieler;
-	// }
 
 	// Innere Klasse (Nonstatic Member Class)
 	/**
@@ -96,7 +85,9 @@ public class Tische {
 
 		// festlegen des Gewinners
 		protected void festlegenGewinner() {
-
+			if(Hand. > 21){
+				
+			}
 		}
 
 		// Auszahlung an Gewinner
