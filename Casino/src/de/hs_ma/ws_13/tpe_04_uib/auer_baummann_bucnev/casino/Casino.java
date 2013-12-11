@@ -8,25 +8,25 @@ public class Casino {
 	protected int vermoegen;
 	private int gewinn;
 	private ArrayList<Tische> tische;
-	protected ArrayList spieler;
+	protected ArrayList<Spieler> spieler;
 
-	Casino(int vermoegen, ArrayList tische) {
+	Casino(int vermoegen, ArrayList<Spieler> tische) {
 		this.vermoegen = vermoegen;
 		this.tische = new ArrayList<Tische>();
-     //   this.tische.add(new Tische());
+		// this.tische.add(new Tische());
 	}
-	 		
-	public int getGewinn(){
-        return this.gewinn;
-    }
 
-    public void setGewinn(int gewinn){
-        this.gewinn += gewinn;
-    }
-    
-	//Spieler einem Tisch zuweisen(zufällig)
-	public int getAnzahlTische(){
-        return this.tische.size();
-    }
+	public int getGewinn() {
+		return this.gewinn;
+	}
+
+	public void setGewinn(int gewinn) {
+		this.gewinn += gewinn;
+	}
+
+	// Spieler einem Tisch zuweisen(zufällig)
+	public int getAnzahlTische() {
+		return this.tische.size();
+	}
 
 }
