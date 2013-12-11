@@ -88,9 +88,9 @@ public class Tische {
 
 		// festlegen des Gewinners
 		protected void festlegenGewinner() {
-			if( > 21){
+//			if( > 21){
 				
-			}
+//			}
 		}
 
 		// Auszahlung an Gewinner
