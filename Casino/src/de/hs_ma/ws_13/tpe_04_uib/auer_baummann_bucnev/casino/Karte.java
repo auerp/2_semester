@@ -1,22 +1,14 @@
 package de.hs_ma.ws_13.tpe_04_uib.auer_baummann_bucnev.casino;
 
-import java.util.HashMap;
-
 import enum_klassen.EnumKartenTypen;
 import enum_klassen.EnumKarten;
 
 public class Karte {
 
-	// private int farbeValue, wertValue;
-	// private String farbe[] = {"Herz", "Pik", "Karo", "Kreuz"};
-	// private String wert[] = {"2", "3", "4", "5", "6", "7", "8", "9", "10",
-	// "Bube", "Dame", "König","As"};
-	//
-
 	private EnumKarten wert; // Werte der Karten
-	private EnumKartenTypen typ; // Zeichen bzw. Farbe der Karten
+	private EnumKartenTypen farbe; // Zeichen bzw. Farbe der Karten
 
-	private String deck[][] = new String[4][13];
+	// private String deck[][] = new String[4][13];
 
 	/**
 	 * Konstruktor zur Erzeugung der Karte
@@ -26,9 +18,9 @@ public class Karte {
 	 * @param typ
 	 *            Farbe den die Karte enthaelt
 	 */
-	public Karte(EnumKarten wert, EnumKartenTypen typ) {
+	public Karte(EnumKarten wert, EnumKartenTypen farbe) {
 		this.wert = wert;
-		this.typ = typ;
+		this.farbe = farbe;
 	}
 
 	/**
@@ -36,8 +28,8 @@ public class Karte {
 	 * 
 	 * @return typ liefert die Farbe der Karte zurueck
 	 */
-	public EnumKartenTypen getTyp() {
-		return typ;
+	public EnumKartenTypen getFarbe() {
+		return farbe;
 	}
 
 	/**
@@ -49,29 +41,10 @@ public class Karte {
 		return wert;
 	}
 
-	// public String getFarbe(){
-	// for (int i=0; i<= farbe.length; i++){
-	// System.out.println(farbe[i]);
-	// return farbe[i];
-	//
-	// }
-	// return "Hallo";
-	// }
-
-	// public void setSuit(int wert) {
-	// wertValue = wert;
-	// }
-	//
-	// public int getRank() {
-	// return farbeValue;
-	// }
-	//
-	// public int getSuit() {
-	// return wertValue;
-	// }
-
+	/**
+	 * Methode, ...
+	 */
 	public String toString() {
-		String name = typ + " of " + wert;
-		return name;
+		return "Karte [wert=" + wert + ", farbe=" + farbe + "]";
 	}
 }

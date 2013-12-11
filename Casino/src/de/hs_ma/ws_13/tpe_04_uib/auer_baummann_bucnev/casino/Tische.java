@@ -1,5 +1,6 @@
 package de.hs_ma.ws_13.tpe_04_uib.auer_baummann_bucnev.casino;
 
+import de.hs_ma.ws_13.tpe_04_uib.auer_baummann_bucnev.casino.Hand;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Collections;
@@ -28,6 +29,7 @@ public class Tische {
 
 	public HashMap<String, Spieler> getSpieler() {
 		return this.spieler;
+
 	}
 
 	// //Gewinner 21
@@ -56,6 +58,7 @@ public class Tische {
 		// Karten mischen
 		public void mischeKarten() { // Stack<?> kartendeck
 			Collections.shuffle(cards);
+
 		}
 
 		// Karten austeilen an Spieler und sich selbst
@@ -85,7 +88,7 @@ public class Tische {
 
 		// festlegen des Gewinners
 		protected void festlegenGewinner() {
-			if(Hand. > 21){
+			if( > 21){
 				
 			}
 		}
