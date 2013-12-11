@@ -4,12 +4,16 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 
-public class KartenDeck extends Karte implements KartenMischer {
+public class KartenDeck implements KartenMischer{
 
-	// Liste zur Verwendung des Ka rtendecks
-	ArrayList kartenDeck = new ArrayList();
+	// Liste zur Verwendung des Kartendecks
+	ArrayList<String> kartenDeck = new ArrayList<String>();
 
-	public KartenDeck(ArrayList kartenDeck) {
+	/**
+	 * Konstruktor zur Erzeugung eines Kartendeck
+	 * @param kartenDeck
+	 */
+	public KartenDeck(ArrayList<String> kartenDeck) {
 		this.kartenDeck = kartenDeck;
 
 	}
@@ -36,12 +40,10 @@ public class KartenDeck extends Karte implements KartenMischer {
 	// return farbe[farben];
 	// }
 
-	// Methoden
-	// Karten mischen
+	/**
+	 * Methode um Karten zu mischen
+	 */
 	public void mischeKarten() {
-
-		// Collections.enumeration(kartenDeck);
 		Collections.shuffle(kartenDeck);
-		// return 0;
 	}
 }

@@ -11,9 +11,11 @@ public class Hand<K> {
 	// ArrayList<EnumKartenTypen>();
 	// private ArrayList<EnumKarten> enumKarten = new ArrayList<EnumKarten>();
 	private Spieler spieler;
-	private ArrayList meineKarten = new ArrayList(); // Array oder ArrayListe???
-														// Liste bzw. Array
-														// danach leeren
+	private ArrayList<Karte> kartenHand = new ArrayList<Karte>(); // Array oder
+																	// ArrayListe???
+
+	// Liste bzw. Array
+	// danach leeren
 
 	// boolean blackJack = true;
 
@@ -26,21 +28,33 @@ public class Hand<K> {
 	// return kartenAnzahl;
 	// }
 
-	// liefert Summe der Karten
+	/**
+	 * Methode um die Summe aller Karten zu ermitteln
+	 * 
+	 * @return summe liefert die Summer aller Karten zurueck
+	 */
 	public int getSumme() {
 		return summe;
 	}
 
 	// Neues Deck anlegen??
 
+	/**
+	 * Methode, um die Karten der ArrayList (Hand) hinzuzufuegen
+	 * 
+	 * @param k
+	 */
 	// Karten in die ArrayList hinzufügen
-	public void addKarten(Hand k) {
-		meineKarten.add(k);
+	public void addKarte(Karte k) {
+		kartenHand.add(k);
 
 	}
 
+	/**
+	 * Methode, um die Karten aus der ArrayList (Hand) zu entfernen
+	 */
 	// Karten aus der ArrayList entfernen
 	public void removeKarten() {
-		meineKarten.clear();
+		kartenHand.clear();
 	}
 }

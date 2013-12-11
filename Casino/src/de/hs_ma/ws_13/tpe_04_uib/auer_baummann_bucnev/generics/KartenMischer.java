@@ -1,9 +1,17 @@
 package de.hs_ma.ws_13.tpe_04_uib.auer_baummann_bucnev.generics;
 
+/**
+ * Interface , das als zentraler Kartenmischer im Casiono dient.
+ * 
+ * @author pauer
+ * @author rbucnev
+ * @author tbaumann
+ * 
+ */
 public interface KartenMischer {
 
-	// dient als zentraler Kartenmischer im Casino. Mischt die Karten des
-	// Kartendecks
-
+	/**
+	 * Methode, um die KArten eines KArtendecks zu mischen
+	 */
 	public void mischeKarten();
 }

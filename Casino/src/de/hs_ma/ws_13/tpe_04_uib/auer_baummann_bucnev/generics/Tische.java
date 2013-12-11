@@ -61,8 +61,6 @@ public class Tische {
 		 * Konstruktor zur Erzeugung eines Dealer
 		 */
 		Dealer() {
-			// this.dealer = dealer;
-
 		}
 
 		// Methoden
@@ -86,6 +84,11 @@ public class Tische {
 			}
 		}
 
+		// Karten einsammeln von Spielern
+		protected void einsammelnKarten() {
+
+		}
+
 		// Einsätze der Spieler
 		protected void abfragen() {
 
@@ -101,10 +104,6 @@ public class Tische {
 
 		}
 
-		// Karten einsammeln von Spielern
-		protected void einsammelnKarten() {
-
-		}
 	} // Innere Klasse Ende
 
 }
