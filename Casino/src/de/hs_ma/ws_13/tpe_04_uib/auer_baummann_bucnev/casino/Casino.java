@@ -10,12 +10,26 @@ public class Casino {
 
 	// private ArrayList<Spieler> spieler;
 
+	/**
+	 * Konstruktor zur Erzeugung des Casinos
+	 * 
+	 * @param anzahlTische
+	 *            Anzahl der Tische
+	 * @param vermoegen
+	 *            Vermoegen des Casinos
+	 */
 	Casino(int anzahlTische, int vermoegen) {
 		this.setVermoegen(vermoegen);
 		this.tische = new ArrayList<Tische>();
 		this.addTische(anzahlTische);
 	}
 
+	/**
+	 * Methode um neue Tische hinzuzufuegen
+	 * 
+	 * @param anzahlTische
+	 *            Anzahl der Tische
+	 */
 	private void addTische(int anzahlTische) {
 		for (int i = 0; i < anzahlTische; i++) {
 			this.tische.add(new Tische(this));

@@ -1,9 +1,6 @@
 package de.hs_ma.ws_13.tpe_04_uib.auer_baummann_bucnev.casino;
 
 import java.util.ArrayList;
-
-import enum_klassen.EnumKartenTypen;
-import enum_klassen.EnumKarten;
 import de.hs_ma.ws_13.tpe_04_uib.auer_baummann_bucnev.casino.Tische.Dealer;
 
 public class Main {
@@ -14,11 +11,11 @@ public class Main {
 		ArrayList spielerTisch1 = new ArrayList();
 		ArrayList alleTische = new ArrayList();
 
-		KartenDeck deck = new KartenDeck();
-		deck.hinzufuegen();
-		System.out.println(deck);
-		deck.mischeKarten();
-		System.out.println(deck);
+		KartenDeck kartenDeck = new KartenDeck();
+		kartenDeck.hinzufuegen();
+		System.out.println(kartenDeck);
+		kartenDeck.mischeKarten();
+		System.out.println(kartenDeck);
 		// Karte karte = new Karte();
 		// karte.getFarbe();
 		// Karte karte = new Karte(EnumKarten.ACHT,EnumKartenTypen.KARO);

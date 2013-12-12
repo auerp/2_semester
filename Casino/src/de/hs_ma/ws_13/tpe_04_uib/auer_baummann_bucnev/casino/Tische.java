@@ -12,6 +12,11 @@ public class Tische {
 	private Dealer dealer;
 	private Casino casino;
 
+	/**
+	 * Konstruktor zur Erzeugung eines Tisches
+	 * 
+	 * @param casino
+	 */
 	public Tische(Casino casino) {
 		this.casino = casino;
 		// this.tischNr++;
@@ -22,6 +27,11 @@ public class Tische {
 		// this.pot = new HashMap<String, Integer>();
 	}
 
+	/**
+	 * Methode, um eine Tischnummer zu liefern
+	 * 
+	 * @return tischNr liefert die Tischnummer
+	 */
 	public int getTischNr() {
 		return this.tischNr;
 	}
@@ -46,6 +56,7 @@ public class Tische {
 	class Dealer {
 
 		private ArrayList<Karte> cards = new ArrayList<Karte>();
+		private Hand hand = new Hand();
 
 		/**
 		 * Konstruktor zur Erzeugung eines Dealer
@@ -62,7 +73,7 @@ public class Tische {
 		}
 
 		// Karten austeilen an Spieler und sich selbst
-		protected void austeilenKarten(Stack<?> kartendeck) {
+		protected void austeilenKarten() {
 			// Wie viele Spieler?
 			// 3 Karten pro Spieler
 			// Dealer spielt mit
@@ -88,7 +99,7 @@ public class Tische {
 
 		// festlegen des Gewinners
 		protected void festlegenGewinner() {
-			Map<Integer, Spieler> punkteSpieler = new HashMap<Integer, Spieler>;
+			private Map<String, Spieler> punkteSpieler = new HashMap<String, Spieler>;
 			
 		}
 

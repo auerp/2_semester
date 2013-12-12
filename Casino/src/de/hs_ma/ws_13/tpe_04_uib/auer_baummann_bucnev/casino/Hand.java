@@ -4,12 +4,9 @@ import java.util.ArrayList;
 //import enum_klassen.EnumKarten;
 //import enum_klassen.EnumKartenTypen;
 
-public class Hand<K> {
+public class Hand {
 
 	private int summe;
-	// private ArrayList<EnumKartenTypen> enumKartenTypen = new
-	// ArrayList<EnumKartenTypen>();
-	// private ArrayList<EnumKarten> enumKarten = new ArrayList<EnumKarten>();
 	private Spieler spieler;
 	private ArrayList<Karte> kartenHand = new ArrayList<Karte>(); // Array oder
 																	// ArrayListe???
@@ -24,28 +21,26 @@ public class Hand<K> {
 		this.summe = summe;
 	}
 
-	// private int getKartenAnzahl(){
-	// return kartenAnzahl;
-	// }
-
 	/**
 	 * Methode um die Summe aller Karten zu ermitteln
 	 * 
 	 * @return summe liefert die Summer aller Karten zurueck
 	 */
 	public int getSumme() {
+		for (Karte karte : kartenHand) {
+			summe = summe + karte.getWert();
+		}
 		return summe;
 	}
-
-	// Neues Deck anlegen??
 
 	/**
 	 * Methode, um die Karten der ArrayList (Hand) hinzuzufuegen
 	 * 
 	 * @param k
+	 *            karte
 	 */
-	// Karten in die ArrayList hinzufügen
-	public void addKarte(Karte k) {
+	public void addKarte(Karte k) { // ISt diese Methode so korrekt und
+									// vollstaendig??
 		kartenHand.add(k);
 
 	}
@@ -53,7 +48,6 @@ public class Hand<K> {
 	/**
 	 * Methode, um die Karten aus der ArrayList (Hand) zu entfernen
 	 */
-	// Karten aus der ArrayList entfernen
 	public void removeKarten() {
 		kartenHand.clear();
 	}
