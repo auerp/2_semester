@@ -24,6 +24,15 @@ public class Casino {
 		this.gewinn += gewinn;
 	}
 
+	/**
+	 * Methode, um die Anzahl der Tische festzulegen
+	 * 
+	 * @return tische liefert den Wert der enthaltenen Tische zurueck
+	 */
+	public ArrayList<Tische> getTische() {
+		return tische;
+	}
+
 	// Spieler einem Tisch zuweisen(zufällig)
 	public int getAnzahlTische() {
 		return this.tische.size();
