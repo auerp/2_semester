@@ -1,19 +1,14 @@
 package de.hs_ma.ws_13.tpe_04_uib.auer_baummann_bucnev.casino;
 
 import de.hs_ma.ws_13.tpe_04_uib.auer_baummann_bucnev.casino.Hand;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Collections;
-import java.util.Map;
-import java.util.Stack;
-import java.util.Random;
+import java.util.*;
 
 public class Tische {
 
-	private int pot;
+	private Pot pot;
 	private int tischNr = 0;
 	private HashMap<String, Spieler> spieler;
-	private KartenDeck kartendeck;
+	private KartenDeck kartenDeck;
 
 	public Tische(int pot, ArrayList<Spieler> spieler) {
 
@@ -54,10 +49,11 @@ public class Tische {
 		Dealer() {
 		}
 
-		// Methoden
-		// Karten mischen
-		public void mischeKarten() { // Stack<?> kartendeck
-			Collections.shuffle(cards);
+		/**
+		 * Methode zum Mischen der Karten
+		 */
+		public void mischeKarten() { 
+			KartenMischer.mischeKarten(kartenDeck);
 
 		}
 

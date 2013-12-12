@@ -34,7 +34,8 @@ public class KartenMischer {
 	/**
 	 * Methode, um die Karten eines Kartendecks zu mischen
 	 */
-	public void mischeKarten(KartenDeck kartenDeck) {
+	public static void mischeKarten(KartenDeck kartenDeck) {
 		Collections.shuffle(kartenDeck);
 	}
+
 }
