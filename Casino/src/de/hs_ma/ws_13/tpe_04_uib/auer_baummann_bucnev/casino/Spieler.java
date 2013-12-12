@@ -6,6 +6,7 @@ public abstract class Spieler {
 	private String id;
 	// private int id1=0;
 	private int vermoegen;
+	private Hand hand;
 
 	// private Integer intId = new Integer(id1);
 
@@ -25,12 +26,13 @@ public abstract class Spieler {
 	 *            Das Vermoegen eines Spielers
 	 */
 	public Spieler(String name, String id, int vermoegen) {
-		super();
+		// super();
 		this.name = name;
 		this.vermoegen = vermoegen;
 		// setVermoegen(vermoegen);
 		this.intId++;
 		// this.id = intId.toString();
+		//this.hand = new Hand();
 	}
 
 	/**
@@ -71,16 +73,16 @@ public abstract class Spieler {
 		return this.id;
 	}
 
-	// // getVermoegen
-	// public int getVermoegen() {
-	// return this.vermoegen;
-	// }
-	//
-	// // Setter Methoden
-	// // setVermoegen
-	// public void setVermoegen(int vermoegen) {
-	// this.vermoegen = vermoegen;
-	// }
+	// getVermoegen
+	public int getVermoegen() {
+		return this.vermoegen;
+	}
+
+	// Setter Methoden
+	// setVermoegen
+	public void setVermoegen(int vermoegen) {
+		this.vermoegen = vermoegen;
+	}
 
 	public String toString() {
 		return id;

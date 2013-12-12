@@ -5,13 +5,13 @@ import java.util.Collections;
 
 public class Casino {
 
-	protected int vermoegen;
+	private int vermoegen;
 	private int gewinn;
 	private ArrayList<Tische> tische;
 	protected ArrayList<Spieler> spieler;
 
 	Casino(int vermoegen, ArrayList<Spieler> tische) {
-		this.vermoegen = vermoegen;
+		this.setVermoegen(vermoegen);
 		this.tische = new ArrayList<Tische>();
 		// this.tische.add(new Tische());
 	}
@@ -27,6 +27,25 @@ public class Casino {
 	// Spieler einem Tisch zuweisen(zufällig)
 	public int getAnzahlTische() {
 		return this.tische.size();
+	}
+
+	/**
+	 * Methode die das Vermoegen liefert
+	 * 
+	 * @return vermoegen liefert den Betrag des Vermoegens zurueck
+	 */
+	public int getVermoegen() {
+		return vermoegen;
+	}
+
+	/**
+	 * Methode um Vermoegen zu setzen
+	 * 
+	 * @param vermoegen
+	 *            Betrag des Vermoegen
+	 */
+	public void setVermoegen(int vermoegen) {
+		this.vermoegen = vermoegen;
 	}
 
 }
