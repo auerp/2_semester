@@ -35,6 +35,6 @@ public class KartenMischer {
 	 * Methode, um die Karten eines Kartendecks zu mischen
 	 */
 	public void mischeKarten(KartenDeck kartenDeck) {
-		return Collections.shuffle(kartenDeck);
+		Collections.shuffle(kartenDeck);
 	}
 }
