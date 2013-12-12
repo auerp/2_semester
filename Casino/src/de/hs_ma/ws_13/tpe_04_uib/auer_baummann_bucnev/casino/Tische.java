@@ -88,7 +88,7 @@ public class Tische {
 
 		// festlegen des Gewinners
 		protected void festlegenGewinner() {
-			Map<Integer, Spieler> punkteSpieler = new HashMap<Integer, String>;
+			Map<Integer, Spieler> punkteSpieler = new HashMap<Integer, Spieler>;
 			
 		}
 
