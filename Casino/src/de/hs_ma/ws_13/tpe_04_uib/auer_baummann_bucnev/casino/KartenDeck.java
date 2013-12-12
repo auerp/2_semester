@@ -4,23 +4,24 @@ import java.util.Stack;
 
 public class KartenDeck extends Stack<Karte> {
 
-	// Stack<Karte> kartenDeck = new Stack<Karte>();
+	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Konstruktor zur Erzeugung eines Kartendeck
 	 */
 	public KartenDeck() {
-		deckErstellen();
+		deckErstellen(); // Aufruf der MEthode deckErstellen(), damit ein
+							// KArtendeck erzeugt wird
 	}
 
 	/**
 	 * Methode, um ein Kartendeck zu erstellen
 	 */
 	public void deckErstellen() {
-		for(Karte.EnumKartenWert wert : Karte.EnumKartenWert.wert(); ){
-			for(Karte.EnumKartenFarbe farbe : Karte.EnumKartenFarbe.farbe()){
-				
-			}}
+		for (Karte.EnumKartenWert wert : Karte.EnumKartenWert.values()) {
+			for (Karte.EnumKartenFarbe farbe : Karte.EnumKartenFarbe.values()) {
+			}
+		}
 	}
 	// int i = 0;
 	// do {
