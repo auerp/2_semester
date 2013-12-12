@@ -1,25 +1,18 @@
 package de.hs_ma.ws_13.tpe_04_uib.auer_baummann_bucnev.casino;
 
 import java.util.ArrayList;
-//import enum_klassen.EnumKarten;
-//import enum_klassen.EnumKartenTypen;
 
 public class Hand {
 
 	private int summe;
-	private Spieler spieler;
-	private ArrayList<Karte> kartenHand = new ArrayList<Karte>(); // Array oder
-																	// ArrayListe???
-
-	// Liste bzw. Array
-	// danach leeren
+	private ArrayList<Karte> kartenHand = new ArrayList<Karte>();
 
 	// boolean blackJack = true;
 
-	// Konstruktor
-	public Hand(String name, int summe) {
-		this.summe = summe;
-	}
+	// // Konstruktor
+	// public Hand(String name, int summe) {
+	// this.summe = summe;
+	// }
 
 	/**
 	 * Methode um die Summe aller Karten zu ermitteln
@@ -39,10 +32,10 @@ public class Hand {
 	 * @param k
 	 *            karte
 	 */
-	public void addKarte(Karte k) { // ISt diese Methode so korrekt und
-									// vollstaendig??
-		kartenHand.add(k);
-
+	public void addKarte(Karte k) { // Ist diese Methode so korrekt und
+		// if (kartenHand.size() < 3) {
+		this.kartenHand.add(k);
+		// }
 	}
 
 	/**
