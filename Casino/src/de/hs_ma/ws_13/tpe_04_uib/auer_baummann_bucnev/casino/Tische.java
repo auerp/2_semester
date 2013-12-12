@@ -9,11 +9,15 @@ public class Tische {
 	private int tischNr = 0;
 	private HashMap<String, Spieler> spieler;
 	private KartenDeck kartenDeck;
+	private Dealer dealer;
+	private Casino casino;
 
-	public Tische(int pot, ArrayList<Spieler> spieler) {
-
-		this.tischNr++;
+	public Tische(Casino casino) {
+		this.casino = casino;
+		// this.tischNr++;
 		this.spieler = new HashMap<String, Spieler>();
+		this.dealer = new Dealer();
+		this.pot = new Pot();
 		// this.kartendeck = new KartenDeck();
 		// this.pot = new HashMap<String, Integer>();
 	}
@@ -52,7 +56,7 @@ public class Tische {
 		/**
 		 * Methode zum Mischen der Karten
 		 */
-		public void mischeKarten() { 
+		public void mischeKarten() {
 			KartenMischer.mischeKarten(kartenDeck);
 
 		}

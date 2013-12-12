@@ -1,19 +1,25 @@
 package de.hs_ma.ws_13.tpe_04_uib.auer_baummann_bucnev.casino;
 
 import java.util.ArrayList;
-import java.util.Collections;
 
 public class Casino {
 
 	private int vermoegen;
 	private int gewinn;
 	private ArrayList<Tische> tische;
-	protected ArrayList<Spieler> spieler;
 
-	Casino(int vermoegen, ArrayList<Spieler> tische) {
+	// private ArrayList<Spieler> spieler;
+
+	Casino(int anzahlTische, int vermoegen) {
 		this.setVermoegen(vermoegen);
 		this.tische = new ArrayList<Tische>();
-		// this.tische.add(new Tische());
+		this.addTische(anzahlTische);
+	}
+
+	private void addTische(int anzahlTische) {
+		for (int i = 0; i < anzahlTische; i++) {
+			this.tische.add(new Tische(this));
+		}
 	}
 
 	public int getGewinn() {
