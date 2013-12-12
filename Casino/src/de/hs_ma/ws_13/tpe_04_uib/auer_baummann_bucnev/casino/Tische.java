@@ -44,7 +44,7 @@ public class Tische {
 	 * @author baumannt
 	 * 
 	 */
-	class Dealer implements KartenMischer {
+	class Dealer {
 
 		private ArrayList<Karte> cards = new ArrayList<Karte>();
 
@@ -88,9 +88,8 @@ public class Tische {
 
 		// festlegen des Gewinners
 		protected void festlegenGewinner() {
-//			if( > 21){
-				
-//			}
+			Map<Integer, Spieler> punkteSpieler = new HashMap<Integer, String>;
+			
 		}
 
 		// Auszahlung an Gewinner

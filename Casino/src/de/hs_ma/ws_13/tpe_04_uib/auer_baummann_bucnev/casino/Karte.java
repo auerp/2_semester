@@ -5,10 +5,21 @@ import enum_klassen.EnumKarten;
 
 public class Karte {
 
-	private EnumKarten wert; // Werte der Karten
-	private EnumKartenTypen farbe; // Zeichen bzw. Farbe der Karten
+	private int wert; // Werte der Karten
+	private String farbe; // Zeichen bzw. Farbe der Karten
 
-	// private String deck[][] = new String[4][13];
+	// Innere Enum Klasse
+	public enum EnumKartenWert {
+
+		ZWEI(2), DREI(3), VIER(4), FUENF(5), SECHS(6), SIEBEN(7), ACHT(8), NEUN(
+				9), ZEHN(10), BUBE(10), DAME(10), KOENIG(10), AS(11);
+	}
+
+	// Innere Enum Klasse
+	public enum EnumKartenFarbe {
+
+		PIK, KREUZ, KARO, HERZ;
+	}
 
 	/**
 	 * Konstruktor zur Erzeugung der Karte
