@@ -10,6 +10,10 @@ public class Main {
 		// Spielerlisten
 		ArrayList spielerTisch1 = new ArrayList();
 		ArrayList alleTische = new ArrayList();
+		ArrayList casinos = new ArrayList();
+		
+		Casino casino1 = new Casino(10,5000);
+		Casino casino2 = new Casino(12,2500);
 
 		KartenDeck kartenDeck = new KartenDeck();
 		//kartenDeck.hinzufuegen();
@@ -22,9 +26,9 @@ public class Main {
 		// karte.kartenHinzufuegen();
 		// System.out.println("zahl");
 
-		// Spieler
-		Spieler spieler1 = new Spieler("Lutz", 1000, null);
-		Spieler spieler2 = new Spieler("Peter", 2000, );
+		// Spieler	Casinos noch anschauen
+		Spieler spieler1 = new Spieler("Lutz", 1000, casino1);
+		Spieler spieler2 = new Spieler("Peter", 2000, casino2);
 		
 		
 		System.out.println("Spieler:" + spieler1.getId());
