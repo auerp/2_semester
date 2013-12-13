@@ -7,7 +7,7 @@ public class Tische {
 
 	private Pot pot;
 	private int tischNr = 0;
-	private HashMap<String, Spieler> spieler;
+	private Map<String, Spieler> spieler;
 	private KartenDeck kartenDeck;
 	private Dealer dealer;
 	private Casino casino;
@@ -34,11 +34,6 @@ public class Tische {
 	 */
 	public int getTischNr() {
 		return this.tischNr;
-	}
-
-	public HashMap<String, Spieler> getSpieler() {
-		return this.spieler;
-
 	}
 
 	// //Gewinner 21
@@ -99,8 +94,16 @@ public class Tische {
 
 		// festlegen des Gewinners
 		protected void festlegenGewinner() {
-			private Map<String, Spieler> punkteSpieler = new HashMap<String, Spieler>;
-			
+			// private Map<String, Spieler> punkteSpieler = new HashMap<String,
+			// Spieler>;
+
+			Set<Map.Entry<String, Spieler>> punkteSpieler = Spieler
+					.punkteSpieler();
+			for (Map.Entry<String, Spieler> entry : punkteSpieler) {
+				String id = entry.getKey();
+				Spieler value = entry.getValue();
+			}
+
 		}
 
 		// Auszahlung an Gewinner
@@ -109,5 +112,48 @@ public class Tische {
 		}
 
 	} // Innere Klasse Ende
+
+	/**
+	 * Innere Klasse Pot, der die Einsätze der Spieler verwaltet
+	 * 
+	 * @author auerp
+	 * @author bucnevr
+	 * @author baumannt
+	 * 
+	 */
+	class Pot {
+
+		// verwendet die ID des Spielers zur Verwaltung der Einsätze
+
+	}
+
+	/**
+	 * Methode, um den Spieler zurueck zu liefern
+	 * 
+	 * @return spieler liefert einen Spieler zurueck
+	 */
+	public Map<String, Spieler> getSpieler() {
+		return spieler;
+
+	}
+
+	/**
+	 * Fuegt einen Spieler der Map hinzu
+	 * 
+	 * @param spieler
+	 *            ID, Name und Vermoegen des Spielers
+	 */
+	public void addSpieler(Spieler spieler) {
+		this.spieler.put(spieler.getId(), spieler);
+	}
+
+	/**
+	 * Gibt die Anzahl der Spieler zurueck
+	 * 
+	 * @return spieler liefert die Anzahl der Spieler zurueck
+	 */
+	public int getAnzahlSpieler() {
+		return spieler.size();
+	}
 
 }

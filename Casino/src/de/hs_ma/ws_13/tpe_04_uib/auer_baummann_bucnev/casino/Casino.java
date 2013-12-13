@@ -54,7 +54,7 @@ public class Casino {
 	}
 
 	// Spieler einem Tisch zuweisen(zufällig)
-	public int getAnzahlTische() {
+	public int spielerTischZuweisen() {
 		return this.tische.size();
 	}
 
