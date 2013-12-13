@@ -12,10 +12,10 @@ public class Main {
 		ArrayList alleTische = new ArrayList();
 
 		KartenDeck kartenDeck = new KartenDeck();
-		kartenDeck.hinzufuegen();
-		System.out.println(kartenDeck);
-		kartenDeck.mischeKarten();
-		System.out.println(kartenDeck);
+		//kartenDeck.hinzufuegen();
+		//System.out.println(kartenDeck);
+		//kartenDeck.mischeKarten();
+		//System.out.println(kartenDeck);
 		// Karte karte = new Karte();
 		// karte.getFarbe();
 		// Karte karte = new Karte(EnumKarten.ACHT,EnumKartenTypen.KARO);
@@ -23,8 +23,12 @@ public class Main {
 		// System.out.println("zahl");
 
 		// Spieler
-		// Spieler spieler1 = new Spieler("Lutz", "01", 1000);
-		// Spieler spieler2 = new Spieler("Peter", "02", 2000);
+		Spieler spieler1 = new Spieler("Lutz", 1000);
+		Spieler spieler2 = new Spieler("Peter", 2000);
+		
+		
+		System.out.println("Spieler:" + spieler1.getId());
+		System.out.println("Spieler:" + spieler2.getId());
 		// Spieler spieler3 = new Spieler("Gustav", "03", 500);
 		// Spieler spieler4 = new Spieler("Lutzi", "04", 7000);
 
@@ -35,12 +39,12 @@ public class Main {
 		// spielerTisch1.add(spieler4);
 
 		// Tische anlegen
-		Tische tisch1 = new Tische(0, spielerTisch1);
+		//Tische tisch1 = new Tische(0, spielerTisch1);
 
 		// Tische der Liste hinzufügen
-		alleTische.add(tisch1);
+		//alleTische.add(tisch1);
 
 		// Casino anlegen
-		Casino casino1 = new Casino(0, alleTische);
+		//Casino casino1 = new Casino(0, alleTische);
 	}
 }

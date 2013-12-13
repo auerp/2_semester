@@ -1,19 +1,13 @@
 package de.hs_ma.ws_13.tpe_04_uib.auer_baummann_bucnev.casino;
 
-public abstract class Spieler {
+public class Spieler {
 
 	private String name;
-	private String id;
-	// private int id1=0;
+	private String id = " " + System.identityHashCode(this); // erzeugt
+																// automatische
+																// ID
 	private int vermoegen;
 	private Hand hand;
-
-	// private Integer intId = new Integer(id1);
-
-	private int intId = Integer.parseInt(id); // String wird in Integer
-												// umgewandelt
-
-	// private Integer idIntW = new Integer(intid);
 
 	/**
 	 * Konstruktor zur Erzeugung eines Spielers
@@ -25,14 +19,9 @@ public abstract class Spieler {
 	 * @param vermoegen
 	 *            Das Vermoegen eines Spielers
 	 */
-	public Spieler(String name, String id, int vermoegen) {
-		// super();
+	public Spieler(String name, int vermoegen) {
 		this.name = name;
 		this.vermoegen = vermoegen;
-		// setVermoegen(vermoegen);
-		this.intId++;
-		// this.id = intId.toString();
-		//this.hand = new Hand();
 	}
 
 	/**
@@ -84,7 +73,4 @@ public abstract class Spieler {
 		this.vermoegen = vermoegen;
 	}
 
-	public String toString() {
-		return id;
-	}
 }

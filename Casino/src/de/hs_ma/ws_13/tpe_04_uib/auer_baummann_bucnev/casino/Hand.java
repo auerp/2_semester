@@ -7,8 +7,6 @@ public class Hand {
 	private int summe;
 	private ArrayList<Karte> kartenHand = new ArrayList<Karte>();
 
-	// boolean blackJack = true;
-
 	// // Konstruktor
 	// public Hand(String name, int summe) {
 	// this.summe = summe;
@@ -32,10 +30,10 @@ public class Hand {
 	 * @param k
 	 *            karte
 	 */
-	public void addKarte(Karte k) { // Ist diese Methode so korrekt und
-		// if (kartenHand.size() < 3) {
-		this.kartenHand.add(k);
-		// }
+	public void addKarte(Karte k) {
+		if (kartenHand.size() < 3) {
+			this.kartenHand.add(k);
+		}
 	}
 
 	/**
