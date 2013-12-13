@@ -19,12 +19,9 @@ public class Tische {
 	 */
 	public Tische(Casino casino) {
 		this.casino = casino;
-		// this.tischNr++;
 		this.spieler = new HashMap<String, Spieler>();
 		this.dealer = new Dealer();
 		this.pot = new Pot();
-		// this.kartendeck = new KartenDeck();
-		// this.pot = new HashMap<String, Integer>();
 	}
 
 	/**
@@ -36,10 +33,35 @@ public class Tische {
 		return this.tischNr;
 	}
 
-	// //Gewinner 21
-	// private static final int blackjack = 21;
+	/**
+	 * Methode, um den Spieler zurueck zu liefern
+	 * 
+	 * @return spieler liefert einen Spieler zurueck
+	 */
+	public Map<String, Spieler> getSpieler() {
+		return spieler;
 
-	// Innere Klasse (Nonstatic Member Class)
+	}
+
+	/**
+	 * Fuegt einen Spieler der Map hinzu
+	 * 
+	 * @param spieler
+	 *            ID, Name und Vermoegen des Spielers
+	 */
+	public void addSpieler(Spieler spieler) {
+		this.spieler.put(spieler.getId(), spieler);
+	}
+
+	/**
+	 * Gibt die Anzahl der Spieler zurueck
+	 * 
+	 * @return spieler liefert die Anzahl der Spieler zurueck
+	 */
+	public int getAnzahlSpieler() {
+		return spieler.size();
+	}
+
 	/**
 	 * Innere Klasse die den Dealer enthaelt
 	 * 
@@ -125,35 +147,6 @@ public class Tische {
 
 		// verwendet die ID des Spielers zur Verwaltung der Einsätze
 
-	}
-
-	/**
-	 * Methode, um den Spieler zurueck zu liefern
-	 * 
-	 * @return spieler liefert einen Spieler zurueck
-	 */
-	public Map<String, Spieler> getSpieler() {
-		return spieler;
-
-	}
-
-	/**
-	 * Fuegt einen Spieler der Map hinzu
-	 * 
-	 * @param spieler
-	 *            ID, Name und Vermoegen des Spielers
-	 */
-	public void addSpieler(Spieler spieler) {
-		this.spieler.put(spieler.getId(), spieler);
-	}
-
-	/**
-	 * Gibt die Anzahl der Spieler zurueck
-	 * 
-	 * @return spieler liefert die Anzahl der Spieler zurueck
-	 */
-	public int getAnzahlSpieler() {
-		return spieler.size();
 	}
 
 }
