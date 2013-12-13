@@ -53,9 +53,27 @@ public class Casino {
 		return tische;
 	}
 
-	// Spieler einem Tisch zuweisen(zufällig)
-	public int spielerTischZuweisen() {
-		return this.tische.size();
+	
+	/**
+	 * Methode, um die Spieler einem Tisch zuzuweisen
+	 * 
+	 * @param spieler
+	 */
+	public void spielerTischZuweisen(Spieler spieler) {
+		boolean tischGefunden = false;
+		int zaehler = 0; // zaehler um die Anzahl zu ermitteln
+
+		while (!tischGefunden && zaehler < tische.size()) {
+			if (tische.get(zaehler).getAnzahlSpieler() < 16) { // 16 Spieler
+																// koennen an
+																// einm Tisch
+																// sitzen
+				tische.get(zaehler).addSpieler(spieler); // Fuegt Spieler hinzu
+				tischGefunden = true; // Spieler hat Platz zugewiesen bekommen
+			}
+			zaehler++;
+		}
+
 	}
 
 	/**

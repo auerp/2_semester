@@ -19,9 +19,12 @@ public class Spieler {
 	 * @param vermoegen
 	 *            Das Vermoegen eines Spielers
 	 */
-	public Spieler(String name, int vermoegen) {
+	public Spieler(String name, int vermoegen, Casino casino) {
 		this.name = name;
 		this.vermoegen = vermoegen;
+		this.hand = new Hand();
+		casino.spielerTischZuweisen(this);
+
 	}
 
 	/**
@@ -62,13 +65,30 @@ public class Spieler {
 		return this.id;
 	}
 
-	// getVermoegen
+	/**
+	 * Gibt die Hand eines Spielers zurueck
+	 * 
+	 * @return hand liefert die Hand eines Spielers
+	 */
+	public Hand getHand() {
+		return this.hand;
+	}
+
+	/**
+	 * Liefert das Vermoegen eines Spielers
+	 * 
+	 * @return vermoegen liefert das vermoegen eines Spielers zurueck
+	 */
 	public int getVermoegen() {
 		return this.vermoegen;
 	}
 
-	// Setter Methoden
-	// setVermoegen
+	/**
+	 * Methode, die das Vermoegen eines Spielers ermittelt
+	 * 
+	 * @param vermoegen
+	 *            Vermoegen eines Spielers
+	 */
 	public void setVermoegen(int vermoegen) {
 		this.vermoegen = vermoegen;
 	}

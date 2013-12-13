@@ -23,8 +23,8 @@ public class Main {
 		// System.out.println("zahl");
 
 		// Spieler
-		Spieler spieler1 = new Spieler("Lutz", 1000);
-		Spieler spieler2 = new Spieler("Peter", 2000);
+		Spieler spieler1 = new Spieler("Lutz", 1000, null);
+		Spieler spieler2 = new Spieler("Peter", 2000, );
 		
 		
 		System.out.println("Spieler:" + spieler1.getId());
