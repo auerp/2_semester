@@ -5,12 +5,14 @@ import java.util.*;
 
 public class Tische {
 
-	private Pot pot;
+	// private Pot pot;
+	private Map<String, Integer> pot;
 	private int tischNr = 0;
 	private Map<String, Spieler> spieler;
 	private KartenDeck kartenDeck;
 	private Dealer dealer;
 	private Casino casino;
+	private Stack<Spieler> gewinnerSpieler;
 
 	/**
 	 * Konstruktor zur Erzeugung eines Tisches
@@ -18,10 +20,10 @@ public class Tische {
 	 * @param casino
 	 */
 	public Tische(Casino casino) {
+		this.gewinnerSpieler = new Stack();
 		this.casino = casino;
 		this.spieler = new HashMap<String, Spieler>();
-		this.dealer = new Dealer();
-		this.pot = new Pot();
+		this.pot = new HashMap<String, Integer>();
 	}
 
 	/**
@@ -71,14 +73,18 @@ public class Tische {
 	 * 
 	 */
 	class Dealer {
-
-		private ArrayList<Karte> cards = new ArrayList<Karte>();
 		private Hand hand = new Hand();
+		String name;
+		private double vermoegenDealer;
 
 		/**
 		 * Konstruktor zur Erzeugung eines Dealer
 		 */
-		Dealer() {
+		Dealer(String name, double vermoegen) {
+			this.name = name;
+			this.vermoegenDealer = vermoegen;
+			// greift auf globalen Dealer vom tisch zu
+			dealer = this;
 		}
 
 		/**
@@ -91,46 +97,85 @@ public class Tische {
 
 		// Karten austeilen an Spieler und sich selbst
 		protected void austeilenKarten() {
-			// Wie viele Spieler?
-			// 3 Karten pro Spieler
-			// Dealer spielt mit
-			// karten verteilen
-
-			for (int a = 1; a <= 4; a++) {
-				for (int b = 1; b <= 13; b++) {
-					// Karte c = new Karte(a,b);
-					// cards.add(c);
+			int kartenAnzahl = 0;
+			while (kartenAnzahl != 3) {
+				for (Spieler it : Tische.this.spieler.values()) {
+					Karte karte = Tische.this.kartenDeck.pop();
+					it.setHand(karte);
 				}
+				// Ausgabe der Karten an den Dealer
+				this.hand.addKarte(Tische.this.kartenDeck.pop());
+				kartenAnzahl++;
 			}
 		}
 
 		// Karten einsammeln von Spielern
 		protected void einsammelnKarten() {
-
+			for (Spieler it : Tische.this.spieler.values()) {
+				Hand spielerhand = it.getHand();
+				for (Karte karte : spielerhand.getKartenHand()) {
+					Tische.this.kartenDeck.push(karte);
+				}
+				spielerhand.removeKarten();
+			}
+			ArrayList<Karte> dealerHandKarten = this.hand.getKartenHand();
+			for (Karte card : dealerHandKarten) {
+				Tische.this.kartenDeck.push(card);
+			}
+			this.hand.removeKarten();
 		}
 
 		// Einsätze der Spieler
-		protected void abfragen() {
-
+		protected int abfragen(Spieler spieler) {
+			String id = spieler.getId();
+			return Tische.this.pot.get(id);
 		}
 
 		// festlegen des Gewinners
 		protected void festlegenGewinner() {
-			// private Map<String, Spieler> punkteSpieler = new HashMap<String,
-			// Spieler>;
+			Stack<Spieler> besteSpieler = new Stack();
+			gewinnerSpieler.clear();
 
-			Set<Map.Entry<String, Spieler>> punkteSpieler = Spieler
-					.punkteSpieler();
-			for (Map.Entry<String, Spieler> entry : punkteSpieler) {
-				String id = entry.getKey();
-				Spieler value = entry.getValue();
+			for (Spieler spieler : Tische.this.spieler.values()) {
+				Hand spielerhand = spieler.getHand();
+				int summe = spielerhand.getSumme();
+				if (summe <= 21) {
+					if (besteSpieler.isEmpty()) {
+						besteSpieler.add(spieler);
+					} else {
+						Hand besteSpielerHand = besteSpieler.firstElement()
+								.getHand();
+						if (summe == besteSpielerHand.getSumme()) {
+							besteSpieler.add(spieler);
+						} else if (summe > besteSpielerHand.getSumme()) {
+							// Liste löschen um den besten spieler danach
+							// einzuspeichern
+							besteSpieler.clear();
+							besteSpieler.add(spieler);
+						}
+					}
+				}
 			}
+			int dealersumme = this.hand.getSumme();
+			if (dealersumme <= 21) {
+				Hand besteSpielerHand = besteSpieler.firstElement().getHand();
+				if (dealersumme >= besteSpielerHand.getSumme()) {
+					besteSpieler.clear();
+				}
+			}
+			gewinnerSpieler = besteSpieler;
 
 		}
 
 		// Auszahlung an Gewinner
 		protected void auszahlen(int betrag) {
-
+			if (gewinnerSpieler.isEmpty()) {
+				this.vermoegenDealer += betrag;
+			} else {
+				for (Spieler spieler : gewinnerSpieler) {
+					spieler.gewonnen(betrag / gewinnerSpieler.size());
+				}
+			}
 		}
 
 	} // Innere Klasse Ende

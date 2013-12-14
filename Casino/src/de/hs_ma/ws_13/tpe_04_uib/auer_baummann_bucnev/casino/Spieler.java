@@ -6,7 +6,7 @@ public class Spieler {
 	private String id = " " + System.identityHashCode(this); // erzeugt
 																// automatische
 																// ID
-	private int vermoegen;
+	private double vermoegen;
 	private Hand hand;
 
 	/**
@@ -19,12 +19,11 @@ public class Spieler {
 	 * @param vermoegen
 	 *            Das Vermoegen eines Spielers
 	 */
-	public Spieler(String name, int vermoegen, Casino casino) {
+	public Spieler(String name, double vermoegen, Casino casino) {
 		this.name = name;
 		this.vermoegen = vermoegen;
 		this.hand = new Hand();
 		casino.spielerTischZuweisen(this);
-
 	}
 
 	/**
@@ -43,7 +42,7 @@ public class Spieler {
 	 * @param betrag
 	 *            Betrag um welchen das Vermoegen erhoeht wird
 	 */
-	public void gewonnen(int betrag) {
+	public void gewonnen(double betrag) {
 		this.vermoegen = this.vermoegen + betrag;
 	}
 
@@ -79,7 +78,7 @@ public class Spieler {
 	 * 
 	 * @return vermoegen liefert das vermoegen eines Spielers zurueck
 	 */
-	public int getVermoegen() {
+	public double getVermoegen() {
 		return this.vermoegen;
 	}
 
@@ -92,5 +91,9 @@ public class Spieler {
 	public void setVermoegen(int vermoegen) {
 		this.vermoegen = vermoegen;
 	}
-
+	
+	public void setHand(Karte karte){
+		this.hand.addKarte(karte);
+	}
+	
 }

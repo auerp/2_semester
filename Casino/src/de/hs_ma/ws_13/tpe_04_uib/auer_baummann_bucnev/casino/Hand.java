@@ -42,4 +42,9 @@ public class Hand {
 	public void removeKarten() {
 		kartenHand.clear();
 	}
+	
+	public ArrayList<Karte> getKartenHand()
+	{
+		return this.kartenHand;
+	}
 }
