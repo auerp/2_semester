@@ -10,8 +10,8 @@ public class Tische {
 	private int tischNr = 0;
 	private Map<String, Spieler> spieler;
 	private KartenDeck kartenDeck;
-	private Dealer dealer;
-	private Casino casino;
+	Dealer dealer;
+	Casino casino;
 	private Stack<Spieler> gewinnerSpieler;
 
 	/**
@@ -20,7 +20,7 @@ public class Tische {
 	 * @param casino
 	 */
 	public Tische(Casino casino) {
-		this.gewinnerSpieler = new Stack();
+		this.gewinnerSpieler = new Stack<Spieler>();
 		this.casino = casino;
 		this.spieler = new HashMap<String, Spieler>();
 		this.pot = new HashMap<String, Integer>();
@@ -75,7 +75,7 @@ public class Tische {
 	class Dealer {
 		private Hand hand = new Hand();
 		String name;
-		private double vermoegenDealer;
+		double vermoegenDealer;
 
 		/**
 		 * Konstruktor zur Erzeugung eines Dealer
@@ -133,7 +133,7 @@ public class Tische {
 
 		// festlegen des Gewinners
 		protected void festlegenGewinner() {
-			Stack<Spieler> besteSpieler = new Stack();
+			Stack<Spieler> besteSpieler = new Stack<Spieler>();
 			gewinnerSpieler.clear();
 
 			for (Spieler spieler : Tische.this.spieler.values()) {
