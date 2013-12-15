@@ -65,10 +65,9 @@ public class Tische {
 	}
 
 	// Methode spielStarten
-	public String spielStarten(){
-		
-	}
-	
+	// public String spielStarten() {
+	// }
+
 	@Override
 	public String toString() {
 		return "Tische [spieler=" + spieler + ", kartenDeck=" + kartenDeck
@@ -102,7 +101,7 @@ public class Tische {
 		 * Methode zum Mischen der Karten
 		 */
 		public void mischeKarten() {
-			KartenMischer.mischeKarten(kartenDeck);
+			KartenMischer.shuffle(kartenDeck);
 
 		}
 

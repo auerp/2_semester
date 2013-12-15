@@ -16,6 +16,9 @@ public class Main {
 		Tische.Dealer dealer1 = tisch1.new Dealer("Hans", 80000);
 		Tische tisch2 = new Tische(casino);
 		Tische.Dealer dealer2 = tisch2.new Dealer("Achmet", 300000);
+		
+		// Kartendeck erzeugen
+		KartenDeck kartenDeck = new KartenDeck();
 
 		// Spieler erzeugen
 		Spieler spieler1 = new Spieler("Lutz", 1000, casino);
@@ -41,18 +44,14 @@ public class Main {
 		Spieler spieler21 = new Spieler("Laura", 7000, casino);
 		Spieler spieler22 = new Spieler("Patricia", 7000, casino);
 		Spieler spieler23 = new Spieler("Michelle", 7000, casino);
+		
+		
 
 		// Listen erstellen
 		// ArrayList<Spieler> spielerList = new ArrayList<Spieler>();
 		// ArrayList<Tische> tisch1 = new ArrayList<Tische>();
 		// ArrayList alleTische = new ArrayList();
 		// ArrayList casinos = new ArrayList();
-
-		// Kartendeck erstellen
-		KartenDeck kartenDeck = new KartenDeck();
-		kartenDeck.deckErstellen();
-
-		// kartenDeck.mischeKarten();
 
 		// Spieler der Spielerliste hinzufügen
 		// spielerList.add(spieler1);
@@ -93,5 +92,14 @@ public class Main {
 		// Asugabe Tische
 		System.out.println(tisch1);
 		System.out.println(tisch2);
+		
+		System.out.println(casino.spielerTischZuweisen());
+		
+		dealer1.mischeKarten();
+		dealer1.austeilenKarten();
+		dealer1.einsammelnKarten();
+		
+		
+		
 	}
 }

@@ -66,9 +66,8 @@ public class Casino {
 	}
 
 	// Methode spielStarten
-	public String spielStarten() {
-
-	}
+	// public String spielStarten() {
+	// }
 
 	/**
 	 * Methode die das Vermoegen liefert
