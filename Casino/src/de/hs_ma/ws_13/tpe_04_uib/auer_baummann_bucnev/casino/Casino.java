@@ -16,7 +16,7 @@ public class Casino {
 	 * @param vermoegen
 	 *            Vermoegen des Casinos
 	 */
-	Casino(int anzahlTische, int vermoegen) {
+	public Casino(int anzahlTische, int vermoegen) {
 		this.setVermoegen(vermoegen);
 		this.tische = new ArrayList<Tische>();
 		this.addTische(anzahlTische);
@@ -64,6 +64,11 @@ public class Casino {
 		}
 
 	}
+	
+	// Methode starteSpiel
+	public String starteSpiel(){
+		
+	}
 
 	/**
 	 * Methode die das Vermoegen liefert
@@ -92,6 +97,8 @@ public class Casino {
 		this.gewinn += gewinn;
 	}
 
+	
+	
 	@Override
 	public String toString() {
 		return "Casino [vermoegen=" + vermoegen + ", gewinn=" + gewinn + "]";
