@@ -31,8 +31,8 @@ public class Main {
 		Spieler spieler2 = new Spieler("Peter", 2000, casino2);
 		
 		
-		System.out.println("Spieler:" + spieler1.getId());
-		System.out.println("Spieler:" + spieler2.getId());
+		System.out.println(spieler1);
+		System.out.println(spieler2);
 		// Spieler spieler3 = new Spieler("Gustav", "03", 500);
 		// Spieler spieler4 = new Spieler("Lutzi", "04", 7000);
 

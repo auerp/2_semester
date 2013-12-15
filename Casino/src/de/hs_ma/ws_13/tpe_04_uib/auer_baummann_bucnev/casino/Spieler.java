@@ -96,4 +96,10 @@ public class Spieler {
 		this.hand.addKarte(karte);
 	}
 	
+	@Override
+	public String toString() {
+		return "Spieler [name=" + name + ", id=" + id + ", vermoegen="
+				+ vermoegen + ", hand=" + hand + "]";
+	}
+	
 }
