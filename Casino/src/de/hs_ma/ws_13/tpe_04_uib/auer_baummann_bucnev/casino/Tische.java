@@ -7,7 +7,7 @@ public class Tische {
 
 	// private Pot pot;
 	private Map<String, Integer> pot;
-	private int tischNr = 0;
+	// private int tischNr = 0;
 	private Map<String, Spieler> spieler;
 	private KartenDeck kartenDeck;
 	Dealer dealer;
@@ -26,14 +26,14 @@ public class Tische {
 		this.pot = new HashMap<String, Integer>();
 	}
 
-	/**
-	 * Methode, um eine Tischnummer zu liefern
-	 * 
-	 * @return tischNr liefert die Tischnummer
-	 */
-	public int getTischNr() {
-		return this.tischNr;
-	}
+	// /**
+	// * Methode, um eine Tischnummer zu liefern
+	// *
+	// * @return tischNr liefert die Tischnummer
+	// */
+	// public int getTischNr() {
+	// return this.tischNr;
+	// }
 
 	/**
 	 * Methode, um den Spieler zurueck zu liefern
@@ -64,6 +64,13 @@ public class Tische {
 		return spieler.size();
 	}
 
+	@Override
+	public String toString() {
+		return "Tische [spieler=" + spieler + ", kartenDeck=" + kartenDeck
+				+ ", dealer=" + dealer + ", casino=" + casino
+				+ ", gewinnerSpieler=" + gewinnerSpieler + "]";
+	}
+
 	/**
 	 * Innere Klasse die den Dealer enthaelt
 	 * 
@@ -80,7 +87,7 @@ public class Tische {
 		/**
 		 * Konstruktor zur Erzeugung eines Dealer
 		 */
-		Dealer(String name, double vermoegen) {
+		public Dealer(String name, double vermoegen) {
 			this.name = name;
 			this.vermoegenDealer = vermoegen;
 			dealer = this; // greift auf globalen Dealer vom tisch zu
@@ -164,6 +171,12 @@ public class Tische {
 			}
 			gewinnerSpieler = besteSpieler;
 
+		}
+
+		@Override
+		public String toString() {
+			return "Dealer [hand=" + hand + ", name=" + name
+					+ ", vermoegenDealer=" + vermoegenDealer + "]";
 		}
 
 		// Auszahlung an Gewinner

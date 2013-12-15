@@ -8,8 +8,6 @@ public class Casino {
 	private int gewinn;
 	private ArrayList<Tische> tische;
 
-	// private ArrayList<Spieler> spieler;
-
 	/**
 	 * Konstruktor zur Erzeugung des Casinos
 	 * 
@@ -36,14 +34,6 @@ public class Casino {
 		}
 	}
 
-	public int getGewinn() {
-		return this.gewinn;
-	}
-
-	public void setGewinn(int gewinn) {
-		this.gewinn += gewinn;
-	}
-
 	/**
 	 * Methode, um die Anzahl der Tische festzulegen
 	 * 
@@ -53,7 +43,6 @@ public class Casino {
 		return tische;
 	}
 
-	
 	/**
 	 * Methode, um die Spieler einem Tisch zuzuweisen
 	 * 
@@ -93,6 +82,19 @@ public class Casino {
 	 */
 	public void setVermoegen(int vermoegen) {
 		this.vermoegen = vermoegen;
+	}
+
+	public int getGewinn() {
+		return this.gewinn;
+	}
+
+	public void setGewinn(int gewinn) {
+		this.gewinn += gewinn;
+	}
+
+	@Override
+	public String toString() {
+		return "Casino [vermoegen=" + vermoegen + ", gewinn=" + gewinn + "]";
 	}
 
 }
