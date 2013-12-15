@@ -132,7 +132,7 @@ public class Tische {
 		}
 
 		// Einsätze der Spieler
-		protected int abfragen(Spieler spieler) {
+		protected int einsatzAbfragen(Spieler spieler) {
 			String id = spieler.getId();
 			return Tische.this.pot.get(id);
 		}
