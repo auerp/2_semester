@@ -30,8 +30,8 @@ public class Main {
 		// Spieler erzeugen
 		Spieler spieler1 = new Spieler("Lutz", 1000, casino1);
 		Spieler spieler2 = new Spieler("Peter", 2000, casino1);
-		Spieler spieler3 = new Spieler("Gustav", 500, casino1);
-		Spieler spieler4 = new Spieler("Lutzi", 7000, casino1);
+		Spieler spieler3 = new Spieler("Gustav", 500, casino2);
+		Spieler spieler4 = new Spieler("Lutzi", 7000, casino2);
 
 		// Ausgabe Spieler
 		System.out.println(spieler1);

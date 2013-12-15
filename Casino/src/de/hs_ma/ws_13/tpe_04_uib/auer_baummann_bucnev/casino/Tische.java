@@ -83,8 +83,7 @@ public class Tische {
 		Dealer(String name, double vermoegen) {
 			this.name = name;
 			this.vermoegenDealer = vermoegen;
-			// greift auf globalen Dealer vom tisch zu
-			dealer = this;
+			dealer = this; // greift auf globalen Dealer vom tisch zu
 		}
 
 		/**
@@ -148,9 +147,9 @@ public class Tische {
 						if (summe == besteSpielerHand.getSumme()) {
 							besteSpieler.add(spieler);
 						} else if (summe > besteSpielerHand.getSumme()) {
-							// Liste löschen um den besten spieler danach
-							// einzuspeichern
-							besteSpieler.clear();
+							besteSpieler.clear(); // Liste löschen um den besten
+													// spieler danach
+													// einzuspeichern
 							besteSpieler.add(spieler);
 						}
 					}
