@@ -64,10 +64,10 @@ public class Casino {
 		}
 
 	}
-	
-	// Methode starteSpiel
-	public String spielStarten(){
-		
+
+	// Methode spielStarten
+	public String spielStarten() {
+
 	}
 
 	/**
@@ -97,8 +97,6 @@ public class Casino {
 		this.gewinn += gewinn;
 	}
 
-	
-	
 	@Override
 	public String toString() {
 		return "Casino [vermoegen=" + vermoegen + ", gewinn=" + gewinn + "]";

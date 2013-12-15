@@ -64,6 +64,11 @@ public class Tische {
 		return spieler.size();
 	}
 
+	// Methode spielStarten
+	public String spielStarten(){
+		
+	}
+	
 	@Override
 	public String toString() {
 		return "Tische [spieler=" + spieler + ", kartenDeck=" + kartenDeck
