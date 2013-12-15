@@ -42,9 +42,14 @@ public class Hand {
 	public void removeKarten() {
 		kartenHand.clear();
 	}
-	
-	public ArrayList<Karte> getKartenHand()
-	{
+
+	public ArrayList<Karte> getKartenHand() {
 		return this.kartenHand;
 	}
+
+	@Override
+	public String toString() {
+		return "Hand [summe=" + summe + ", kartenHand=" + kartenHand + "]";
+	}
+
 }
