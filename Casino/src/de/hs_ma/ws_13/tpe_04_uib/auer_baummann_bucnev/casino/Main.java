@@ -12,8 +12,7 @@ public class Main {
 		ArrayList alleTische = new ArrayList();
 		ArrayList casinos = new ArrayList();
 
-		Casino casino1 = new Casino(10, 5000);
-		Casino casino2 = new Casino(12, 2500);
+		Casino casino = new Casino(10, 5000);
 
 		KartenDeck kartenDeck = new KartenDeck();
 		// kartenDeck.hinzufuegen();
@@ -28,10 +27,10 @@ public class Main {
 
 		// Spieler Casinos noch anschauen
 		// Spieler erzeugen
-		Spieler spieler1 = new Spieler("Lutz", 1000, casino1);
-		Spieler spieler2 = new Spieler("Peter", 2000, casino1);
-		Spieler spieler3 = new Spieler("Gustav", 500, casino2);
-		Spieler spieler4 = new Spieler("Lutzi", 7000, casino2);
+		Spieler spieler1 = new Spieler("Lutz", 1000, casino);
+		Spieler spieler2 = new Spieler("Peter", 2000, casino);
+		Spieler spieler3 = new Spieler("Gustav", 500, casino);
+		Spieler spieler4 = new Spieler("Lutzi", 7000, casino);
 
 		// Ausgabe Spieler
 		System.out.println(spieler1);
