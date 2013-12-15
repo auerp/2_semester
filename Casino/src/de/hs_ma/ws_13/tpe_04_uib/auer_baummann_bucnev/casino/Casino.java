@@ -66,7 +66,7 @@ public class Casino {
 	}
 	
 	// Methode starteSpiel
-	public String starteSpiel(){
+	public String spielStarten(){
 		
 	}
 
