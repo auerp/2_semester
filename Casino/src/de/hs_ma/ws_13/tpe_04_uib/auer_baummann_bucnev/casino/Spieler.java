@@ -92,6 +92,11 @@ public class Spieler {
 		this.vermoegen = vermoegen;
 	}
 	
+	/**
+	 * Methode, die die eine Karte in die Hand nimmt
+	 * @param karte 
+	 * 			Karte eines Spielers
+	 */
 	public void setHand(Karte karte){
 		this.hand.addKarte(karte);
 	}
