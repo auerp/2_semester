@@ -81,23 +81,26 @@ public class Main {
 		// System.out.println(spieler4);
 
 		// Ausgabe Casino
-		System.out.println(casino);
+//		System.out.println(casino);
 
 		// Ausgabe Dealer
-		System.out.println(dealer1);
+//		System.out.println(dealer1);
 
 		// Ausgabe Kartendeck
-		System.out.println(kartenDeck);
+//		System.out.println(kartenDeck);
 
 		// Asugabe Tische
-		System.out.println(tisch1);
-		System.out.println(tisch2);
+//		System.out.println(tisch1);
+//		System.out.println(tisch2);
 		
-		System.out.println(casino.spielerTischZuweisen());
+//		System.out.println(casino.spielerTischZuweisen());
 		
-		dealer1.mischeKarten();
-		dealer1.austeilenKarten();
-		dealer1.einsammelnKarten();
+//		dealer1.mischeKarten();
+//		dealer1.austeilenKarten();
+		
+		dealer1.austeilenKarten(kartenDeck);
+		System.out.println(tisch1.getSpieler());
+//		dealer1.einsammelnKarten();
 		
 		
 		

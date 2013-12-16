@@ -87,6 +87,7 @@ public class Tische {
 		private Hand hand = new Hand();
 		String name;
 		double vermoegenDealer;
+		private KartenDeck kartenDeck;
 
 		/**
 		 * Konstruktor zur Erzeugung eines Dealer
@@ -106,15 +107,16 @@ public class Tische {
 		}
 
 		// Karten austeilen an Spieler und sich selbst
-		protected void austeilenKarten() {
+		protected void austeilenKarten(KartenDeck kartenDeck){
+			this.kartenDeck = kartenDeck;
 			int kartenAnzahl = 0;
 			while (kartenAnzahl != 3) {
 				for (Spieler it : Tische.this.spieler.values()) {
-					Karte karte = Tische.this.kartenDeck.pop();
+					Karte karte = Tische.this.dealer.kartenDeck.pop();
 					it.setHand(karte);
 				}
 				// Ausgabe der Karten an den Dealer
-				this.hand.addKarte(Tische.this.kartenDeck.pop());
+				Tische.this.dealer.hand.addKarte(Tische.this.dealer.kartenDeck.pop());
 				kartenAnzahl++;
 			}
 		}
