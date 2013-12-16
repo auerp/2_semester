@@ -205,7 +205,7 @@ public class Tische {
 //			if(gewinnerSpieler.isEmpty()){
 //				return Tische.Dealer;
 //			}
-			if(gewinnerSpieler.isEmpty()){
+			if(!gewinnerSpieler.isEmpty()){
 				return gewinnerSpieler;
 			} 
 			else{
