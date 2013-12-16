@@ -14,6 +14,7 @@ public class Tische {
 	Dealer dealer;
 	Casino casino;
 	private Stack<Spieler> gewinnerSpieler;
+	private Stack<Dealer> gewinnerDealer;
 
 	/**
 	 * Konstruktor zur Erzeugung eines Tisches
@@ -176,18 +177,18 @@ public class Tische {
 				}
 			}
 			//TODO Dealer in Spieler casten
-			if(besteSpieler.isEmpty()){
-				Stack <Dealer> eg = new Stack<Dealer>();
- 				eg.add(Tische.this.dealer);
- 				gewinnerSpieler = (Stack<Spieler>)eg.firstElement();
-			}
+//			if(besteSpieler.isEmpty()){
+//				Stack <Dealer> eg = new Stack<Dealer>();
+// 				eg.add(dealer);
+// 				gewinnerSpieler = (Stack<Spieler>)eg.firstElement();
+//			}
 			
 			int dealersumme = this.hand.getSumme();
 			if (dealersumme <= 21) {
 				Hand besteSpielerHand = besteSpieler.firstElement().getHand();
 				if (dealersumme >= besteSpielerHand.getSumme()) {
 					besteSpieler.clear();
-					
+					gewinnerDealer.add(dealer);
 					//TODO das Dealer gewinnt
 					
 				}
@@ -200,11 +201,16 @@ public class Tische {
 			return this.hand;
 		}
 		
-		public Stack<Spieler> getGewinner(){
+		public Stack<?> getGewinner(){
 //			if(gewinnerSpieler.isEmpty()){
 //				return Tische.Dealer;
 //			}
-			return gewinnerSpieler;
+			if(gewinnerSpieler.isEmpty()){
+				return gewinnerSpieler;
+			} 
+			else{
+				return gewinnerDealer;
+			}
 		}
 
 		@Override
