@@ -107,6 +107,10 @@ public class Tische {
 			KartenMischer.shuffle(kartenDeck);
 
 		}
+		
+		public double getDealerVermoegen(){
+			return this.vermoegenDealer;
+		}
 
 		// Karten austeilen an Spieler und sich selbst
 		protected void austeilenKarten(KartenDeck kartenDeck){
@@ -171,18 +175,34 @@ public class Tische {
 					}
 				}
 			}
+			//TODO Dealer in Spieler casten
+			if(besteSpieler.isEmpty()){
+				Stack <Dealer> eg = new Stack<Dealer>();
+ 				eg.add(Tische.this.dealer);
+ 				gewinnerSpieler = (Stack<Spieler>)eg.firstElement();
+			}
+			
 			int dealersumme = this.hand.getSumme();
 			if (dealersumme <= 21) {
 				Hand besteSpielerHand = besteSpieler.firstElement().getHand();
 				if (dealersumme >= besteSpielerHand.getSumme()) {
 					besteSpieler.clear();
+					//TODO das Dealer gewinnt
+					
 				}
 			}
 			gewinnerSpieler = besteSpieler;
 
 		}
 		
+		public Hand getDealerHand(){
+			return this.hand;
+		}
+		
 		public Stack<Spieler> getGewinner(){
+//			if(gewinnerSpieler.isEmpty()){
+//				return Tische.Dealer;
+//			}
 			return gewinnerSpieler;
 		}
 

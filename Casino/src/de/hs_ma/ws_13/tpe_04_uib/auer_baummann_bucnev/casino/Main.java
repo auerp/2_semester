@@ -47,18 +47,8 @@ public class Main {
 		
 		
 
-		// Listen erstellen
-		// ArrayList<Spieler> spielerList = new ArrayList<Spieler>();
-		// ArrayList<Tische> tisch1 = new ArrayList<Tische>();
-		// ArrayList alleTische = new ArrayList();
-		// ArrayList casinos = new ArrayList();
-
-		// Spieler der Spielerliste hinzufügen
-		// spielerList.add(spieler1);
-		// spielerList.add(spieler2);
-		// spielerList.add(spieler2);
-		// spielerList.add(spieler3);
-		// spielerList.add(spieler4);
+	
+	
 
 		// Spieler tische zuweisen
 		// Tisch 1
@@ -120,14 +110,17 @@ public class Main {
 		System.out.println(tisch2);
 		System.out.println();
 		System.out.println();
-		System.out.println("Verschaffen wir uns einen Einblick ins Spielgeschehen");
+		System.out.println("Verschaffen wir uns einen Einblick ins Spielgeschehen \n");
 		System.out.println("Kartendeck: "+kartenDeck);
 		dealer1.mischeKarten(kartenDeck);
 		System.out.println("Dealer mischt die Karten: "+ kartenDeck);
-		System.out.println("Dealer teilt Karten aus:");
+		System.out.println("Dealer teilt Karten aus.");
 		dealer1.austeilenKarten(kartenDeck);
+//		System.out.println(dealer1.getDealerHand());
+//		dealer1.festlegenGewinner();
 //		System.out.println("Hand des 1. Spielers: "+ spieler1.getHand());
 //		System.out.println("Wert der Hand des 1. Spielers: "+ spieler1.getHand().getSumme());
+//		System.out.println("Vermoegen des 1. Spielers: "+ spieler1.getVermoegen());
 //		System.out.println("Hand des 2. Spielers: "+ spieler2.getHand());
 //		System.out.println("Wert der Hand des 2. Spielers: "+ spieler2.getHand().getSumme());
 //		System.out.println("Hand des 3. Spielers: "+ spieler3.getHand());
@@ -136,9 +129,10 @@ public class Main {
 //		System.out.println("Wert der Hand des 4. Spielers: "+ spieler4.getHand().getSumme());
 //		System.out.println("Hand des 5. Spielers: "+ spieler5.getHand());
 //		System.out.println("Wert der Hand des 5. Spielers: "+ spieler5.getHand().getSumme());
-		System.out.println();
+//		System.out.println();
 		dealer1.festlegenGewinner();
 		System.out.println("Gewinner dieser Runde: "+ dealer1.getGewinner());
+		System.out.println(dealer1.getDealerVermoegen());;
 		
 		
 		
