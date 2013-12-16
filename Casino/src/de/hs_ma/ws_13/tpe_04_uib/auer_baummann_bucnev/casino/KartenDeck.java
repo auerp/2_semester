@@ -24,4 +24,7 @@ public class KartenDeck extends Stack<Karte> {
 			}
 		}
 	}
+
+	
+	
 }

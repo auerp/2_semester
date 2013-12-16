@@ -29,11 +29,16 @@ public class Spieler {
 	/**
 	 * Methode um einen Betrag zu setzen
 	 * 
-	 * @param betrag
+	 * @param einsatz
 	 *            Betrag der gesetzt werden soll
 	 */
-	public void setzen(int betrag) {
-		this.vermoegen = this.vermoegen - betrag;
+	public int setzen(int einsatz) {
+		if(einsatz <=0){
+			return 0;
+		}
+		this.vermoegen = this.vermoegen - einsatz;
+		return (int) this.vermoegen;
+		
 	}
 
 	/**

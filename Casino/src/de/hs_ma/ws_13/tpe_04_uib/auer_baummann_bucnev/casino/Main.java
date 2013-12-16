@@ -93,23 +93,23 @@ public class Main {
 		
 		System.out.println("***************************************************************************");
 		System.out.println("Herzlich Willkommen im Casino Royal");
-		System.out.println();
-		System.out.println(casino);
-		System.out.println();
-		System.out.println("Folgende Tische sind vorhanden:");
-		System.out.println(casino.getTische());
-		System.out.println();
-		System.out.println("---------Tisch 1---------");
-		System.out.println("Dealer: " + dealer1);
-		System.out.println("Spieler:");
-		System.out.println(tisch1);
-		System.out.println();
-		System.out.println("---------Tisch 2---------");
-		System.out.println("Dealer: " + dealer2);
-		System.out.println("Spieler:");
-		System.out.println(tisch2);
-		System.out.println();
-		System.out.println();
+//		System.out.println();
+//		System.out.println(casino);
+//		System.out.println();
+//		System.out.println("Folgende Tische sind vorhanden:");
+//		System.out.println(casino.getTische());
+//		System.out.println();
+//		System.out.println("---------Tisch 1---------");
+//		System.out.println("Dealer: " + dealer1);
+//		System.out.println("Spieler:");
+//		System.out.println(tisch1);
+//		System.out.println();
+//		System.out.println("---------Tisch 2---------");
+//		System.out.println("Dealer: " + dealer2);
+//		System.out.println("Spieler:");
+//		System.out.println(tisch2);
+//		System.out.println();
+//		System.out.println();
 		System.out.println("Verschaffen wir uns einen Einblick ins Spielgeschehen \n");
 		System.out.println("Kartendeck: "+kartenDeck);
 		dealer1.mischeKarten(kartenDeck);
@@ -132,7 +132,7 @@ public class Main {
 //		System.out.println();
 		dealer1.festlegenGewinner();
 		System.out.println("Gewinner dieser Runde: "+ dealer1.getGewinner());
-		System.out.println(dealer1.getDealerVermoegen());;
+		System.out.println(dealer1.getDealerVermoegen());
 		
 		
 		
