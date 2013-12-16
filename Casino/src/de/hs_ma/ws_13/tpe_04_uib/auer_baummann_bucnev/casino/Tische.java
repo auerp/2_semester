@@ -1,6 +1,7 @@
 package de.hs_ma.ws_13.tpe_04_uib.auer_baummann_bucnev.casino;
 
 import de.hs_ma.ws_13.tpe_04_uib.auer_baummann_bucnev.casino.Hand;
+
 import java.util.*;
 
 public class Tische {
@@ -101,7 +102,8 @@ public class Tische {
 		/**
 		 * Methode zum Mischen der Karten
 		 */
-		public void mischeKarten() {
+		public void mischeKarten(KartenDeck kartenDeck) {
+			this.kartenDeck = kartenDeck;
 			KartenMischer.shuffle(kartenDeck);
 
 		}
@@ -151,6 +153,7 @@ public class Tische {
 			for (Spieler spieler : Tische.this.spieler.values()) {
 				Hand spielerhand = spieler.getHand();
 				int summe = spielerhand.getSumme();
+				summe = summe/2;    						//Ist Quatsch weiß aber gerade keine bessere Lösung
 				if (summe <= 21) {
 					if (besteSpieler.isEmpty()) {
 						besteSpieler.add(spieler);
@@ -177,6 +180,10 @@ public class Tische {
 			}
 			gewinnerSpieler = besteSpieler;
 
+		}
+		
+		public Stack<Spieler> getGewinner(){
+			return gewinnerSpieler;
 		}
 
 		@Override
