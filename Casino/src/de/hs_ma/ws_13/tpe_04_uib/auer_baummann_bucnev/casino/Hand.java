@@ -43,6 +43,9 @@ public class Hand {
 		kartenHand.clear();
 	}
 
+	/**
+	 * Methode, die die Karten von der Hand zurueck gibt
+	 */
 	public ArrayList<Karte> getKartenHand() {
 		return this.kartenHand;
 	}

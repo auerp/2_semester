@@ -187,6 +187,7 @@ public class Tische {
 				Hand besteSpielerHand = besteSpieler.firstElement().getHand();
 				if (dealersumme >= besteSpielerHand.getSumme()) {
 					besteSpieler.clear();
+					
 					//TODO das Dealer gewinnt
 					
 				}
