@@ -153,7 +153,7 @@ public class Tische {
 			for (Spieler spieler : Tische.this.spieler.values()) {
 				Hand spielerhand = spieler.getHand();
 				int summe = spielerhand.getSumme();
-				summe = summe/2;    						//Ist Quatsch weiß aber gerade keine bessere Lösung
+//				summe = summe/2;    						//Ist Quatsch weiß aber gerade keine bessere Lösung
 				if (summe <= 21) {
 					if (besteSpieler.isEmpty()) {
 						besteSpieler.add(spieler);
