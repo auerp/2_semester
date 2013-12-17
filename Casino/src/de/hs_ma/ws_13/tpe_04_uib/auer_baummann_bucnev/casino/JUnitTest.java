@@ -2,6 +2,8 @@ package de.hs_ma.ws_13.tpe_04_uib.auer_baummann_bucnev.casino;
 
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
+
 import org.junit.Test;
 
 import de.hs_ma.ws_13.tpe_04_uib.auer_baummann_bucnev.casino.Karte.EnumKartenFarbe;
@@ -11,26 +13,40 @@ public class JUnitTest {
 
 	Casino casino = new Casino(3, 20000);
 	KartenDeck kartenDeck = new KartenDeck();
+	Tische tisch1 = new Tische(casino);
+	Tische.Dealer dealer1 = tisch1.new Dealer("Hans", 80000);
+	Spieler spieler1 = new Spieler("Dodo", 1000, casino);
+	ArrayList<Karte> kartenHand = new ArrayList<Karte>();
 
 	@Test
 	public void testCasino() {
-		
-//		assertEquals(5, casino.addTische(5));
+
+		// assertEquals(casino.addTische(5) );
 
 		// Im Casino
 		// Spieler Tisch zuweisen
 		// Tisch hinzufügen
 	}
-	
-	
 
 	@Test
-	public void testHand(){
+	public void testHand() {
 
-	// Hand
-	// Summe der Karten auf der Hand
-	// AddKarten
-	// removeKarten?
+		Karte karte1 = new Karte(EnumKartenWert.DREI, EnumKartenFarbe.HERZ);
+		Karte karte2 = new Karte(EnumKartenWert.BUBE, EnumKartenFarbe.HERZ);
+
+		spieler1.setHand(karte1);
+		spieler1.setHand(karte2);
+
+		// AddKarten
+		assertEquals(true, kartenHand.add(new Karte(EnumKartenWert.DREI,
+				EnumKartenFarbe.HERZ)));
+		assertEquals(true, kartenHand.add(new Karte(EnumKartenWert.BUBE,
+				EnumKartenFarbe.HERZ)));
+
+		// Summe der Karten auf der Hand
+		assertEquals(13, spieler1.getHand().getSumme());
+
+		// removeKarten?
 	}
 
 	@Test
@@ -49,49 +65,80 @@ public class JUnitTest {
 
 	@Test
 	public void testKartenDeck() {
-		// KartenDeck
 		// Deck erstellen
-		// TODO ergibt das Sinn?
 		assertEquals(false, kartenDeck.equals(new KartenDeck()));
+		
+		//Länge des Decks
+		assertEquals(52, kartenDeck.size());
 
 	}
 
 	// TODO wird alles im Dealer getestet oder?
 	@Test
 	public void testKartenMischer() {
+		
+		
+
 		// Kartenmischer
 		// shuffle Methode testen
+//		assertEquals(false, kartenDeck.equals(KartenMischer.shuffle(kartenDeck)));
 
 	}
 
 	@Test
 	public void testSpieler() {
-		// Spieler
 
-		assertEquals(900, new Spieler("Lutz", 1000, casino).setzen(100));
+		Karte karte1 = new Karte(EnumKartenWert.DREI, EnumKartenFarbe.HERZ);
+		Karte karte2 = new Karte(EnumKartenWert.BUBE, EnumKartenFarbe.HERZ);
+
 		// Einsatz setzen
-		// Pot gewonnen
-		// getHand
+		assertEquals(900, new Spieler("Lutz", 1000, casino).setzen(100));
+
 		// setHand
+		spieler1.setHand(karte1);
+		spieler1.setHand(karte2);
+
+		// getHand
+		Hand hand = new Hand();
+		hand.addKarte(karte1);
+		hand.addKarte(karte2);
+		//TODO Warum gibt der false aus?
+//		assertEquals(true,spieler1.getHand().equals(hand));
+
+		// Pot gewonnen
+
 	}
 
 	@Test
 	public void testTische() {
-		// Tische
+		
+		tisch1.addSpieler(spieler1);
+		
 		// addSpieler
+		//TODO Das gleiche Spiel hier mit dem false, warum?
+//		assertEquals(true ,tisch1.getSpieler().equals(tisch1) );
+		
+		
 		// getAnzahlSpieler
+		assertEquals(1, tisch1.getAnzahlSpieler());
 	}
 
 	@Test
 	public void testDealer() {
-
-//		assertEquals(false, kartenDeck.equals(new Tische.Dealer("Gustav", 200)
-//				.mischeKarten(kartenDeck)));
-		// Dealer
+		
 		// Karten mischen
+		KartenDeck kartenDeckNeu =  new KartenDeck ();
+		dealer1.mischeKarten(kartenDeckNeu);
+
+		 assertEquals(false, kartenDeck.equals(kartenDeckNeu));
+		
 		// Karten einsammeln
-		// Einsatz abfragen
+		 
+		
 		// Gewinner festlegen
+//		 assertEquals(true, dealer1.festlegenGewinner());
+		 
+		// Einsatz abfragen
 		// auszahlen
 	}
 
