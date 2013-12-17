@@ -8,6 +8,7 @@ public class Spieler {
 																// ID
 	private double vermoegen;
 	private Hand hand;
+	private int einsatz;
 
 	/**
 	 * Konstruktor zur Erzeugung eines Spielers
@@ -22,6 +23,7 @@ public class Spieler {
 	public Spieler(String name, double vermoegen, Casino casino) {
 		this.name = name;
 		this.vermoegen = vermoegen;
+		
 		this.hand = new Hand();
 		casino.spielerTischZuweisen(this);
 	}
@@ -33,12 +35,17 @@ public class Spieler {
 	 *            Betrag der gesetzt werden soll
 	 */
 	public int setzen(int einsatz) {
+		this.einsatz = einsatz;
 		if(einsatz <=0){
 			return 0;
 		}
 		this.vermoegen = this.vermoegen - einsatz;
 		return (int) this.vermoegen;
 		
+	}
+	
+	public int getEinsatz(){
+		return this.einsatz;
 	}
 
 	/**

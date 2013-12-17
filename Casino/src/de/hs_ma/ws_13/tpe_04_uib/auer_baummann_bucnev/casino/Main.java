@@ -137,6 +137,13 @@ public class Main {
 		
 		
 		
+	Tische.Pot pot = tisch1.new Pot();
+	spieler1.setzen(100);
+	spieler2.setzen(400);
+	spieler3.setzen(200);
+	spieler4.setzen(700);
+	spieler5.setzen(600);
+	pot.potSammeln();
 		
 	}
 }

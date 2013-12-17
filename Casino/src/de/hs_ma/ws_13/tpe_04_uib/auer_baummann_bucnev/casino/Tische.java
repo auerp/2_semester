@@ -241,7 +241,22 @@ public class Tische {
 	 * 
 	 */
 	class Pot {
-
+		
+		private int pot;
+		
+		public Pot(){
+			
+		}
+		
+		
+		public int potSammeln(){
+		for(Spieler spieler : Tische.this.spieler.values() ){
+			pot += spieler.getEinsatz();
+			System.out.println(pot);
+		}
+		return pot;
+		
+		}
 		// verwendet die ID des Spielers zur Verwaltung der Einsätze
 
 	}
