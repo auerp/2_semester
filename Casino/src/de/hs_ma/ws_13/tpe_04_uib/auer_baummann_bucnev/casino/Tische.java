@@ -242,11 +242,25 @@ public class Tische {
 	 */
 	class Pot {
 		
+//		private Map<String, Integer> einsatzSpieler = new HashMap<String, Integer>();
 		private int pot;
 		
-		public Pot(){
+		// private int getInhalt(){
+		// int inhalt = 0;
+		// for(int einsatz : einsatzSpieler.values()){
+		// inhalt = inhalt + einsatz;
+		// }
+		// return inhalt;
+		// }
+		//
+		// public void clear(){
+		// einsatzSpieler.clear();
+		// }
+		
+		Pot(){
 			
 		}
+		
 		
 		
 		public int potSammeln(){
