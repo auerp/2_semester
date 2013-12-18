@@ -83,15 +83,7 @@ public class JUnitTest {
 
 	}
 
-	// TODO wird alles im Dealer getestet oder?
-	@Test
-	public void testKartenMischer() {
-		
-		// Kartenmischer
-		// shuffle Methode testen
-//		assertEquals(false, KartenMischer.shuffle(kartenDeck));
-
-	}
+	
 
 	@Test
 	public void testSpieler() {

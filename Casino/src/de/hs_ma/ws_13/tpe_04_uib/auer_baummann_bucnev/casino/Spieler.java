@@ -70,7 +70,7 @@ public class Spieler {
 	 *            Betrag um welchen das Vermoegen erhoeht wird
 	 */
 	public void gewonnen(double betrag) {
-		this.vermoegen = this.vermoegen + betrag;
+		this.vermoegen +=  betrag;
 	}
 
 	/**

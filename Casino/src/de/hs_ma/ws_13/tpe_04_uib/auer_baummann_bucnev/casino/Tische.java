@@ -318,9 +318,10 @@ public class Tische {
 		 * @return pot 	liefert den gesamten Pot zurueck
 		 */
 		public int potSammeln() {
+			pot = 0;
 			for (Spieler spieler : Tische.this.spieler.values()) {
 				pot += spieler.getEinsatz();
-				System.out.println(pot);
+			
 			}
 			pot += dealer.getEinsatz();
 			return pot;
