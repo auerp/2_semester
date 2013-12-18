@@ -191,6 +191,7 @@ public class Tische {
 			if (dealersumme <= 21 && !besteSpieler.isEmpty()) {
 				Hand besteSpielerHand = besteSpieler.firstElement().getHand();
 				if (dealersumme >= besteSpielerHand.getSumme()) {
+					besterDealer.clear();
 					besteSpieler.clear();
 					besterDealer.add(dealer);
 					gewinnerDealer = besterDealer;
@@ -200,6 +201,7 @@ public class Tische {
 				}
 			}
 			if(dealersumme > 21 && besteSpieler.isEmpty()){
+				besterDealer.clear();
 				besterDealer.add(dealer);
 				gewinnerDealer = besterDealer;
 				
@@ -220,6 +222,7 @@ public class Tische {
 				return gewinnerSpieler;
 			} 
 			else{
+				System.out.println("Gewinner dealer");
 				return gewinnerDealer;
 			}
 		}
