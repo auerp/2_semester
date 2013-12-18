@@ -87,8 +87,6 @@ public class JUnitTest {
 	@Test
 	public void testKartenMischer() {
 		
-		
-
 		// Kartenmischer
 		// shuffle Methode testen
 //		assertEquals(false, KartenMischer.shuffle(kartenDeck));
@@ -112,16 +110,12 @@ public class JUnitTest {
 		Hand hand = new Hand();
 		hand.addKarte(karte1);
 		hand.addKarte(karte2);
-		//TODO Warum gibt der false aus?
-//		assertEquals(true,spieler1.getHand().equals(hand));
-
-		
+		assertEquals(true,spieler1.getHand().getKartenHand().equals(hand.getKartenHand()));		
 	}
 
 	@Test
 	public void testTische() {
 		
-		//Tisch spieler besetzen
 		tisch1.addSpieler(spieler1);
 		
 		// getAnzahlSpieler
@@ -149,18 +143,21 @@ public class JUnitTest {
 		 assertEquals(false, kartenDeck.equals(kartenDeckNeu));
 		
 		// Gewinner festlegen
-//		 assertEquals(true, dealer1.festlegenGewinner());
+//		 assertEquals(dealer1.festlegenGewinner());
 		 
 		// Einsatz abfragen
-		 spieler1.setzen(200);
-		 
+		 spieler1.setzen(200);		 
 		 assertEquals(200, spieler1.getEinsatz());
+		 
+		 dealer1.setzen(43);
+		 assertEquals(43, dealer1.getEinsatz());
+		 
 		// auszahlen
 		 Spieler spieler = new Spieler("Haha",300,casino);
 		 Tische tisch = new Tische(casino);
 		 tisch.addSpieler(spieler);
 		 dealer1.auszahlen(200);
-		 assertEquals();
+//		 assertEquals();
 		
 	}
 
