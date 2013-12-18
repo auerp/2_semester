@@ -173,9 +173,9 @@ public class Main {
 //			bla
 //waha läuft immer noch nicht.
 			
-		} while (i <= spieler1.getVermoegen()||  spieler2.getVermoegen()
-				|| spieler3.getVermoegen() || spieler4.getVermoegen()
-				|| spieler5.getVermoegen() || dealer1.getDealerVermoegen());
+		} while (i <= spieler1.getVermoegen()||  i<=spieler2.getVermoegen()
+				|| i<=spieler3.getVermoegen() || i<=spieler4.getVermoegen()
+				|| i<=spieler5.getVermoegen() || i<=dealer1.getDealerVermoegen());
 		
 
 	}
