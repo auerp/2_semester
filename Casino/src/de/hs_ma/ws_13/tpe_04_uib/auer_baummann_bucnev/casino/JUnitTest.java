@@ -115,19 +115,14 @@ public class JUnitTest {
 		//TODO Warum gibt der false aus?
 //		assertEquals(true,spieler1.getHand().equals(hand));
 
-		// Pot gewonnen
 		
 	}
 
 	@Test
 	public void testTische() {
 		
+		//Tisch spieler besetzen
 		tisch1.addSpieler(spieler1);
-		
-		// addSpieler
-		//TODO Das gleiche Spiel hier mit dem false, warum?
-//		assertEquals(true ,tisch1.getSpieler().equals(tisch1) );
-		
 		
 		// getAnzahlSpieler
 		assertEquals(1, tisch1.getAnzahlSpieler());
