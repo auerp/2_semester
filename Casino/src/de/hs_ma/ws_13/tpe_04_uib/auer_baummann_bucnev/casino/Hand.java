@@ -18,7 +18,9 @@ public class Hand {
 	 * @return summe liefert die Summer aller Karten zurueck
 	 */
 	public int getSumme() {
+		int summe = 0; // summe auf Null setzen, sonst wird summe aufgerechnet
 		for (Karte karte : kartenHand) {
+			System.out.println("Summer der Hand: " + summe);
 			summe = summe + karte.getWert();
 		}
 		return summe;
