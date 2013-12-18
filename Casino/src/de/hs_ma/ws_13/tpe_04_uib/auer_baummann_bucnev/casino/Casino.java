@@ -47,8 +47,8 @@ public class Casino {
 	 * 
 	 * @return tische liefert den Wert der enthaltenen Tische zurueck
 	 */
-	public ArrayList<Tische> getTische() {
-		return tische;
+	public int getTische() {
+		return this.tische.size();
 	}
 
 	/**

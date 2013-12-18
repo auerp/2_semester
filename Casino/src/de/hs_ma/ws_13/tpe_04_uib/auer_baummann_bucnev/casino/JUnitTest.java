@@ -1,7 +1,6 @@
 package de.hs_ma.ws_13.tpe_04_uib.auer_baummann_bucnev.casino;
 
 import static org.junit.Assert.*;
-
 import java.util.ArrayList;
 
 import org.junit.Test;
@@ -21,11 +20,13 @@ public class JUnitTest {
 	@Test
 	public void testCasino() {
 
-		// assertEquals(casino.addTische(5) );
+		
+		assertEquals(3, casino.getTische());
 
-		// Im Casino
-		// Spieler Tisch zuweisen
-		// Tisch hinzufügen
+		// Im Casino Spieler Tisch zuweisen	 
+//		assertEquals(true, casino.spielerTischZuweisen(spieler1));
+		
+		 // Tisch hinzufügen
 		
 		
 		
@@ -152,24 +153,6 @@ public class JUnitTest {
 
 		 assertEquals(false, kartenDeck.equals(kartenDeckNeu));
 		
-		// Karten einsammeln
-		 Karte karte1 = new Karte(EnumKartenWert.DREI, EnumKartenFarbe.HERZ); 
-		 Karte karte2 = new Karte(EnumKartenWert.BUBE, EnumKartenFarbe.HERZ); 
-//		 Hand hand = new Hand(); 
-//		 hand.addKarte(karte1);
-//		 hand.addKarte(karte2);
-//		 kartenDeck.add(karte1);
-//		 kartenDeck.add(karte2);
-//		 spieler1.setHand(karte1); 
-//		 spieler1.setHand(karte2); 
-		 kartenDeckNeu.add(karte2);
-		 kartenDeckNeu.add(karte1);
-		 dealer1.austeilenKarten(kartenDeckNeu);
-		 dealer1.einsammelnKarten(); 
-		 assertEquals(false, kartenDeck.equals(kartenDeckNeu));
-//		 hand.removeKarten(); 
-//		 assertEquals(true, kartenDeckNeu.isEmpty());
-		
 		// Gewinner festlegen
 //		 assertEquals(true, dealer1.festlegenGewinner());
 		 
@@ -178,8 +161,11 @@ public class JUnitTest {
 		 
 		 assertEquals(200, spieler1.getEinsatz());
 		// auszahlen
+		 Spieler spieler = new Spieler("Haha",300,casino);
+		 Tische tisch = new Tische(casino);
+		 tisch.addSpieler(spieler);
 		 dealer1.auszahlen(200);
-		 assertEquals(1200,spieler1.getVermoegen());
+		 assertEquals();
 		
 	}
 
@@ -192,7 +178,7 @@ public class JUnitTest {
 		spieler1.setzen(alleEinsaetze/tisch1.getAnzahlSpieler() + 1);
 		dealer1.setzen(alleEinsaetze/tisch1.getAnzahlSpieler() + 1);
 		
-		spieler1.gewonnen(Tische.Pot.this.potSammeln());
+//		spieler1.gewonnen(Tische.Pot.this.potSammeln());
 		
 		
 	}

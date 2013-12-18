@@ -45,11 +45,6 @@ public class Main {
 		Spieler spieler22 = new Spieler("Patricia", 7000, casino);
 		Spieler spieler23 = new Spieler("Michelle", 7000, casino);
 		
-		
-
-	
-	
-
 		// Spieler tische zuweisen
 		// Tisch 1
 		tisch1.addSpieler(spieler1);
