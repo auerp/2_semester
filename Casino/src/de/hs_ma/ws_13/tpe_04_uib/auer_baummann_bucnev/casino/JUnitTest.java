@@ -7,6 +7,7 @@ import org.junit.Test;
 
 import de.hs_ma.ws_13.tpe_04_uib.auer_baummann_bucnev.casino.Karte.EnumKartenFarbe;
 import de.hs_ma.ws_13.tpe_04_uib.auer_baummann_bucnev.casino.Karte.EnumKartenWert;
+import de.hs_ma.ws_13.tpe_04_uib.auer_baummann_bucnev.casino.Tische.Pot;
 
 public class JUnitTest {
 
@@ -20,16 +21,17 @@ public class JUnitTest {
 	@Test
 	public void testCasino() {
 
-		
+		//Anzahl der Tische
 		assertEquals(3, casino.getTische());
 
-		// Im Casino Spieler Tisch zuweisen	 
-//		assertEquals(true, casino.spielerTischZuweisen(spieler1));
+		// Im Casino Spieler Tisch zuweisen	
+		casino.spielerTischZuweisen(spieler1);
+		tisch1.addSpieler(spieler1);
+		assertEquals(true, spieler1.equals(spieler1));
 		
 		 // Tisch hinzufügen
-		
-		
-		
+		casino.addTische(1);
+		assertEquals(4 , casino.getTische());		
 	}
 
 	@Test
@@ -50,7 +52,7 @@ public class JUnitTest {
 		// Summe der Karten auf der Hand
 		assertEquals(13, spieler1.getHand().getSumme());
 
-		// removeKarten?
+		//removeKarten
 		Hand hand = new Hand();
 		hand.addKarte(karte1);
 		hand.addKarte(karte2);
@@ -82,7 +84,6 @@ public class JUnitTest {
 		assertEquals(52, kartenDeck.size());
 
 	}
-
 	
 
 	@Test
@@ -135,7 +136,11 @@ public class JUnitTest {
 		 assertEquals(false, kartenDeck.equals(kartenDeckNeu));
 		
 		// Gewinner festlegen
-//		 assertEquals(dealer1.festlegenGewinner());
+		 KartenDeck kartendeck =  new KartenDeck ();
+		 tisch1.addSpieler(spieler1);
+		 dealer1.austeilenKarten(kartendeck);
+		 dealer1.festlegenGewinner();
+//		 assertEquals(true, dealer1.festlegenGewinner());
 		 
 		// Einsatz abfragen
 		 spieler1.setzen(200);		 
@@ -149,7 +154,8 @@ public class JUnitTest {
 		 Tische tisch = new Tische(casino);
 		 tisch.addSpieler(spieler);
 		 dealer1.auszahlen(200);
-//		 assertEquals();
+		 spieler.gewonnen(200);
+		 assertEquals(500, spieler.getVermoegen());
 		
 	}
 
@@ -162,6 +168,8 @@ public class JUnitTest {
 		spieler1.setzen(alleEinsaetze/tisch1.getAnzahlSpieler() + 1);
 		dealer1.setzen(alleEinsaetze/tisch1.getAnzahlSpieler() + 1);
 		
+		int h = Pot.this.potSammeln();
+		assertEquals(1000, h);
 //		spieler1.gewonnen(Tische.Pot.this.potSammeln());
 		
 		
