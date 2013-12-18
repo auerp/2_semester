@@ -142,7 +142,7 @@ public class JUnitTest {
 		 tisch1.addSpieler(spieler1);
 		 dealer1.austeilenKarten(kartendeck);
 		 dealer1.festlegenGewinner();
-//		 assertEquals(true, dealer1.festlegenGewinner());
+
 		 
 		// Einsatz abfragen
 		 spieler1.setzen(200);		 
@@ -154,9 +154,9 @@ public class JUnitTest {
 		// auszahlen
 
 		 tisch1.addSpieler(spieler1);
+		 spieler1.setVermoegen(1000);
 		 dealer1.auszahlen(200);
 		 spieler1.gewonnen(200);
-
 		 assertEquals(1200,00, spieler1.getVermoegen());
 		
 	}
