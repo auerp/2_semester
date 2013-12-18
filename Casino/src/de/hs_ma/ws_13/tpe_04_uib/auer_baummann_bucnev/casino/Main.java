@@ -172,7 +172,7 @@ public class Main {
 		do {
 //			bla
 
-		} while (i <= spieler1.getVermoegen() || spieler2.getVermoegen()
+		} while (i <= spieler1.getVermoegen()||  spieler2.getVermoegen()
 				|| spieler3.getVermoegen() || spieler4.getVermoegen()
 				|| spieler5.getVermoegen() || dealer1.getDealerVermoegen());
 		
