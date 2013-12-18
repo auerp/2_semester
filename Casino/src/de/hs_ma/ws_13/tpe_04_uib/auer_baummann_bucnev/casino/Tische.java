@@ -188,7 +188,7 @@ public class Tische {
 //			}
 //			int summe = spielerhand.getSumme();
 			int dealersumme = this.hand.getSumme();
-			if (dealersumme <= 21) {
+			if (dealersumme <= 21 && !besteSpieler.isEmpty()) {
 				Hand besteSpielerHand = besteSpieler.firstElement().getHand();
 				if (dealersumme >= besteSpielerHand.getSumme()) {
 					besteSpieler.clear();
