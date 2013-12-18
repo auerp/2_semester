@@ -3,6 +3,7 @@ package de.hs_ma.ws_13.tpe_04_uib.auer_baummann_bucnev.casino;
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;
+import java.util.Stack;
 
 import org.junit.Test;
 
@@ -137,11 +138,26 @@ public class JUnitTest {
 		assertEquals(false, kartenDeck.equals(kartenDeckNeu));
 
 		// Gewinner festlegen
-		KartenDeck kartendeck = new KartenDeck();
 		tisch1.addSpieler(spieler1);
-		dealer1.austeilenKarten(kartendeck);
-		dealer1.festlegenGewinner();
-
+		Karte karte = new Karte(EnumKartenWert.ZWEI, EnumKartenFarbe.HERZ);
+		spieler1.setHand(karte);
+		karte = new Karte(EnumKartenWert.ACHT, EnumKartenFarbe.HERZ);
+		spieler1.setHand(karte);
+		karte = new Karte(EnumKartenWert.AS, EnumKartenFarbe.HERZ);
+		spieler1.setHand(karte);
+		
+		karte = new Karte(EnumKartenWert.ZWEI, EnumKartenFarbe.KARO);
+		dealer1.setHand(karte);
+		karte = new Karte(EnumKartenWert.ZWEI, EnumKartenFarbe.KREUZ);
+		dealer1.setHand(karte);
+		karte = new Karte(EnumKartenWert.ZWEI, EnumKartenFarbe.PIK);
+		dealer1.setHand(karte);
+		dealer1.SetzteGewinner();
+		
+		Stack<?> test = dealer1.getGewinner();
+		for (Object spieler : test) {
+			assertEquals(true,spieler.equals(spieler1));
+		}
 		// Einsatz abfragen
 		spieler1.setzen(200);
 		assertEquals(200, spieler1.getEinsatz());
@@ -166,13 +182,12 @@ public class JUnitTest {
 		tisch1.addSpieler(spieler1);
 		tisch1.addSpieler(spieler2);
 		dealer1.austeilenKarten(kartendeck);
-		dealer1.festlegenGewinner();
+		dealer1.SetzteGewinner();
 
 		Tische.Pot pot1 = tisch1.new Pot();
 		spieler1.setzen(100);
 		spieler2.setzen(100);
 		pot1.potSammeln();
-		System.out.println(pot1.potSammeln());
 		assertEquals(200, pot1.potSammeln());
 
 	}

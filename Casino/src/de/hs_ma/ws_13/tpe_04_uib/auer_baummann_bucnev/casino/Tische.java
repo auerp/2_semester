@@ -171,11 +171,16 @@ public class Tische {
 			String id = spieler.getId();
 			return Tische.this.pot.get(id);
 		}
+		
+		public void setHand(Karte karte) {
+			this.hand.addKarte(karte);
+		}
+
 
 		/**
-		 * Methode um einen Gewinner festzulegen
+		 * Methode um die gewinner zu bekommen
 		 */
-		protected void festlegenGewinner() {
+		protected void SetzteGewinner() {
 			Stack<Spieler> besteSpieler = new Stack<Spieler>();
 			Stack<Dealer> besterDealer = new Stack<Dealer>();
 			gewinnerSpieler.clear();
