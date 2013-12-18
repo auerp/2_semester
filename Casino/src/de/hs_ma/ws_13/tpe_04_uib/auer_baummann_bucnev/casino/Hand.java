@@ -13,9 +13,9 @@ public class Hand {
 	// }
 
 	/**
-	 * Methode um die Summe aller Karten zu ermitteln
+	 * Methode um die Summe aller Karten einer Hand zu ermitteln
 	 * 
-	 * @return summe liefert die Summer aller Karten zurueck
+	 * @return summe liefert die Summer aller Karten einer Hand zurueck
 	 */
 	public int getSumme() {
 		int summe = 0; // summe auf Null setzen, sonst wird summe aufgerechnet
