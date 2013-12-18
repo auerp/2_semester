@@ -119,42 +119,53 @@ public class Main {
 				+ spieler1.getHand().getSumme());
 		System.out.println("Vermoegen des 1. Spielers: "
 				+ spieler1.getVermoegen() + "\n");
-		spieler1.setzen(100);
+//		spieler1.setzen(100);
 		System.out.println("Hand des 2. Spielers: " + spieler2.getHand());
 		System.out.println("Wert der Hand des 2. Spielers: "
 				+ spieler2.getHand().getSumme());
 		System.out.println("Vermoegen des 2. Spielers: "
 				+ spieler2.getVermoegen() + "\n");
-		spieler2.setzen(100);
+//		spieler2.setzen(100);
 		System.out.println("Hand des 3. Spielers: " + spieler3.getHand());
 		System.out.println("Wert der Hand des 3. Spielers: "
 				+ spieler3.getHand().getSumme());
 		System.out.println("Vermoegen des 3. Spielers: "
 				+ spieler3.getVermoegen() + "\n");
-		spieler3.setzen(100);
+//		spieler3.setzen(100);
 		System.out.println("Hand des 4. Spielers: " + spieler4.getHand());
 		System.out.println("Wert der Hand des 4. Spielers: "
 				+ spieler4.getHand().getSumme());
 		System.out.println("Vermoegen des 4. Spielers: "
 				+ spieler4.getVermoegen() + "\n");
-		spieler4.setzen(100);
+//		spieler4.setzen(100);
 		System.out.println("Hand des 5. Spielers: " + spieler5.getHand());
 		System.out.println("Wert der Hand des 5. Spielers: "
 				+ spieler5.getHand().getSumme());
 		System.out.println("Vermoegen des 5. Spielers: "
 				+ spieler5.getVermoegen() + "\n");
-		spieler5.setzen(100);
+//		spieler5.setzen(100);
 		System.out.println("Hand des Dealers: " + dealer1.getDealerHand());
 		System.out.println("Wert der Hand des Dealers: "
 				+ dealer1.getDealerHand().getSumme());
 		System.out.println("Vermoegen des Dealers: "
 				+ dealer1.getDealerVermoegen() + "\n");
-		dealer1.setzen(100);
+//		dealer1.setzen(100);
 		System.out.println("Summe des Pots: " + pot1.potSammeln() + "\n");
 		dealer1.festlegenGewinner();
 		System.out.println("Gewinner dieser Runde: " + dealer1.getGewinner()
 				+ "\n");
-		dealer1.auszahlen(pot1.potSammeln());
+		
+		do {
+			dealer1.mischeKarten(kartenDeck);
+			dealer1.austeilenKarten(kartenDeck);
+		
+			spieler1.setzen(100);
+			spieler2.setzen(100);
+			spieler3.setzen(100);
+			spieler4.setzen(100);
+			spieler5.setzen(100);
+			dealer1.setzen(100);
+			
 		System.out.println("Neues Vermoegen des 1. Spielers: "
 				+ spieler1.getVermoegen() + "\n");
 		System.out.println("Neues Vermoegen des 2. Spielers: "
@@ -168,14 +179,19 @@ public class Main {
 		System.out.println("Neues Vermoegen des Dealers: "
 				+ dealer1.getDealerVermoegen() + "\n");
 		
-		int i = 0;
-		do {
-//			bla
-//waha läuft immer noch nicht.
+		dealer1.festlegenGewinner();
+		dealer1.auszahlen(pot1.potSammeln());
+		dealer1.getGewinner();
+		
+//		spieler1.gewonnen(pot1.potSammeln());
+		
+		
+	
+		
 			
-		} while (i <= spieler1.getVermoegen()||  i<=spieler2.getVermoegen()
-				|| i<=spieler3.getVermoegen() || i<=spieler4.getVermoegen()
-				|| i<=spieler5.getVermoegen() || i<=dealer1.getDealerVermoegen());
+		} while (spieler1.getVermoegen() > 0||  spieler2.getVermoegen()>0
+				|| spieler3.getVermoegen()>0 || spieler4.getVermoegen()>0
+				|| spieler5.getVermoegen()>0 || dealer1.getDealerVermoegen()>0);
 		
 
 	}
