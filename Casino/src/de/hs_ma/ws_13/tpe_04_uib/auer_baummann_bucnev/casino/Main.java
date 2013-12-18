@@ -90,7 +90,6 @@ public class Main {
 		
 //		dealer1.einsammelnKarten();
 		
-		
 		System.out.println("***************************************************************************");
 		System.out.println("Herzlich Willkommen im Casino Royal");
 //		System.out.println();
@@ -144,6 +143,7 @@ public class Main {
 //	spieler4.setzen(700);
 //	spieler5.setzen(600);
 	pot.potSammeln();
-		
-	}
+	dealer1.einsammelnKarten();
+		}
+	
 }

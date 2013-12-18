@@ -131,6 +131,16 @@ public class JUnitTest {
 		// getAnzahlSpieler
 		assertEquals(1, tisch1.getAnzahlSpieler());
 	}
+	
+	@Test
+	public void testEinsammeln() {
+		KartenDeck kartenDeckNeu =  new KartenDeck ();
+		int laengeKarteDeckVorAusteilen = kartenDeckNeu.size();
+		dealer1.austeilenKarten(kartenDeckNeu);
+		dealer1.einsammelnKarten(); 
+		int laengeKarteDeckNachAusteilen = kartenDeckNeu.size();
+		assertEquals(true, laengeKarteDeckVorAusteilen == laengeKarteDeckNachAusteilen);
+	}
 
 	@Test
 	public void testDealer() {
@@ -154,7 +164,9 @@ public class JUnitTest {
 //		 spieler1.setHand(karte2); 
 		 kartenDeckNeu.add(karte2);
 		 kartenDeckNeu.add(karte1);
+		 dealer1.austeilenKarten(kartenDeckNeu);
 		 dealer1.einsammelnKarten(); 
+		 assertEquals(false, kartenDeck.equals(kartenDeckNeu));
 //		 hand.removeKarten(); 
 //		 assertEquals(true, kartenDeckNeu.isEmpty());
 		
@@ -173,7 +185,15 @@ public class JUnitTest {
 
 	@Test
 	public void testPot() {
-		// Pot
+		Tische.Pot pot;
+		int alleEinsaetze = 1000;
+		tisch1.addSpieler(spieler1);
+		spieler1.setVermoegen(400);
+		spieler1.setzen(alleEinsaetze/tisch1.getAnzahlSpieler() + 1);
+		dealer1.setzen(alleEinsaetze/tisch1.getAnzahlSpieler() + 1);
+		
+		spieler1.gewonnen(Tische.Pot.this.potSammeln());
+		
 		
 	}
 

@@ -88,6 +88,7 @@ public class Tische {
 	class Dealer {
 		private Hand hand = new Hand();
 		String name;
+		private int einsatz;
 		double vermoegenDealer;
 		private KartenDeck kartenDeck;
 
@@ -133,13 +134,13 @@ public class Tische {
 			for (Spieler it : Tische.this.spieler.values()) {
 				Hand spielerhand = it.getHand();
 				for (Karte karte : spielerhand.getKartenHand()) {
-					Tische.this.kartenDeck.push(karte);
+					this.kartenDeck.push(karte);
 				}
 				spielerhand.removeKarten();
 			}
 			ArrayList<Karte> dealerHandKarten = this.hand.getKartenHand();
-			for (Karte card : dealerHandKarten) {
-				Tische.this.kartenDeck.push(card);
+			for (Karte karte : dealerHandKarten) {
+				this.kartenDeck.push(karte);
 			}
 			this.hand.removeKarten();
 		}
@@ -176,32 +177,19 @@ public class Tische {
 						}
 					}
 				}
-				else{
-					besteSpieler.clear();
-				}
 			}
-			//TODO Dealer in Spieler casten
-//			if(besteSpieler.isEmpty()){
-//				Stack <Dealer> eg = new Stack<Dealer>();
-// 				eg.add(dealer);
-// 				gewinnerSpieler = (Stack<Spieler>)eg.firstElement();
-//			}
-//			int summe = spielerhand.getSumme();
+			
 			int dealersumme = this.hand.getSumme();
 			if (dealersumme <= 21 && !besteSpieler.isEmpty()) {
 				Hand besteSpielerHand = besteSpieler.firstElement().getHand();
 				if (dealersumme >= besteSpielerHand.getSumme()) {
-					besterDealer.clear();
 					besteSpieler.clear();
 					besterDealer.add(dealer);
 					gewinnerDealer = besterDealer;
-					
 					//TODO das Dealer gewinnt
-					
 				}
 			}
 			if(dealersumme > 21 && besteSpieler.isEmpty()){
-				besterDealer.clear();
 				besterDealer.add(dealer);
 				gewinnerDealer = besterDealer;
 				
@@ -215,22 +203,12 @@ public class Tische {
 		}
 		
 		public Stack<?> getGewinner(){
-//			if(gewinnerSpieler.isEmpty()){
-//				return Tische.Dealer;
-//			}
 			if(!gewinnerSpieler.isEmpty()){
 				return gewinnerSpieler;
 			} 
 			else{
-				System.out.println("Gewinner dealer");
 				return gewinnerDealer;
 			}
-		}
-
-		@Override
-		public String toString() {
-			return "Dealer [hand=" + hand + ", name=" + name
-					+ ", vermoegenDealer=" + vermoegenDealer + "]";
 		}
 
 		// Auszahlung an Gewinner
@@ -242,6 +220,32 @@ public class Tische {
 					spieler.gewonnen(betrag / gewinnerSpieler.size());
 				}
 			}
+		}
+		
+		/**
+		 * Methode um einen Betrag zu setzen
+		 * 
+		 * @param einsatz
+		 *            Betrag der gesetzt werden soll
+		 */
+		public int setzen(int einsatz) {
+			this.einsatz = einsatz;
+			if(einsatz <=0){
+				return 0;
+			}
+			this.vermoegenDealer = this.vermoegenDealer - einsatz;
+			return (int) this.vermoegenDealer;
+			
+		}
+		
+		public int getEinsatz(){
+			return this.einsatz;
+		}
+
+		@Override
+		public String toString() {
+			return "Dealer [hand=" + hand + ", name=" + name
+					+ ", vermoegenDealer=" + vermoegenDealer + "]";
 		}
 
 	} // Innere Klasse Ende
@@ -274,14 +278,13 @@ public class Tische {
 		Pot(){
 			
 		}
-		
-		
-		
+				
 		public int potSammeln(){
 		for(Spieler spieler : Tische.this.spieler.values() ){
 			pot += spieler.getEinsatz();
 			System.out.println(pot);
 		}
+		pot += dealer.getEinsatz();
 		return pot;
 		
 		}

@@ -27,6 +27,7 @@ public class Karte {
 		return this.wert.getWert(); // ruft getWert() aus der inneren Enumklasse
 									// auf
 	}
+	
 
 	/**
 	 * Methode, ...
