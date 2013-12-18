@@ -153,6 +153,7 @@ public class Tische {
 		// festlegen des Gewinners
 		protected void festlegenGewinner() {
 			Stack<Spieler> besteSpieler = new Stack<Spieler>();
+			Stack<Dealer> besterDealer = new Stack <Dealer>();
 			gewinnerSpieler.clear();
 
 			for (Spieler spieler : Tische.this.spieler.values()) {
@@ -182,16 +183,23 @@ public class Tische {
 // 				eg.add(dealer);
 // 				gewinnerSpieler = (Stack<Spieler>)eg.firstElement();
 //			}
-			
+//			int summe = spielerhand.getSumme();
 			int dealersumme = this.hand.getSumme();
 			if (dealersumme <= 21) {
 				Hand besteSpielerHand = besteSpieler.firstElement().getHand();
 				if (dealersumme >= besteSpielerHand.getSumme()) {
 					besteSpieler.clear();
 					gewinnerDealer.add(dealer);
+					gewinnerDealer = besterDealer;
+					
 					//TODO das Dealer gewinnt
 					
 				}
+			}
+			if(dealersumme > 21 && besteSpieler.isEmpty()){
+				gewinnerDealer.add(dealer);
+				gewinnerDealer = besterDealer;
+				
 			}
 			gewinnerSpieler = besteSpieler;
 

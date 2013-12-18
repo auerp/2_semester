@@ -26,6 +26,9 @@ public class JUnitTest {
 		// Im Casino
 		// Spieler Tisch zuweisen
 		// Tisch hinzufügen
+		
+		
+		
 	}
 
 	@Test
@@ -47,6 +50,12 @@ public class JUnitTest {
 		assertEquals(13, spieler1.getHand().getSumme());
 
 		// removeKarten?
+		Hand hand = new Hand();
+		hand.addKarte(karte1);
+		hand.addKarte(karte2);
+		hand.removeKarten();
+		assertEquals(true, hand.getKartenHand().isEmpty());
+		
 	}
 
 	@Test
@@ -81,7 +90,7 @@ public class JUnitTest {
 
 		// Kartenmischer
 		// shuffle Methode testen
-//		assertEquals(false, kartenDeck.equals(KartenMischer.shuffle(kartenDeck)));
+//		assertEquals(false, KartenMischer.shuffle(kartenDeck));
 
 	}
 
@@ -106,7 +115,7 @@ public class JUnitTest {
 //		assertEquals(true,spieler1.getHand().equals(hand));
 
 		// Pot gewonnen
-
+		
 	}
 
 	@Test
@@ -126,6 +135,7 @@ public class JUnitTest {
 	@Test
 	public void testDealer() {
 		
+	
 		// Karten mischen
 		KartenDeck kartenDeckNeu =  new KartenDeck ();
 		dealer1.mischeKarten(kartenDeckNeu);
@@ -133,18 +143,38 @@ public class JUnitTest {
 		 assertEquals(false, kartenDeck.equals(kartenDeckNeu));
 		
 		// Karten einsammeln
-		 
+		 Karte karte1 = new Karte(EnumKartenWert.DREI, EnumKartenFarbe.HERZ); 
+		 Karte karte2 = new Karte(EnumKartenWert.BUBE, EnumKartenFarbe.HERZ); 
+//		 Hand hand = new Hand(); 
+//		 hand.addKarte(karte1);
+//		 hand.addKarte(karte2);
+//		 kartenDeck.add(karte1);
+//		 kartenDeck.add(karte2);
+//		 spieler1.setHand(karte1); 
+//		 spieler1.setHand(karte2); 
+		 kartenDeckNeu.add(karte2);
+		 kartenDeckNeu.add(karte1);
+		 dealer1.einsammelnKarten(); 
+//		 hand.removeKarten(); 
+//		 assertEquals(true, kartenDeckNeu.isEmpty());
 		
 		// Gewinner festlegen
 //		 assertEquals(true, dealer1.festlegenGewinner());
 		 
 		// Einsatz abfragen
+		 spieler1.setzen(200);
+		 
+		 assertEquals(200, spieler1.getEinsatz());
 		// auszahlen
+		 dealer1.auszahlen(200);
+		 assertEquals(1200,spieler1.getVermoegen());
+		
 	}
 
 	@Test
 	public void testPot() {
 		// Pot
+		
 	}
 
 }
