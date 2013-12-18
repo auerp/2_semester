@@ -313,9 +313,9 @@ public class Tische {
 		}
 
 		/**
-		 * Methode...
+		 * Methode, die den Pot von allen Spielern und dem Dealer einsammelt
 		 * 
-		 * @return pot
+		 * @return pot 	liefert den gesamten Pot zurueck
 		 */
 		public int potSammeln() {
 			for (Spieler spieler : Tische.this.spieler.values()) {
