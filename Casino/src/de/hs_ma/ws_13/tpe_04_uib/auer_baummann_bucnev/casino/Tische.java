@@ -176,6 +176,9 @@ public class Tische {
 						}
 					}
 				}
+				else{
+					besteSpieler.clear();
+				}
 			}
 			//TODO Dealer in Spieler casten
 //			if(besteSpieler.isEmpty()){
