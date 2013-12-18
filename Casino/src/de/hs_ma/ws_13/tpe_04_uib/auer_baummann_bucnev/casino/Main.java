@@ -17,9 +17,9 @@ public class Main {
 		Tische.Dealer dealer1 = tisch1.new Dealer("Hans", 80000);
 		Tische tisch2 = new Tische(casino);
 		Tische.Dealer dealer2 = tisch2.new Dealer("Achmet", 300000);
-//		Pot pot1 = new Pot();
+		// Pot pot1 = new Pot();
 		Tische.Pot pot1 = tisch1.new Pot();
-		
+
 		// Kartendeck erzeugen
 		KartenDeck kartenDeck = new KartenDeck();
 
@@ -47,7 +47,7 @@ public class Main {
 		Spieler spieler21 = new Spieler("Laura", 7000, casino);
 		Spieler spieler22 = new Spieler("Patricia", 7000, casino);
 		Spieler spieler23 = new Spieler("Michelle", 7000, casino);
-		
+
 		// Spieler tische zuweisen
 		// Tisch 1
 		tisch1.addSpieler(spieler1);
@@ -63,105 +63,119 @@ public class Main {
 		tisch2.addSpieler(spieler10);
 
 		// // Ausgabe Spieler
-		 //System.out.println(spieler1);
+		// System.out.println(spieler1);
 		// System.out.println(spieler2);
 		// System.out.println(spieler3);
 		// System.out.println(spieler4);
 
 		// Ausgabe Casino
-//		System.out.println(casino);
+		// System.out.println(casino);
 
 		// Ausgabe Dealer
-//		System.out.println(dealer1);
+		// System.out.println(dealer1);
 
 		// Ausgabe Kartendeck
-//		System.out.println(kartenDeck);
+		// System.out.println(kartenDeck);
 
 		// Asugabe Tische
-//		System.out.println(tisch1);
-//		System.out.println(tisch2);
-		
-//		System.out.println(casino.spielerTischZuweisen());
-		
-		
-		
-		
-//		dealer1.einsammelnKarten();
-		
-		System.out.println("***************************************************************************");
+		// System.out.println(tisch1);
+		// System.out.println(tisch2);
+
+		// System.out.println(casino.spielerTischZuweisen());
+
+		// dealer1.einsammelnKarten();
+
+		System.out
+				.println("***************************************************************************");
 		System.out.println("Herzlich Willkommen im Casino Royal \n");
-//		System.out.println();
-//		System.out.println(casino);
-//		System.out.println();
-//		System.out.println("Folgende Tische sind vorhanden:");
-//		System.out.println(casino.getTische());
-//		System.out.println();
-//		System.out.println("---------Tisch 1---------");
-//		System.out.println("Dealer: " + dealer1);
-//		System.out.println("Spieler:");
-//		System.out.println(tisch1);
-//		System.out.println();
-//		System.out.println("---------Tisch 2---------");
-//		System.out.println("Dealer: " + dealer2);
-//		System.out.println("Spieler:");
-//		System.out.println(tisch2);
-//		System.out.println();
-//		System.out.println();
-		System.out.println("Verschaffen wir uns einen Einblick ins Spielgeschehen \n");
-		System.out.println("Kartendeck: "+kartenDeck + "\n");
+		// System.out.println();
+		// System.out.println(casino);
+		// System.out.println();
+		// System.out.println("Folgende Tische sind vorhanden:");
+		// System.out.println(casino.getTische());
+		// System.out.println();
+		// System.out.println("---------Tisch 1---------");
+		// System.out.println("Dealer: " + dealer1);
+		// System.out.println("Spieler:");
+		// System.out.println(tisch1);
+		// System.out.println();
+		// System.out.println("---------Tisch 2---------");
+		// System.out.println("Dealer: " + dealer2);
+		// System.out.println("Spieler:");
+		// System.out.println(tisch2);
+		// System.out.println();
+		// System.out.println();
+		System.out
+				.println("Verschaffen wir uns einen Einblick ins Spielgeschehen \n");
+		System.out.println("Kartendeck: " + kartenDeck + "\n");
 		dealer1.mischeKarten(kartenDeck);
-		System.out.println("Dealer mischt die Karten: "+ kartenDeck+"\n");
+		System.out.println("Dealer mischt die Karten: " + kartenDeck + "\n");
 		System.out.println("Dealer teilt Karten aus. \n");
 		dealer1.austeilenKarten(kartenDeck);
-//		
-//		dealer1.festlegenGewinner();
-		System.out.println("Hand des 1. Spielers: "+ spieler1.getHand());
-		System.out.println("Wert der Hand des 1. Spielers: "+ spieler1.getHand().getSumme());
-		System.out.println("Vermoegen des 1. Spielers: "+ spieler1.getVermoegen()+"\n");
+		//
+		// dealer1.festlegenGewinner();
+		System.out.println("Hand des 1. Spielers: " + spieler1.getHand());
+		System.out.println("Wert der Hand des 1. Spielers: "
+				+ spieler1.getHand().getSumme());
+		System.out.println("Vermoegen des 1. Spielers: "
+				+ spieler1.getVermoegen() + "\n");
 		spieler1.setzen(100);
-		System.out.println("Hand des 2. Spielers: "+ spieler2.getHand());
-		System.out.println("Wert der Hand des 2. Spielers: "+ spieler2.getHand().getSumme());
-		System.out.println("Vermoegen des 2. Spielers: "+ spieler2.getVermoegen()+"\n");
+		System.out.println("Hand des 2. Spielers: " + spieler2.getHand());
+		System.out.println("Wert der Hand des 2. Spielers: "
+				+ spieler2.getHand().getSumme());
+		System.out.println("Vermoegen des 2. Spielers: "
+				+ spieler2.getVermoegen() + "\n");
 		spieler2.setzen(100);
-		System.out.println("Hand des 3. Spielers: "+ spieler3.getHand());
-		System.out.println("Wert der Hand des 3. Spielers: "+ spieler3.getHand().getSumme());
-		System.out.println("Vermoegen des 3. Spielers: "+ spieler3.getVermoegen()+"\n");
+		System.out.println("Hand des 3. Spielers: " + spieler3.getHand());
+		System.out.println("Wert der Hand des 3. Spielers: "
+				+ spieler3.getHand().getSumme());
+		System.out.println("Vermoegen des 3. Spielers: "
+				+ spieler3.getVermoegen() + "\n");
 		spieler3.setzen(100);
-		System.out.println("Hand des 4. Spielers: "+ spieler4.getHand());
-		System.out.println("Wert der Hand des 4. Spielers: "+ spieler4.getHand().getSumme());
-		System.out.println("Vermoegen des 4. Spielers: "+ spieler4.getVermoegen()+"\n");
+		System.out.println("Hand des 4. Spielers: " + spieler4.getHand());
+		System.out.println("Wert der Hand des 4. Spielers: "
+				+ spieler4.getHand().getSumme());
+		System.out.println("Vermoegen des 4. Spielers: "
+				+ spieler4.getVermoegen() + "\n");
 		spieler4.setzen(100);
-		System.out.println("Hand des 5. Spielers: "+ spieler5.getHand());
-		System.out.println("Wert der Hand des 5. Spielers: "+ spieler5.getHand().getSumme());
-		System.out.println("Vermoegen des 5. Spielers: "+ spieler5.getVermoegen()+"\n");
+		System.out.println("Hand des 5. Spielers: " + spieler5.getHand());
+		System.out.println("Wert der Hand des 5. Spielers: "
+				+ spieler5.getHand().getSumme());
+		System.out.println("Vermoegen des 5. Spielers: "
+				+ spieler5.getVermoegen() + "\n");
 		spieler5.setzen(100);
-		System.out.println("Hand des Dealers: "+dealer1.getDealerHand());
-		System.out.println("Wert der Hand des Dealers: "+ dealer1.getDealerHand().getSumme());
-		System.out.println("Vermoegen des Dealers: "+ dealer1.getDealerVermoegen()+"\n");
+		System.out.println("Hand des Dealers: " + dealer1.getDealerHand());
+		System.out.println("Wert der Hand des Dealers: "
+				+ dealer1.getDealerHand().getSumme());
+		System.out.println("Vermoegen des Dealers: "
+				+ dealer1.getDealerVermoegen() + "\n");
 		dealer1.setzen(100);
-		System.out.println("Einsätze: "+ pot1.potSammeln()+"\n" );
+		System.out.println("Summe des Pots: " + pot1.potSammeln() + "\n");
 		dealer1.festlegenGewinner();
-		System.out.println("Gewinner dieser Runde: "+ dealer1.getGewinner()+"\n");
+		System.out.println("Gewinner dieser Runde: " + dealer1.getGewinner()
+				+ "\n");
 		dealer1.auszahlen(pot1.potSammeln());
-		System.out.println("Vermoegen des 1. Spielers: "+ spieler1.getVermoegen()+"\n");
-		System.out.println("Vermoegen des 2. Spielers: "+ spieler2.getVermoegen()+"\n");
-		System.out.println("Vermoegen des 3. Spielers: "+ spieler3.getVermoegen()+"\n");
-		System.out.println("Vermoegen des 4. Spielers: "+ spieler4.getVermoegen()+"\n");
-		System.out.println("Vermoegen des 5. Spielers: "+ spieler5.getVermoegen()+"\n");
-		System.out.println("Vermoegen des Dealers: "+ dealer1.getDealerVermoegen()+"\n");
-	
+		System.out.println("Neues Vermoegen des 1. Spielers: "
+				+ spieler1.getVermoegen() + "\n");
+		System.out.println("Neues Vermoegen des 2. Spielers: "
+				+ spieler2.getVermoegen() + "\n");
+		System.out.println("Neues Vermoegen des 3. Spielers: "
+				+ spieler3.getVermoegen() + "\n");
+		System.out.println("Neues Vermoegen des 4. Spielers: "
+				+ spieler4.getVermoegen() + "\n");
+		System.out.println("Neues Vermoegen des 5. Spielers: "
+				+ spieler5.getVermoegen() + "\n");
+		System.out.println("Neues Vermoegen des Dealers: "
+				+ dealer1.getDealerVermoegen() + "\n");
 		
+		int i = 0;
+		do {
+//			bla
+
+		} while (i <= spieler1.getVermoegen() || spieler2.getVermoegen()
+				|| spieler3.getVermoegen() || spieler4.getVermoegen()
+				|| spieler5.getVermoegen() || dealer1.getDealerVermoegen());
 		
-		
-		
-	Tische.Pot pot = tisch1.new Pot();
-	spieler1.setzen(100);
-//	spieler2.setzen(400);
-//	spieler3.setzen(200);
-//	spieler4.setzen(700);
-//	spieler5.setzen(600);
-	pot.potSammeln();
-	dealer1.einsammelnKarten();
-		}
-	
+
+	}
 }
