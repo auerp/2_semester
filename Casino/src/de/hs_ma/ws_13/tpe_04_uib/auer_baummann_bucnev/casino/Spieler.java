@@ -1,5 +1,13 @@
 package de.hs_ma.ws_13.tpe_04_uib.auer_baummann_bucnev.casino;
 
+/**
+ * Klasse Spieler. Sie dient zur Erzeugung eines Spielers
+ * 
+ * @author pauer
+ * @author rbucnev
+ * @author tbaumann
+ * 
+ */
 public class Spieler {
 
 	private String name;
@@ -11,19 +19,19 @@ public class Spieler {
 	private int einsatz;
 
 	/**
-	 * Konstruktor zur Erzeugung eines Spielers
+	 * /** Konstruktor zur Erzeugung eines Spielers
 	 * 
 	 * @param name
 	 *            Name eines Spielers
-	 * @param id
-	 *            ID eines Spielers
 	 * @param vermoegen
 	 *            Das Vermoegen eines Spielers
+	 * @param casino
+	 *            Casino in dem der Spieler vorhanden ist
 	 */
 	public Spieler(String name, double vermoegen, Casino casino) {
 		this.name = name;
 		this.vermoegen = vermoegen;
-		
+
 		this.hand = new Hand();
 		casino.spielerTischZuweisen(this);
 	}
@@ -33,18 +41,25 @@ public class Spieler {
 	 * 
 	 * @param einsatz
 	 *            Betrag der gesetzt werden soll
+	 * @return 0 liefert den Betrag Null zurueck wenn nichts gesetzt wurde
+	 * @return vermoegen liefert das errechnete vermoegen zurueck
 	 */
 	public int setzen(int einsatz) {
 		this.einsatz = einsatz;
-		if(einsatz <=0){
+		if (einsatz <= 0) {
 			return 0;
 		}
 		this.vermoegen = this.vermoegen - einsatz;
 		return (int) this.vermoegen;
-		
+
 	}
-	
-	public int getEinsatz(){
+
+	/**
+	 * Methode die den Einsatz liefert
+	 * 
+	 * @return einsatz liefert den Einsatz
+	 */
+	public int getEinsatz() {
 		return this.einsatz;
 	}
 
@@ -103,20 +118,21 @@ public class Spieler {
 	public void setVermoegen(int vermoegen) {
 		this.vermoegen = vermoegen;
 	}
-	
+
 	/**
 	 * Methode, die die eine Karte in die Hand nimmt
-	 * @param karte 
-	 * 			Karte eines Spielers
+	 * 
+	 * @param karte
+	 *            Karte eines Spielers
 	 */
-	public void setHand(Karte karte){
+	public void setHand(Karte karte) {
 		this.hand.addKarte(karte);
 	}
-	
+
 	@Override
 	public String toString() {
 		return "Spieler [name=" + name + ", id=" + id + ", vermoegen="
 				+ vermoegen + ", hand=" + hand + "]";
 	}
-	
+
 }

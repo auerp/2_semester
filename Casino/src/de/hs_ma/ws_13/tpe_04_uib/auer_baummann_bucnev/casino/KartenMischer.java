@@ -1,10 +1,9 @@
 package de.hs_ma.ws_13.tpe_04_uib.auer_baummann_bucnev.casino;
 
-import java.util.Arrays;
 import java.util.Collections;
 
 /**
- * Interface , das als zentraler Kartenmischer im Casiono dient.
+ * Klasse, die als zentraler Kartenmischer im Casiono dient.
  * 
  * @author pauer
  * @author rbucnev
@@ -25,7 +24,7 @@ public class KartenMischer {
 	/**
 	 * Statische Methode, liefert die einzige Instanz dieser Klasse zurueck
 	 * 
-	 * @return instanz liefert die instanz der Klasse
+	 * @return instanz liefert die Instanz der Klasse
 	 */
 	public static KartenMischer getInstance() {
 		return instanz;

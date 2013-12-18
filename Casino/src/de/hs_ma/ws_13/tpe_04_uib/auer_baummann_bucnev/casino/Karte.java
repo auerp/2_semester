@@ -1,5 +1,11 @@
 package de.hs_ma.ws_13.tpe_04_uib.auer_baummann_bucnev.casino;
 
+/**
+ * Klasse zur Erzeugung der Karten
+ * 
+ * @author pauer
+ * 
+ */
 public class Karte {
 
 	private EnumKartenWert wert; // Werte der Karten
@@ -27,11 +33,8 @@ public class Karte {
 		return this.wert.getWert(); // ruft getWert() aus der inneren Enumklasse
 									// auf
 	}
-	
 
-	/**
-	 * Methode, ...
-	 */
+	@Override
 	public String toString() {
 		return "Karte [wert=" + wert + ", farbe=" + farbe + "]";
 	}
@@ -70,6 +73,7 @@ public class Karte {
 			return wert;
 		}
 
+		@Override
 		public String toString() {
 			return this.name();
 		}

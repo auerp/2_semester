@@ -2,6 +2,12 @@ package de.hs_ma.ws_13.tpe_04_uib.auer_baummann_bucnev.casino;
 
 import java.util.Stack;
 
+/**
+ * Klasse zur Erzeugung des Kartendeck
+ * 
+ * @author pauer
+ * 
+ */
 public class KartenDeck extends Stack<Karte> {
 
 	private static final long serialVersionUID = 1L;
@@ -18,7 +24,10 @@ public class KartenDeck extends Stack<Karte> {
 	 * Methode, um ein Kartendeck zu erstellen
 	 */
 	public void deckErstellen() {
-		for (Karte.EnumKartenWert wert : Karte.EnumKartenWert.values()) {
+		for (Karte.EnumKartenWert wert : Karte.EnumKartenWert.values()) { // Karten
+																			// werden
+																			// durch
+																			// iteriert
 			for (Karte.EnumKartenFarbe farbe : Karte.EnumKartenFarbe.values()) {
 				add(new Karte(wert, farbe)); // Fuegt Karte hinzu
 			}

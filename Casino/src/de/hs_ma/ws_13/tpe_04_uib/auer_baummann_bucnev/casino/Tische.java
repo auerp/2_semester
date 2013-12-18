@@ -4,11 +4,20 @@ import de.hs_ma.ws_13.tpe_04_uib.auer_baummann_bucnev.casino.Hand;
 
 import java.util.*;
 
+/**
+ * Klasse Tische, die einen Tisch innerhalb des Casinos erzeugt. Die Klasse
+ * Tische enthaelt ausserdem eine innere Klasse Dealer, die einen Dealer erzeugt
+ * und die Methoden des Spielablaufs enthaelt. Eine weitere innere Klasse Pot,
+ * die den Einsatz aller Spieler darstellen soll.
+ * 
+ * @author pauer
+ * @author rbucnev
+ * @author tbaumann
+ * 
+ */
 public class Tische {
 
-	// private Pot pot;
 	private Map<String, Integer> pot;
-	// private int tischNr = 0;
 	private Map<String, Spieler> spieler;
 	private KartenDeck kartenDeck;
 	Dealer dealer;
@@ -28,15 +37,6 @@ public class Tische {
 		this.pot = new HashMap<String, Integer>();
 	}
 
-	// /**
-	// * Methode, um eine Tischnummer zu liefern
-	// *
-	// * @return tischNr liefert die Tischnummer
-	// */
-	// public int getTischNr() {
-	// return this.tischNr;
-	// }
-
 	/**
 	 * Methode, um den Spieler zurueck zu liefern
 	 * 
@@ -44,7 +44,6 @@ public class Tische {
 	 */
 	public Map<String, Spieler> getSpieler() {
 		return spieler;
-
 	}
 
 	/**
@@ -66,10 +65,6 @@ public class Tische {
 		return spieler.size();
 	}
 
-	// Methode spielStarten
-	// public String spielStarten() {
-	// }
-
 	@Override
 	public String toString() {
 		return "Tische [spieler=" + spieler + ", kartenDeck=" + kartenDeck
@@ -86,6 +81,7 @@ public class Tische {
 	 * 
 	 */
 	class Dealer {
+
 		private Hand hand = new Hand();
 		String name;
 		private int einsatz;
@@ -94,6 +90,11 @@ public class Tische {
 
 		/**
 		 * Konstruktor zur Erzeugung eines Dealer
+		 * 
+		 * @param name
+		 *            Name des Dealers
+		 * @param vermoegen
+		 *            Vermoegen des Dealers
 		 */
 		public Dealer(String name, double vermoegen) {
 			this.name = name;
@@ -109,13 +110,23 @@ public class Tische {
 			KartenMischer.shuffle(kartenDeck);
 
 		}
-		
-		public double getDealerVermoegen(){
+
+		/**
+		 * Methode, die das vermoegen des Dealer liefert
+		 * 
+		 * @return vermoegenDealer liefert das Vermoegen des Dealer
+		 */
+		public double getDealerVermoegen() {
 			return this.vermoegenDealer;
 		}
 
-		// Karten austeilen an Spieler und sich selbst
-		protected void austeilenKarten(KartenDeck kartenDeck){
+		/**
+		 * Methode, um Karten an Spieler und an sich selbst auszuteilen
+		 * 
+		 * @param kartenDeck
+		 *            erzeugtes Kartendeck mit 52 KArten
+		 */
+		protected void austeilenKarten(KartenDeck kartenDeck) {
 			this.kartenDeck = kartenDeck;
 			int kartenAnzahl = 0;
 			while (kartenAnzahl != 3) {
@@ -123,13 +134,16 @@ public class Tische {
 					Karte karte = Tische.this.dealer.kartenDeck.pop();
 					it.setHand(karte);
 				}
-				// Ausgabe der Karten an den Dealer
-				Tische.this.dealer.hand.addKarte(Tische.this.dealer.kartenDeck.pop());
+				Tische.this.dealer.hand.addKarte(Tische.this.dealer.kartenDeck
+						.pop()); // Ausgabe der Karten an den Dealer
 				kartenAnzahl++;
 			}
 		}
 
-		// Karten einsammeln von Spielern
+		/**
+		 * Methode um die ausgeteilten Karten nach Spiel Ende wieder
+		 * einzusammeln
+		 */
 		protected void einsammelnKarten() {
 			for (Spieler it : Tische.this.spieler.values()) {
 				Hand spielerhand = it.getHand();
@@ -146,21 +160,30 @@ public class Tische {
 		}
 
 		// Einsätze der Spieler
+		/**
+		 * Methode um die Einsaetze der Spieler abzufragen
+		 * 
+		 * @param spieler
+		 * @return pot liefert den Pot der die Einsaetze aller Mitspieler
+		 *         enthaelt
+		 */
 		protected int einsatzAbfragen(Spieler spieler) {
 			String id = spieler.getId();
 			return Tische.this.pot.get(id);
 		}
 
-		// festlegen des Gewinners
+		/**
+		 * Methode um einen Gewinner festzulegen
+		 */
 		protected void festlegenGewinner() {
 			Stack<Spieler> besteSpieler = new Stack<Spieler>();
-			Stack<Dealer> besterDealer = new Stack <Dealer>();
+			Stack<Dealer> besterDealer = new Stack<Dealer>();
 			gewinnerSpieler.clear();
 
 			for (Spieler spieler : Tische.this.spieler.values()) {
 				Hand spielerhand = spieler.getHand();
 				int summe = spielerhand.getSumme();
-//				summe = summe/2;    						//Ist Quatsch weiß aber gerade keine bessere Lösung
+
 				if (summe <= 21) {
 					if (besteSpieler.isEmpty()) {
 						besteSpieler.add(spieler);
@@ -178,7 +201,7 @@ public class Tische {
 					}
 				}
 			}
-			
+
 			int dealersumme = this.hand.getSumme();
 			if (dealersumme <= 21 && !besteSpieler.isEmpty()) {
 				Hand besteSpielerHand = besteSpieler.firstElement().getHand();
@@ -186,32 +209,47 @@ public class Tische {
 					besteSpieler.clear();
 					besterDealer.add(dealer);
 					gewinnerDealer = besterDealer;
-					//TODO das Dealer gewinnt
 				}
 			}
-			if(dealersumme > 21 && besteSpieler.isEmpty()){
+			if (dealersumme > 21 && besteSpieler.isEmpty()) {
 				besterDealer.add(dealer);
 				gewinnerDealer = besterDealer;
-				
+
 			}
 			gewinnerSpieler = besteSpieler;
 
 		}
-		
-		public Hand getDealerHand(){
+
+		/**
+		 * Methode um die HAnd des Dealers zu liefern
+		 * 
+		 * @return hand liefert die Hand des Dealer
+		 */
+		public Hand getDealerHand() {
 			return this.hand;
 		}
-		
-		public Stack<?> getGewinner(){
-			if(!gewinnerSpieler.isEmpty()){
+
+		/**
+		 * Methode um den Gewinner zu liefern
+		 * 
+		 * @return gewinnerSpieler liefert den Spieler der Gewonnen hat
+		 * @return gewinnerDealer liefert den Dealer wenn dieser Gewonnen hat
+		 */
+		public Stack<?> getGewinner() {
+			if (!gewinnerSpieler.isEmpty()) {
 				return gewinnerSpieler;
-			} 
-			else{
+			} else {
 				return gewinnerDealer;
 			}
 		}
 
 		// Auszahlung an Gewinner
+		/**
+		 * Methode um den Gewinner auszuzahlen
+		 * 
+		 * @param betrag
+		 *            liefert die Summe des auszuzahlenden Betrag
+		 */
 		protected void auszahlen(int betrag) {
 			if (gewinnerSpieler.isEmpty()) {
 				this.vermoegenDealer += betrag;
@@ -221,7 +259,7 @@ public class Tische {
 				}
 			}
 		}
-		
+
 		/**
 		 * Methode um einen Betrag zu setzen
 		 * 
@@ -230,15 +268,20 @@ public class Tische {
 		 */
 		public int setzen(int einsatz) {
 			this.einsatz = einsatz;
-			if(einsatz <=0){
+			if (einsatz <= 0) {
 				return 0;
 			}
 			this.vermoegenDealer = this.vermoegenDealer - einsatz;
 			return (int) this.vermoegenDealer;
-			
+
 		}
-		
-		public int getEinsatz(){
+
+		/**
+		 * Methode um die Einsaetze zu ermitteln
+		 * 
+		 * @return einsatz liefert die Einsaetze zurueck
+		 */
+		public int getEinsatz() {
 			return this.einsatz;
 		}
 
@@ -259,37 +302,29 @@ public class Tische {
 	 * 
 	 */
 	class Pot {
-		
-//		private Map<String, Integer> einsatzSpieler = new HashMap<String, Integer>();
+
 		private int pot;
-		
-		// private int getInhalt(){
-		// int inhalt = 0;
-		// for(int einsatz : einsatzSpieler.values()){
-		// inhalt = inhalt + einsatz;
-		// }
-		// return inhalt;
-		// }
-		//
-		// public void clear(){
-		// einsatzSpieler.clear();
-		// }
-		
-		Pot(){
-			
-		}
-				
-		public int potSammeln(){
-		for(Spieler spieler : Tische.this.spieler.values() ){
-			pot += spieler.getEinsatz();
-			System.out.println(pot);
-		}
-		pot += dealer.getEinsatz();
-		return pot;
-		
-		}
-		// verwendet die ID des Spielers zur Verwaltung der Einsätze
 
+		/**
+		 * Default Konstruktor
+		 */
+		Pot() {
+
+		}
+
+		/**
+		 * Methode...
+		 * 
+		 * @return pot
+		 */
+		public int potSammeln() {
+			for (Spieler spieler : Tische.this.spieler.values()) {
+				pot += spieler.getEinsatz();
+				System.out.println(pot);
+			}
+			pot += dealer.getEinsatz();
+			return pot;
+
+		}
 	}
-
 }

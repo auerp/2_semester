@@ -2,6 +2,14 @@ package de.hs_ma.ws_13.tpe_04_uib.auer_baummann_bucnev.casino;
 
 import java.util.ArrayList;
 
+/**
+ * Klasse zur Erzeugung eines Casinos
+ * 
+ * @author pauer
+ * @author rbucenv
+ * @author tbaumann
+ * 
+ */
 public class Casino {
 
 	private int vermoegen;
@@ -84,10 +92,21 @@ public class Casino {
 		this.vermoegen = vermoegen;
 	}
 
+	/**
+	 * Methode die den Gewinn liefert
+	 * 
+	 * @return gewinn liefert den Gewinn zurueck
+	 */
 	public int getGewinn() {
 		return this.gewinn;
 	}
 
+	/**
+	 * Methode um Gewinn zu erhoehen
+	 * 
+	 * @param gewinn
+	 *            zu gewinnender Betrag
+	 */
 	public void setGewinn(int gewinn) {
 		this.gewinn += gewinn;
 	}

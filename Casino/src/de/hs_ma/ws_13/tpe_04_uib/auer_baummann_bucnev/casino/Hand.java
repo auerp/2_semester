@@ -2,15 +2,16 @@ package de.hs_ma.ws_13.tpe_04_uib.auer_baummann_bucnev.casino;
 
 import java.util.ArrayList;
 
+/**
+ * Klasse zur Erzeugung einer Hand mit Karten
+ * 
+ * @author pauer
+ * 
+ */
 public class Hand {
 
 	private int summe;
 	private ArrayList<Karte> kartenHand = new ArrayList<Karte>();
-
-	// // Konstruktor
-	// public Hand(String name, int summe) {
-	// this.summe = summe;
-	// }
 
 	/**
 	 * Methode um die Summe aller Karten einer Hand zu ermitteln
@@ -46,6 +47,8 @@ public class Hand {
 
 	/**
 	 * Methode, die die Karten von der Hand zurueck gibt
+	 * 
+	 * @return kartenHand liefert die Karten einer Hand
 	 */
 	public ArrayList<Karte> getKartenHand() {
 		return this.kartenHand;
