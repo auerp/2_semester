@@ -8,7 +8,6 @@ import org.junit.Test;
 
 import de.hs_ma.ws_13.tpe_04_uib.auer_baummann_bucnev.casino.Karte.EnumKartenFarbe;
 import de.hs_ma.ws_13.tpe_04_uib.auer_baummann_bucnev.casino.Karte.EnumKartenWert;
-import de.hs_ma.ws_13.tpe_04_uib.auer_baummann_bucnev.casino.Tische.Pot;
 
 public class JUnitTest {
 
@@ -23,17 +22,17 @@ public class JUnitTest {
 	@Test
 	public void testCasino() {
 
-		//Anzahl der Tische
+		// Anzahl der Tische
 		assertEquals(3, casino.getTische());
 
-		// Im Casino Spieler Tisch zuweisen	
+		// Im Casino Spieler Tisch zuweisen
 		casino.spielerTischZuweisen(spieler1);
 		tisch1.addSpieler(spieler1);
 		assertEquals(true, spieler1.equals(spieler1));
-		
-		 // Tisch hinzufügen
+
+		// Tisch hinzufügen
 		casino.addTische(1);
-		assertEquals(4 , casino.getTische());		
+		assertEquals(4, casino.getTische());
 	}
 
 	@Test
@@ -54,13 +53,13 @@ public class JUnitTest {
 		// Summe der Karten auf der Hand
 		assertEquals(13, spieler1.getHand().getSumme());
 
-		//removeKarten
+		// removeKarten
 		Hand hand = new Hand();
 		hand.addKarte(karte1);
 		hand.addKarte(karte2);
 		hand.removeKarten();
 		assertEquals(true, hand.getKartenHand().isEmpty());
-		
+
 	}
 
 	@Test
@@ -81,12 +80,11 @@ public class JUnitTest {
 	public void testKartenDeck() {
 		// Deck erstellen
 		assertEquals(false, kartenDeck.equals(new KartenDeck()));
-		
-		//Länge des Decks
+
+		// Länge des Decks
 		assertEquals(52, kartenDeck.size());
 
 	}
-	
 
 	@Test
 	public void testSpieler() {
@@ -105,80 +103,78 @@ public class JUnitTest {
 		Hand hand = new Hand();
 		hand.addKarte(karte1);
 		hand.addKarte(karte2);
-		assertEquals(true,spieler1.getHand().getKartenHand().equals(hand.getKartenHand()));		
+		assertEquals(true,
+				spieler1.getHand().getKartenHand().equals(hand.getKartenHand()));
 	}
 
 	@Test
 	public void testTische() {
-		
+
 		tisch1.addSpieler(spieler1);
-		
+
 		// getAnzahlSpieler
 		assertEquals(1, tisch1.getAnzahlSpieler());
 	}
-	
+
 	@Test
 	public void testEinsammeln() {
-		KartenDeck kartenDeckNeu =  new KartenDeck ();
+		KartenDeck kartenDeckNeu = new KartenDeck();
 		int laengeKarteDeckVorAusteilen = kartenDeckNeu.size();
 		dealer1.austeilenKarten(kartenDeckNeu);
-		dealer1.einsammelnKarten(); 
+		dealer1.einsammelnKarten();
 		int laengeKarteDeckNachAusteilen = kartenDeckNeu.size();
-		assertEquals(true, laengeKarteDeckVorAusteilen == laengeKarteDeckNachAusteilen);
+		assertEquals(true,
+				laengeKarteDeckVorAusteilen == laengeKarteDeckNachAusteilen);
 	}
 
 	@Test
 	public void testDealer() {
-		
-	
+
 		// Karten mischen
-		KartenDeck kartenDeckNeu =  new KartenDeck ();
+		KartenDeck kartenDeckNeu = new KartenDeck();
 		dealer1.mischeKarten(kartenDeckNeu);
 
-		 assertEquals(false, kartenDeck.equals(kartenDeckNeu));
-		
-		// Gewinner festlegen
-		 KartenDeck kartendeck =  new KartenDeck ();
-		 tisch1.addSpieler(spieler1);
-		 dealer1.austeilenKarten(kartendeck);
-		 dealer1.festlegenGewinner();
+		assertEquals(false, kartenDeck.equals(kartenDeckNeu));
 
-		 
+		// Gewinner festlegen
+		KartenDeck kartendeck = new KartenDeck();
+		tisch1.addSpieler(spieler1);
+		dealer1.austeilenKarten(kartendeck);
+		dealer1.festlegenGewinner();
+
 		// Einsatz abfragen
-		 spieler1.setzen(200);		 
-		 assertEquals(200, spieler1.getEinsatz());
-		 
-		 dealer1.setzen(43);
-		 assertEquals(43, dealer1.getEinsatz());
-		 
+		spieler1.setzen(200);
+		assertEquals(200, spieler1.getEinsatz());
+
+		dealer1.setzen(43);
+		assertEquals(43, dealer1.getEinsatz());
+
 		// auszahlen
 
-		 tisch1.addSpieler(spieler1);
-		 spieler1.setVermoegen(1000);
-		 dealer1.auszahlen(200);
-		 spieler1.gewonnen(200);
-		 assertEquals(1200,00, spieler1.getVermoegen());
-		
+		tisch1.addSpieler(spieler1);
+		spieler1.setVermoegen(1000);
+		dealer1.auszahlen(200);
+		spieler1.gewonnen(200);
+		assertEquals(1200, 00, spieler1.getVermoegen());
+
 	}
 
 	@Test
 	public void testPot() {
-		
-		 KartenDeck kartendeck =  new KartenDeck ();
-		 tisch1.addSpieler(spieler1);
-		 tisch1.addSpieler(spieler2);
-		 dealer1.austeilenKarten(kartendeck);
-		 dealer1.festlegenGewinner();
-		
+
+		KartenDeck kartendeck = new KartenDeck();
+		tisch1.addSpieler(spieler1);
+		tisch1.addSpieler(spieler2);
+		dealer1.austeilenKarten(kartendeck);
+		dealer1.festlegenGewinner();
+
 		Tische.Pot pot1 = tisch1.new Pot();
 		spieler1.setzen(100);
 		spieler2.setzen(100);
 		pot1.potSammeln();
 		System.out.println(pot1.potSammeln());
 		assertEquals(200, pot1.potSammeln());
-		
-		
-		
+
 	}
 
 }

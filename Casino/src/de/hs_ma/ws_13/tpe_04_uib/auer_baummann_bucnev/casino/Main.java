@@ -171,7 +171,8 @@ public class Main {
 		int i = 0;
 		do {
 //			bla
-
+//waha läuft immer noch nicht.
+			
 		} while (i <= spieler1.getVermoegen()||  spieler2.getVermoegen()
 				|| spieler3.getVermoegen() || spieler4.getVermoegen()
 				|| spieler5.getVermoegen() || dealer1.getDealerVermoegen());
